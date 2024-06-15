@@ -1,5 +1,7 @@
 <template>
-  <img :src="source" width="500" />
+  <div class="flex items-center" style="width: 500px; height: 500px">
+    <img :src="source" width="500" />
+  </div>
 </template>
 
 <script>
@@ -7,17 +9,5 @@ export default {
   props: {
     source: String,
   },
-  // emits: ['set-data'],
-  // data() {
-  //   return {
-  //     enteredName: "",
-  //     enteredAge: "",
-  //   };
-  // },
-  // methods: {
-  //   submitData() {
-  //     this.$emit('set-data', this.enteredName, this.enteredAge);
-  //   }
-  // }
 };
 </script>

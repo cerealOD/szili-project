@@ -6,24 +6,7 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      user: {
-        name: "Max Schwarzmüller",
-        age: 31,
-      },
-    };
-  },
-  methods: {
-    setUserData(name, age) {
-      this.user = {
-        name: name,
-        age: +age,
-      };
-    },
-  },
-};
+export default {};
 </script>
 
 <style>
