@@ -25,24 +25,13 @@
       Yes
     </button>
   </div>
-  <!-- <div>{{ pickedBatch }}</div>
-  <div>{{ index }}</div> -->
-  <!-- <button
-    class="px-8 py-4 rounded-xl bg-green text-white font-bold text-3xl mb-8"
-    @click="chooseBatch"
-  >
-    Start
-  </button>
-  <button
-    class="px-8 py-4 rounded-xl bg-red text-white font-bold text-3xl mb-8"
-    @click="showResults"
-  >
-    Stop
-  </button> -->
+
   <div :style="{ display: computedDisplay }">
     <div>All: {{ count }}</div>
-    <div>Correct: {{ countGood }}</div>
-    <div>Wrong: {{ countBad }}</div>
+    <div>Correct: {{ countCorrect }}</div>
+    <div>Wrong: {{ countWrong }}</div>
+    <div>Number of good figures: {{ countGoodFigures }}</div>
+    <div>Number of bad figures: {{ countBadFigures }}</div>
   </div>
 </template>
 
@@ -98,8 +87,10 @@ export default {
       ],
       pickedBatch: "",
       index: -1,
-      countGood: 0,
-      countBad: 0,
+      countCorrect: 0,
+      countWrong: 0,
+      countGoodFigures: 0,
+      countBadFigures: 0,
       count: 0,
       display: "none",
       start: false,
@@ -116,12 +107,16 @@ export default {
       this.display = "block";
     },
     checkGood() {
-      this.pickedBatch == "good" ? this.countGood++ : this.countBad++;
+      this.pickedBatch == "good"
+        ? (this.countCorrect++, this.countGoodFigures++)
+        : (this.countWrong++, this.countBadFigures++);
       this.count++;
       this.chooseBatch();
     },
     checkBad() {
-      this.pickedBatch == "bad" ? this.countGood++ : this.countBad++;
+      this.pickedBatch == "bad"
+        ? (this.countCorrect++, this.countBadFigures++)
+        : (this.countWrong++, this.countGoodFigures++);
       this.count++;
       this.chooseBatch();
     },
