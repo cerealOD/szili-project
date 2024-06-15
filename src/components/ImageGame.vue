@@ -1,7 +1,7 @@
 <template>
   <vue-countdown
     v-if="counting"
-    :time="1 * 1 * 1 * 10 * 1000"
+    :time="1 * 1 * 7 * 60 * 1000"
     v-slot="{ days, hours, minutes, seconds }"
     @end="showResults"
   >
