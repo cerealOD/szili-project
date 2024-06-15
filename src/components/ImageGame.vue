@@ -16,55 +16,93 @@
       Yes
     </button>
   </div>
-  <div>{{ pickedBatch }}</div>
-  <div>{{ index }}</div>
-  <button
-    class="px-8 py-4 rounded-xl bg-green text-white font-bold text-3xl"
+  <!-- <div>{{ pickedBatch }}</div>
+  <div>{{ index }}</div> -->
+  <!-- <button
+    class="px-8 py-4 rounded-xl bg-green text-white font-bold text-3xl mb-8"
     @click="chooseBatch"
   >
     Start
   </button>
   <button
-    class="px-8 py-4 rounded-xl bg-red text-white font-bold text-3xl"
-    @click=""
+    class="px-8 py-4 rounded-xl bg-red text-white font-bold text-3xl mb-8"
+    @click="showResults"
   >
     Stop
-  </button>
-  <div>All: {{ count }}</div>
-  <div>Correct: {{ countGood }}</div>
-  <div>Wrong: {{ countBad }}</div>
+  </button> -->
+  <div :style="{ display: computedDisplay }">
+    <div>All: {{ count }}</div>
+    <div>Correct: {{ countGood }}</div>
+    <div>Wrong: {{ countBad }}</div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: {},
+  created() {
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Enter") {
+        this.checkGood();
+      }
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Control") {
+        this.checkBad();
+      }
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key == " ") {
+        if (!this.start) {
+          this.chooseBatch();
+          this.start = true;
+        } else {
+          this.showResults();
+          this.start = false;
+        }
+      }
+    });
+  },
   data() {
     return {
       goodFigures: [
-        require("../assets/goodFigures/image1.jpg"),
-        require("../assets/goodFigures/image2.jpg"),
-        require("../assets/goodFigures/image3.jpg"),
-        require("../assets/goodFigures/image4.jpg"),
-        require("../assets/goodFigures/image5.jpg"),
+        require("../assets/goodFigures/good_1.png"),
+        require("../assets/goodFigures/good_2.png"),
+        require("../assets/goodFigures/good_3.png"),
+        require("../assets/goodFigures/good_4.png"),
       ],
       badFigures: [
-        require("../assets/badFigures/bad.png"),
-        require("../assets/badFigures/bad.png"),
-        require("../assets/badFigures/bad.png"),
-        require("../assets/badFigures/bad.png"),
-        require("../assets/badFigures/bad.png"),
-        require("../assets/badFigures/bad.png"),
-        require("../assets/badFigures/bad.png"),
-        require("../assets/badFigures/bad.png"),
+        require("../assets/badFigures/bad_01.png"),
+        require("../assets/badFigures/bad_02.png"),
+        require("../assets/badFigures/bad_03.png"),
+        require("../assets/badFigures/bad_04.png"),
+        require("../assets/badFigures/bad_05.png"),
+        require("../assets/badFigures/bad_06.png"),
+        require("../assets/badFigures/bad_07.png"),
+        require("../assets/badFigures/bad_08.png"),
+        require("../assets/badFigures/bad_09.png"),
+        require("../assets/badFigures/bad_10.png"),
+        require("../assets/badFigures/bad_11.png"),
+        require("../assets/badFigures/bad_12.png"),
+        require("../assets/badFigures/bad_13.png"),
       ],
       pickedBatch: "",
       index: -1,
       countGood: 0,
       countBad: 0,
       count: 0,
+      display: "none",
+      start: false,
     };
   },
+  computed: {
+    computedDisplay: function () {
+      return this.display;
+    },
+  },
   methods: {
+    showResults() {
+      this.display = "block";
+    },
     checkGood() {
       this.pickedBatch == "good" ? this.countGood++ : this.countBad++;
       this.count++;
@@ -79,11 +117,11 @@ export default {
       let values = [
         {
           value: "good",
-          probability: 0.3,
+          probability: 0.2,
         },
         {
           value: "bad",
-          probability: 0.7,
+          probability: 0.8,
         },
       ];
       let i,
