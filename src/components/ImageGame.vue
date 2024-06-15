@@ -1,4 +1,13 @@
 <template>
+  <vue-countdown
+    v-if="counting"
+    :time="1 * 1 * 1 * 10 * 1000"
+    v-slot="{ days, hours, minutes, seconds }"
+    @end="showResults"
+  >
+    <!-- Time Remaining：{{ days }} days, {{ hours }} hours, {{ minutes }} minutes,
+    {{ seconds }} seconds. -->
+  </vue-countdown>
   <div class="flex flex-row items-center gap-x-8">
     <button
       class="px-8 py-4 rounded-xl bg-red text-white font-bold text-3xl"
@@ -55,9 +64,11 @@ export default {
         if (!this.start) {
           this.chooseBatch();
           this.start = true;
+          this.counting = true;
         } else {
           this.showResults();
           this.start = false;
+          this.counting = false;
         }
       }
     });
@@ -92,6 +103,7 @@ export default {
       count: 0,
       display: "none",
       start: false,
+      counting: false,
     };
   },
   computed: {

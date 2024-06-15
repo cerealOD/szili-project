@@ -9,10 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chenfengyuan/vue-countdown": "^2.1.2",
     "core-js": "^3.6.5",
     "vite-plugin-commonjs": "^0.10.1",
     "vite-plugin-require": "^1.2.14",
-    "vue": "^3.4.21"
+    "vue": "^3.4.29"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
