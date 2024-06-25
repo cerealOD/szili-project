@@ -30,6 +30,8 @@
     <div>All: {{ count }}</div>
     <div>Correct: {{ countCorrect }}</div>
     <div>Wrong: {{ countWrong }}</div>
+    <div>Erros in good figures: {{ countWrongInGood }}</div>
+    <div>Errors in bad figures: {{ countWrongInBad }}</div>
     <div>Number of good figures: {{ countGoodFigures }}</div>
     <div>Number of bad figures: {{ countBadFigures }}</div>
   </div>
@@ -88,6 +90,8 @@ export default {
       pickedBatch: "",
       index: -1,
       countCorrect: 0,
+      countWrongInGood: 0,
+      countWrongInBad: 0,
       countWrong: 0,
       countGoodFigures: 0,
       countBadFigures: 0,
@@ -109,14 +113,14 @@ export default {
     checkGood() {
       this.pickedBatch == "good"
         ? (this.countCorrect++, this.countGoodFigures++)
-        : (this.countWrong++, this.countBadFigures++);
+        : (this.countWrong++, this.countBadFigures++, this.countWrongInBad++);
       this.count++;
       this.chooseBatch();
     },
     checkBad() {
       this.pickedBatch == "bad"
         ? (this.countCorrect++, this.countBadFigures++)
-        : (this.countWrong++, this.countGoodFigures++);
+        : (this.countWrong++, this.countGoodFigures++, this.countWrongInGood++);
       this.count++;
       this.chooseBatch();
     },
