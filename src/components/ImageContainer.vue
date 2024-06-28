@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex items-center justify-center"
-    style="width: 500px; height: 500px"
+    style="width: 300px; height: 300px"
   >
     <img :src="source" width="250" />
   </div>

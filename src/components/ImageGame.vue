@@ -26,14 +26,20 @@
     </button>
   </div>
 
-  <div :style="{ display: computedDisplay }">
-    <div>All: {{ count }}</div>
-    <div>Correct: {{ countCorrect }}</div>
-    <div>Wrong: {{ countWrong }}</div>
-    <div>Erros in good figures: {{ countWrongInGood }}</div>
-    <div>Errors in bad figures: {{ countWrongInBad }}</div>
-    <div>Number of good figures: {{ countGoodFigures }}</div>
-    <div>Number of bad figures: {{ countBadFigures }}</div>
+  <div :class="computedDisplay">
+    <div class="flex flex-col gap-y-1">
+      <div>All: {{ count }}</div>
+      <div>Correct: {{ countCorrect }}</div>
+      <div>Wrong: {{ countWrong }}</div>
+    </div>
+    <div class="flex flex-col gap-y-1">
+      <div>Number of good figures: {{ countGoodFigures }}</div>
+      <div>Erros in good figures: {{ countWrongInGood }}</div>
+    </div>
+    <div class="flex flex-col gap-y-1">
+      <div>Number of bad figures: {{ countBadFigures }}</div>
+      <div>Errors in bad figures: {{ countWrongInBad }}</div>
+    </div>
   </div>
 </template>
 
@@ -96,7 +102,7 @@ export default {
       countGoodFigures: 0,
       countBadFigures: 0,
       count: 0,
-      display: "none",
+      display: "hidden",
       start: false,
       counting: false,
     };
@@ -108,7 +114,7 @@ export default {
   },
   methods: {
     showResults() {
-      this.display = "block";
+      this.display = "flex flex-row gap-x-6 items-center";
     },
     checkGood() {
       this.pickedBatch == "good"
