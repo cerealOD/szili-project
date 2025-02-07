@@ -1,26 +1,12 @@
 <template>
-  <section
-    class="flex flex-col items-center justify-center"
-    style="height: 100vh"
-  >
-    <div class="flex flex-col items-center">
-      <div class="flex flex-row items-center">
-        <img src="../src/assets/goodFigures/good_1.png" width="250" />
-        <img src="../src/assets/goodFigures/good_2.png" width="250" />
-        <img src="../src/assets/goodFigures/good_3.png" width="250" />
-        <img src="../src/assets/goodFigures/good_4.png" width="250" />
-      </div>
-      <image-game></image-game>
-    </div>
-  </section>
+  <div class="bg-deep-blue" style="min-height: 100vh">
+    <main>
+      <RouterLink to="/">
+        <div class="text-2xl font-bold py-16 text-center text-white">
+          Szilard Hazi
+        </div>
+      </RouterLink>
+      <RouterView :key="$route.path" />
+    </main>
+  </div>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style>
-html {
-  font-family: sans-serif;
-}
-</style>
