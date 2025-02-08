@@ -7,7 +7,6 @@
         >
           <RouterLink to="/" class="hover:underline">Home </RouterLink>
           <RouterLink to="/about" class="hover:underline">About</RouterLink>
-          <RouterLink to="/contact" class="hover:underline">Contact</RouterLink>
         </nav>
       </header>
       <RouterView :key="$route.path" />

@@ -3,7 +3,7 @@
     <div class="text-5xl font-medium py-16 text-center text-white">
       {{ routeName }}
     </div>
-    <div class="text-xl font-medium pb-16 text-white px-64">
+    <div class="text-xl font-light pb-16 text-white px-64">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
