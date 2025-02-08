@@ -1,10 +1,10 @@
 <template>
   <div
-    class="bg-menu-gray rounded-2xl p-8 flex flex-col lg:ml-8 lg:items-center lg:w-[380px] mb-16 lg:mb-0"
+    class="bg-menu-gray rounded-2xl p-8 flex flex-col lg:ml-8 lg:items-center lg:w-[380px] mb-16 lg:mb-0 lg:sticky lg:top-[152px]"
   >
     <div class="flex gap-x-4 flex-col sm:flex-row lg:flex-col lg:items-center">
       <div
-        class="bg-center bg-no-repeat bg-cover h-32 w-32 sm:h-24 sm:w-24 lg:h-40 lg:w-40 rounded-full prof-pic mb-8 flex-none"
+        class="bg-center bg-no-repeat bg-cover h-32 w-32 sm:h-24 sm:w-24 lg:h-52 lg:w-52 rounded-full prof-pic mb-8 flex-none"
       ></div>
       <div class="flex flex-col lg:items-center">
         <span
@@ -13,12 +13,12 @@
           Szilard Hazi
         </span>
         <span
-          class="text-white lg:text-lg font-medium lg:whitespace-nowrap lg:mb-4"
+          class="text-white lg:text-lg font-semibold lg:whitespace-nowrap lg:mb-1"
         >
           3D Environment & character art
         </span>
         <span
-          class="text-white text-sm lg:text-lg font-medium lg:whitespace-nowrap mb-8 flex items-center gap-x-1"
+          class="text-white text-sm lg:text-base font-medium lg:whitespace-nowrap mb-8 flex items-center gap-x-1"
         >
           <img :src="require('../assets/icons/globe.svg')" />
           Budapest, Hungary
@@ -29,28 +29,58 @@
       Hi, my name is Szilard, and I’m a passionate, self-taught 3D artist with
       over three years of industry experience, specializing in game environments
       and character art. For more details about my experience and work, please
-      visit the About tab.
+      visit the
+      <a href="/about" class="cursor-pointer hover:underline">About</a> tab.
     </div>
-    <div class="text-white font-medium text-left mb-8 w-full">
-      Contact & Socials
-    </div>
-    <a
-      href="mailto:szilard.hazi91@gmail.com"
-      class="text-white hover:underline w-full mb-6 cursor-pointer flex items-center gap-x-2"
-    >
-      <img :src="require('../assets/icons/mail.svg')" />
-      szilard.hazi91@gmail.com
-    </a>
-    <div class="text-white flex items-center w-full gap-x-2">
+    <div class="border-b border-solid border-white pb-8 mb-8 w-full">
+      <div class="text-white font-medium text-left mb-6 w-full">
+        Contact & Socials
+      </div>
       <a
-        href="https://www.linkedin.com/in/szilard-hazi-3d/"
-        class="cursor-pointer"
+        href="mailto:szilard.hazi91@gmail.com"
+        class="text-white hover:underline w-full mb-4 cursor-pointer flex items-center gap-x-2"
       >
-        <img :src="require('../assets/icons/linkedin.svg')" width="30"
-      /></a>
-      <a href="https://www.artstation.com/szilardhazi3d" class="cursor-pointer">
-        <img :src="require('../assets/icons/artstation.svg')" width="32" />
+        <img :src="require('../assets/icons/mail.svg')" />
+        szilard.hazi91@gmail.com
       </a>
+      <div class="text-white flex items-center w-full gap-x-2">
+        <a
+          href="https://www.artstation.com/szilardhazi3d"
+          class="cursor-pointer"
+        >
+          <img :src="require('../assets/icons/artstation.svg')" width="32" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/szilard-hazi-3d/"
+          class="cursor-pointer"
+        >
+          <img :src="require('../assets/icons/linkedin.svg')" width="30"
+        /></a>
+      </div>
     </div>
+    <button
+      class="flex items-center gap-x-1 bg-gray p-2 rounded-lg"
+      style="width: fit-content"
+      @click="downLoadPdf"
+    >
+      <img :src="require('../assets/icons/download.svg')" width="20" />
+      <div class="text-white text-sm font-medium text-left">
+        Download resume
+      </div>
+    </button>
   </div>
 </template>
+
+<script setup>
+const downLoadPdf = () => {
+  const link = document.createElement("a");
+  link.href = "/src/assets/resume.pdf";
+  link.target = "_blank";
+  link.download = "Szilard Hazi - Resume";
+
+  // Simulate a click on the element <a>
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+</script>

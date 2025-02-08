@@ -1,42 +1,40 @@
 <template>
-  <section>
-    <div class="flex flex-col lg:flex-row justify-between p-8 md:p-12 lg:p-16">
-      <div class="order-1 lg:order-0 flex flex-col w-full">
-        <div class="text-3xl font-semibold text-white col-span-4 mb-8">
-          Portfolio
-        </div>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
-        >
-          <RouterLink to="/barbarian">
-            <div
-              class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover barbarian-thumbnail"
-              style="aspect-ratio: 1/1"
-            ></div>
-          </RouterLink>
-          <RouterLink to="/inarius">
-            <div
-              class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover inarius-thumbnail"
-              style="aspect-ratio: 1/1"
-            ></div>
-          </RouterLink>
-          <RouterLink to="/axe">
-            <div
-              class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover axe-thumbnail"
-              style="aspect-ratio: 1/1"
-            ></div>
-          </RouterLink>
-          <RouterLink to="/indiana-jones">
-            <div
-              class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
-              style="aspect-ratio: 1/1"
-            ></div>
-          </RouterLink>
-        </div>
+  <div class="flex flex-col lg:flex-row justify-between">
+    <div class="order-1 lg:order-0 flex flex-col w-full">
+      <div class="text-3xl font-semibold text-white col-span-4 mb-8">
+        Portfolio
       </div>
-      <sideInfo class="order-0 lg:order-1" />
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
+      >
+        <RouterLink to="/barbarian">
+          <div
+            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover barbarian-thumbnail"
+            style="aspect-ratio: 1/1"
+          ></div>
+        </RouterLink>
+        <RouterLink to="/inarius">
+          <div
+            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover inarius-thumbnail"
+            style="aspect-ratio: 1/1"
+          ></div>
+        </RouterLink>
+        <RouterLink to="/axe">
+          <div
+            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover axe-thumbnail"
+            style="aspect-ratio: 1/1"
+          ></div>
+        </RouterLink>
+        <RouterLink to="/indiana-jones">
+          <div
+            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
+            style="aspect-ratio: 1/1"
+          ></div>
+        </RouterLink>
+      </div>
     </div>
-  </section>
+    <sideInfo class="order-0 lg:order-1" />
+  </div>
 </template>
 
 <script>

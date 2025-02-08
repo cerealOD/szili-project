@@ -19,7 +19,8 @@ module.exports = {
       green: "#2FDA44",
       red: "#E51E1E",
       white: "#eeeef1",
-      "menu-gray": "#202024",
+      "menu-gray": "#171d22",
+      gray: "#2a343e",
     },
     fontFamily: {
       sans: ["Montserrat"],

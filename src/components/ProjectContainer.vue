@@ -1,22 +1,19 @@
 <template>
-  <section>
-    <div class="w-full py-8 px-32">
-      <Projectview
-        :routeName="$route.name"
-        :picsArray="picsArray"
-        :videoArray="vidsArray"
-      >
-      </Projectview>
-    </div>
-  </section>
+  <div class="w-full py-8">
+    <Project
+      :routeName="$route.name"
+      :picsArray="picsArray"
+      :videoArray="vidsArray"
+    >
+    </Project>
+  </div>
 </template>
 
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-import Projectview from "../views/ProjectView.vue";
-import Video from "../components/Video.vue";
+import Project from "../views/Project.vue";
 
 const inariusObject = import.meta.glob("/src/assets/inarius/*.png");
 const inariusPics = Object.keys(inariusObject);
