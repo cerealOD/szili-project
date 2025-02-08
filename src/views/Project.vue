@@ -14,7 +14,7 @@
       class="w-full flex items-center text-white gap-x-2 text-lg hover:underline"
     >
       <img :src="require('../assets/icons/back.svg')" />
-      Back to Indiana Jones
+      Back to Indiana Jones and The Great Circle
     </a>
     <div
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"

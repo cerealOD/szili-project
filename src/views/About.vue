@@ -5,7 +5,7 @@
         <div class="text-white text-2xl font-medium underline mb-12">
           About me
         </div>
-        <div class="lg:text-lg/7 text-white">
+        <div class="lg:text-lg/7 text-white" style="max-width: 1100px">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

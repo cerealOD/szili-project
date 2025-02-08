@@ -59,14 +59,21 @@
       </div>
     </div>
     <button
-      class="flex items-center gap-x-1 bg-gray p-2 rounded-lg"
+      class="flex items-center gap-x-1 bg-gray p-2 rounded-lg text-white hover:bg-white hover:text-gray resume-download"
       style="width: fit-content"
       @click="downLoadPdf"
     >
-      <img :src="require('../assets/icons/download.svg')" width="20" />
-      <div class="text-white text-sm font-medium text-left">
-        Download resume
-      </div>
+      <img
+        :src="require('../assets/icons/download.svg')"
+        width="20"
+        class="resume-svg-white"
+      />
+      <img
+        :src="require('../assets/icons/download-gray.svg')"
+        width="20"
+        class="resume-svg-gray"
+      />
+      <div class="text-sm font-medium text-left">Download resume</div>
     </button>
   </div>
 </template>
@@ -84,3 +91,16 @@ const downLoadPdf = () => {
   document.body.removeChild(link);
 };
 </script>
+<style>
+.resume-svg-gray {
+  display: none;
+}
+.resume-download:hover {
+  .resume-svg-white {
+    display: none;
+  }
+  .resume-svg-gray {
+    display: block;
+  }
+}
+</style>

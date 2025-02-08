@@ -3,7 +3,21 @@
     <main>
       <header class="sticky top-0">
         <nav
-          class="gap-x-16 text-white bg-menu-gray w-full flex items-center py-6 px-16"
+          class="gap-x-16 text-white text-xl w-full flex items-center py-8 px-16"
+          :class="
+            $route.path !== '/' &&
+            $route.path !== '/about' &&
+            $route.path !== '/indiana-jones'
+              ? 'bg-transparent'
+              : 'bg-menu-gray'
+          "
+          :style="
+            $route.path !== '/' &&
+            $route.path !== '/about' &&
+            $route.path !== '/indiana-jones'
+              ? 'background: linear-gradient(180deg, rgba(14, 19, 23, .5) 47.75%, rgba(14, 19, 23, .4) 60%, rgba(0, 0, 0, 0) 100%);'
+              : ''
+          "
         >
           <RouterLink
             to="/"
