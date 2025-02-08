@@ -2,13 +2,27 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: "400px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        xxl: "1440px",
+        "2xl": "1536px",
+      },
+    },
     colors: {
       "deep-blue": "#0e1317",
       black: " #000",
       green: "#2FDA44",
       red: "#E51E1E",
-      white: "#fff",
+      white: "#eeeef1",
+      "menu-gray": "#202024",
+    },
+    fontFamily: {
+      sans: ["Montserrat"],
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],

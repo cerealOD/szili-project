@@ -14,6 +14,6 @@ const app = createApp(App).use(router);
 app.component("image-game", ImageGame);
 app.component("image-container", ImageContainer);
 app.component("vue-countdown", VueCountdown);
-app.component("video", Video);
+app.component("videoPlayer", Video);
 
 app.mount("#app");

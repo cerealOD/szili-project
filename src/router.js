@@ -3,7 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Contact from "./views/Contact.vue";
-import Project from "./views/Project.vue";
+import Project from "./components/Project.vue";
 import Jones from "./views/Jones.vue";
 
 const routes = [
