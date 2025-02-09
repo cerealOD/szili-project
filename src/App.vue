@@ -4,13 +4,14 @@
       <header class="sticky top-0">
         <nav
           class="gap-x-16 text-white text-xl w-full flex items-center py-8 px-16"
-          :class="
+          :class="[
             $route.path !== '/' &&
             $route.path !== '/about' &&
             $route.path !== '/indiana-jones'
               ? 'bg-transparent'
-              : 'bg-menu-gray'
-          "
+              : 'bg-menu-gray',
+            $route.path == '/protected' ? 'hidden' : 'flex',
+          ]"
           :style="
             $route.path !== '/' &&
             $route.path !== '/about' &&

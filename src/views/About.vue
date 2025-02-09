@@ -19,109 +19,123 @@
       </div>
       <div class="mb-16">
         <div class="text-white text-2xl font-medium underline mb-12">
-          Productions
+          Work history
         </div>
         <div
           class="rounded-2xl bg-menu-gray p-6 flex flex-col sm:flex-row gap-x-8 mb-4"
         >
-          <img
-            :src="require('../assets/jones-cover.jpg')"
-            width="150"
-            class="rounded-xl flex-none mb-4 sm:mb-0"
-          />
-          <div class="flex flex-col">
-            <span class="text-white font-bold text-lg lg:text-2xl mb-1"
-              >Indiana Jones and the Great Circle</span
+          <div class="flex-none">
+            <img
+              :src="require('../assets/jones-cover.jpg')"
+              width="150"
+              class="rounded-xl flex-none mb-4 sm:mb-0"
+            />
+          </div>
+          <div class="flex flex-col text-white">
+            <div
+              class="flex flex-col 2xl:flex-row 2xl:items-center justify-between mb-4"
             >
-            <span class="text-white lg:text-lg mb-4"
-              >3D Environmenrt Artist Treehouse Ninjas</span
-            >
-            <span class="lg:text-lg font-bold text-white">2023 - 2024</span>
+              <span class="order-1 2xl:order-0 font-bold text-lg lg:text-2xl"
+                >Indiana Jones and the Great Circle</span
+              >
+              <div
+                class="order-0 2xl:order-1 rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
+                style="width: fit-content"
+              >
+                2023 - present
+              </div>
+            </div>
+            <div class="font-medium text-lg mb-1">
+              3D Environment Artist at Treehouse Ninjas
+            </div>
+            <div class="flex items-center gap-x-1 mb-8">
+              <img
+                :src="require('../assets/icons/globe.svg')"
+                class="flex-none"
+              />
+              Budapest, Hungary
+            </div>
+            <div>
+              <div class="pb-4">Crafting story-driven worlds for AAA games</div>
+              <ul>
+                <li>
+                  Responsible for complete environments from initial blockout
+                  phase until the final touches, including building the
+                  necessary elements from modules to unique assets, props and
+                  their complete integration into the engine
+                </li>
+                <li>
+                  Continous collaboration with other developer teams to achieve
+                  production goals
+                </li>
+                <li>Work in team or as an invidual on specific tasks</li>
+                <li>
+                  Polish imperfections on the level of small details and review
+                  final areas
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div
           class="rounded-2xl bg-menu-gray p-6 flex flex-col sm:flex-row gap-x-8"
         >
-          <img
-            :src="require('../assets/descenders-cover.jpg')"
-            width="150"
-            class="rounded-xl flex-none mb-4 sm:mb-0"
-          />
-          <div class="flex flex-col">
-            <span class="text-white font-bold text-lg lg:text-2xl mb-1"
-              >Descenders Next</span
-            >
-            <span class="text-white lg:text-lg mb-4">
-              Junior 3D Character Artist RageSquid</span
-            >
-            <span class="lg:text-lg font-bold text-white">2022 - 2023</span>
+          <div class="flex-none">
+            <img
+              :src="require('../assets/descenders-cover.jpg')"
+              width="150"
+              class="rounded-xl mb-4 sm:mb-0"
+            />
           </div>
-        </div>
-      </div>
-      <div class="mb-16">
-        <div class="text-white text-2xl font-medium underline mb-12">
-          Work history
-        </div>
-        <div class="flex flex-col gap-y-8">
-          <div>
-            <div class="text-lg font-semibold text-white mb-4">
-              January 2023 - Present
-            </div>
-            <div class="rounded-2xl bg-menu-gray p-6 text-white">
-              <div class="font-semibold text-lg mb-1">
-                3D Environment Artist at Treehouse Ninjas
-              </div>
-              <div class="flex items-center mb-8 gap-x-1">
-                <img
-                  :src="require('../assets/icons/globe.svg')"
-                  class="flex-none"
-                />
-                Budapest, Hungary
-              </div>
-              <div class="">
-                Crafting story-driven worlds for AAA games -Responsible for
-                complete environments from initial blockout phase until the
-                final touches, including building the necessary elements from
-                modules to unique assets, props and their complete integration
-                into the engine -Continous collaboration with other developer
-                teams to achieve production goals -Work in team or as an
-                invidual on specific tasks -Polish imperfections on the level of
-                small details and review final areas
+          <div class="flex flex-col text-white w-full">
+            <div
+              class="flex flex-col 2xl:flex-row 2xl:items-center justify-between mb-4"
+            >
+              <span class="order-1 2xl:order-0 font-bold text-lg lg:text-2xl"
+                >Descenders Next</span
+              >
+              <div
+                class="order-0 2xl:order-1 rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
+                style="width: fit-content"
+              >
+                2022 - 2023
               </div>
             </div>
-          </div>
-          <div>
-            <div class="text-lg font-semibold text-white mb-4">
-              February 2022 - January 2023
+            <div class="font-semibold text-lg mb-1">
+              Junior 3D Character Artist at RageSquid
             </div>
-            <div class="rounded-2xl bg-menu-gray p-6 text-white">
-              <div class="font-semibold text-lg mb-1">
-                Junior 3D Character Artist at RageSquid
-              </div>
-              <div class="flex items-center mb-8 gap-x-1">
-                <img
-                  :src="require('../assets/icons/globe.svg')"
-                  class="flex-none"
-                />
-                Tilburg, Netherlands
-              </div>
-              <div class="">
+            <div class="flex items-center gap-x-1 mb-8">
+              <img
+                :src="require('../assets/icons/globe.svg')"
+                class="flex-none"
+              />
+              Tilburg, Netherlands
+            </div>
+            <div>
+              <div class="pb-4">
                 I have worked on their upcoming title - Descencers Next
-                -Sculpted highpoly character models by following given
-                proportions to match existing animations -Created various props
-                and implement them into the engine
               </div>
+              <ul>
+                <li>
+                  Sculpted highpoly character models by following given
+                  proportions to match existing animations
+                </li>
+                <li>
+                  Created various props and implement them into the engine
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+
       <div class="text-white text-2xl font-medium underline mb-8">
         Software knowledge
       </div>
       <div class="flex items-center gap-2 flex-wrap">
         <div
           v-for="image in tagsPics"
-          class="flex items-center bg-gray p-2 rounded-md gap-x-2 text-white"
+          class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
         >
           <img :src="require(image)" width="24" class="rounded-md" />
           <span>{{
@@ -131,7 +145,7 @@
       </div>
     </div>
     <div class="order-0 lg:order-1">
-      <sideInfo class="" />
+      <sideInfo />
     </div>
   </div>
 </template>
@@ -156,5 +170,9 @@ const tagsPics = Object.keys(tagsObject);
 }
 .jones-thumbnail {
   background-image: url("../assets/indiana-jones/indiana_thumbnail.png");
+}
+li {
+  list-style-type: disc;
+  padding-bottom: 12px;
 }
 </style>
