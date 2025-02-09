@@ -10,7 +10,7 @@
     </a>
     <a
       v-if="jones"
-      href="/indiana-jones"
+      href="/projects/indiana-jones"
       class="w-full flex items-center text-white gap-x-2 text-lg hover:underline"
     >
       <img :src="require('../assets/icons/back.svg')" />

@@ -16,6 +16,15 @@ const routes = [
       requiresAuth: true,
     },
   },
+  { path: "/projects", redirect: "/" },
+  {
+    path: "/projects/:slug",
+    name: "projects",
+    component: ProjectContainer,
+    meta: {
+      requiresAuth: true,
+    },
+  },
   {
     path: "/about",
     name: "about",
@@ -25,31 +34,7 @@ const routes = [
     },
   },
   {
-    path: "/barbarian",
-    name: "barbarian",
-    component: ProjectContainer,
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/inarius",
-    name: "inarius",
-    component: ProjectContainer,
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/axe",
-    name: "axe",
-    component: ProjectContainer,
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/indiana-jones",
+    path: "/projects/indiana-jones",
     name: "jones",
     component: Jones,
     meta: {
@@ -57,7 +42,7 @@ const routes = [
     },
   },
   {
-    path: "/indiana-jones/:slug",
+    path: "/projects/indiana-jones/:slug",
     component: JonesContainer,
     meta: {
       requiresAuth: true,

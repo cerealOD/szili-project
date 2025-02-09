@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-center">
+  <div class="w-full flex justify-center pt-40">
     <div
       class="container flex justify-center text-center bg-menu-gray rounded-2xl text-white p-8"
       style="width: fit-content"

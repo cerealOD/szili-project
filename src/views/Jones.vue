@@ -15,49 +15,49 @@
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
     >
-      <RouterLink to="/indiana-jones/iraq">
+      <RouterLink to="/projects/indiana-jones/iraq">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"
         ></div>
       </RouterLink>
-      <RouterLink to="/indiana-jones/nightmare-vol-1">
+      <RouterLink to="/projects/indiana-jones/nightmare-vol-1">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"
         ></div>
       </RouterLink>
-      <RouterLink to="/indiana-jones/nightmare-vol-2">
+      <RouterLink to="/projects/indiana-jones/nightmare-vol-2">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"
         ></div>
       </RouterLink>
-      <RouterLink to="/indiana-jones/shanghai">
+      <RouterLink to="/projects/indiana-jones/shanghai">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"
         ></div>
       </RouterLink>
-      <RouterLink to="/indiana-jones/sukhothai">
+      <RouterLink to="/projects/indiana-jones/sukhothai">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"
         ></div>
       </RouterLink>
-      <RouterLink to="/indiana-jones/treehouse-vol-1">
+      <RouterLink to="/projects/indiana-jones/treehouse-vol-1">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"
         ></div>
       </RouterLink>
-      <RouterLink to="/indiana-jones/treehouse-vol-2">
+      <RouterLink to="/projects/indiana-jones/treehouse-vol-2">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"
         ></div>
       </RouterLink>
-      <RouterLink to="/indiana-jones/vatican">
+      <RouterLink to="/projects/indiana-jones/vatican">
         <div
           class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
           style="aspect-ratio: 1/1"

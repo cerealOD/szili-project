@@ -30,7 +30,10 @@
       over three years of industry experience, specializing in game environments
       and character art. For more details about my experience and work, please
       visit the
-      <a href="/about" class="cursor-pointer hover:underline">About</a> tab.
+      <a href="/about" class="cursor-pointer hover:underline font-medium"
+        >About</a
+      >
+      tab.
     </div>
     <div class="border-b border-solid border-white pb-8 mb-8 w-full">
       <div class="text-white font-medium text-left mb-6 w-full">
