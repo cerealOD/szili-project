@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .container {
+  @apply px-gutter-1/2;
+
+  @screen md {
+    @apply px-gutter;
+  }
+
+  @screen 2xl {
+    max-width: 1200px;
+  }
+} */

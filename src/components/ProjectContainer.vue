@@ -23,7 +23,7 @@ const inariusVids = Object.keys(inariusVidObject);
 const axeObject = import.meta.glob("/src/assets/viking-axe/*.png");
 const axePics = Object.keys(axeObject);
 
-const barbarianObject = import.meta.glob("/src/assets/barbarian/*.png");
+const barbarianObject = import.meta.glob("/src/assets/barbarian/*.jpg");
 const barbarianPics = Object.keys(barbarianObject);
 const barbarianVidObject = import.meta.glob("/src/assets/barbarian/*.mp4");
 const barbarianVids = Object.keys(barbarianVidObject);
@@ -38,9 +38,6 @@ const bowVids = Object.keys(bowVidObject);
 
 const diabloObject = import.meta.glob("/src/assets/diablo/*.png");
 const diabloPics = Object.keys(diabloObject);
-
-const gravObject = import.meta.glob("/src/assets/grav-gen/*.png");
-const gravPics = Object.keys(gravObject);
 
 const ironObject = import.meta.glob("/src/assets/iron/*.png");
 const ironPics = Object.keys(ironObject);
@@ -75,9 +72,6 @@ const picsArray = computed(() => {
   }
   if (currentRouteName.value == "diablo") {
     return diabloPics;
-  }
-  if (currentRouteName.value == "grav-gen") {
-    return gravPics;
   }
   if (currentRouteName.value == "iron") {
     return ironPics;

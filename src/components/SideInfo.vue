@@ -1,10 +1,10 @@
 <template>
   <div
-    class="bg-menu-gray rounded-2xl p-8 flex flex-col lg:ml-8 lg:items-center lg:w-[380px] mb-16 lg:mb-0 lg:sticky lg:top-[172px]"
+    class="bg-menu-gray rounded-2xl p-8 flex flex-col lg:ml-8 lg:items-center lg:w-[380px] mb-16 lg:mb-0 lg:sticky lg:top-[156px]"
   >
     <div class="flex gap-x-4 flex-col sm:flex-row lg:flex-col lg:items-center">
       <div
-        class="bg-center bg-no-repeat bg-cover h-32 w-32 sm:h-24 sm:w-24 lg:h-52 lg:w-52 rounded-full prof-pic mb-8 flex-none"
+        class="bg-center bg-no-repeat bg-cover h-32 w-32 sm:h-24 sm:w-24 lg:h-36 lg:w-36 rounded-full prof-pic mb-8 flex-none"
       ></div>
       <div class="flex flex-col lg:items-center">
         <span

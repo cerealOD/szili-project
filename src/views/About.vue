@@ -156,21 +156,6 @@ const tagsPics = Object.keys(tagsObject);
 </script>
 
 <style>
-.prof-pic {
-  background-image: url("../assets/prof-pic.jpg");
-}
-.barbarian-thumbnail {
-  background-image: url("../assets/barbarian/Barbarian_Thumnail_Fog_Szilard_Hazi.png");
-}
-.inarius-thumbnail {
-  background-image: url("../assets/inarius/szilard_hazi_inarius_thumbnail_final.png");
-}
-.axe-thumbnail {
-  background-image: url("../assets/viking-axe/axe_thumbnail_final.png");
-}
-.jones-thumbnail {
-  background-image: url("../assets/indiana-jones/indiana_thumbnail.png");
-}
 li {
   list-style-type: disc;
   padding-bottom: 12px;
