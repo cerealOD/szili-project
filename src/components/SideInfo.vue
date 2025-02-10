@@ -20,7 +20,7 @@
         <span
           class="text-white text-sm lg:text-base font-medium lg:whitespace-nowrap mb-8 flex items-center gap-x-1"
         >
-          <img :src="require('../assets/icons/globe.svg')" />
+          <img :src="require('/icons/globe.svg')" />
           Budapest, Hungary
         </span>
       </div>
@@ -43,7 +43,7 @@
         href="mailto:szilard.hazi91@gmail.com"
         class="text-white hover:underline w-full mb-4 cursor-pointer flex items-center gap-x-2"
       >
-        <img :src="require('../assets/icons/mail.svg')" />
+        <img :src="require('/icons/mail.svg')" />
         szilard.hazi91@gmail.com
       </a>
       <div class="text-white flex items-center w-full gap-x-2">
@@ -51,13 +51,13 @@
           href="https://www.artstation.com/szilardhazi3d"
           class="cursor-pointer"
         >
-          <img :src="require('../assets/icons/artstation.svg')" width="32" />
+          <img :src="require('/icons/artstation.svg')" width="32" />
         </a>
         <a
           href="https://www.linkedin.com/in/szilard-hazi-3d/"
           class="cursor-pointer"
         >
-          <img :src="require('../assets/icons/linkedin.svg')" width="30"
+          <img :src="require('/icons/linkedin.svg')" width="30"
         /></a>
       </div>
     </div>
@@ -67,12 +67,12 @@
       @click="downLoadPdf"
     >
       <img
-        :src="require('../assets/icons/download.svg')"
+        :src="require('/icons/download.svg')"
         width="20"
         class="resume-svg-white"
       />
       <img
-        :src="require('../assets/icons/download-gray.svg')"
+        :src="require('/icons/download-gray.svg')"
         width="20"
         class="resume-svg-gray"
       />

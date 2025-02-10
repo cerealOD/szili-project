@@ -5,7 +5,7 @@
       href="/"
       class="w-full flex items-center text-white gap-x-2 text-lg hover:underline"
     >
-      <img :src="require('../assets/icons/back.svg')" />
+      <img :src="require('/icons/back.svg')" />
       Back to Home
     </a>
     <a
@@ -13,7 +13,7 @@
       href="/projects/indiana-jones"
       class="w-full flex items-center text-white gap-x-2 text-lg hover:underline"
     >
-      <img :src="require('../assets/icons/back.svg')" />
+      <img :src="require('/icons/back.svg')" />
       Back to Indiana Jones and The Great Circle
     </a>
     <div
@@ -59,53 +59,7 @@
     <span class="text-white font-semibold text-2xl w-full mb-8"
       >Software Used</span
     >
-    <div class="text-white flex items-center w-full gap-x-2">
-      <a href="https://www.artstation.com/szilardhazi3d" class="cursor-pointer">
-        <img :src="require('../assets/icons/artstation.svg')" width="32" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/szilard-hazi-3d/"
-        class="cursor-pointer"
-      >
-        <img :src="require('../assets/icons/linkedin.svg')" width="30"
-      /></a>
-      <a href="https://www.artstation.com/szilardhazi3d" class="cursor-pointer">
-        <img :src="require('../assets/icons/artstation.svg')" width="32" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/szilard-hazi-3d/"
-        class="cursor-pointer"
-      >
-        <img :src="require('../assets/icons/linkedin.svg')" width="30"
-      /></a>
-      <a href="https://www.artstation.com/szilardhazi3d" class="cursor-pointer">
-        <img :src="require('../assets/icons/artstation.svg')" width="32" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/szilard-hazi-3d/"
-        class="cursor-pointer"
-      >
-        <img :src="require('../assets/icons/linkedin.svg')" width="30"
-      /></a>
-      <a href="https://www.artstation.com/szilardhazi3d" class="cursor-pointer">
-        <img :src="require('../assets/icons/artstation.svg')" width="32" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/szilard-hazi-3d/"
-        class="cursor-pointer"
-      >
-        <img :src="require('../assets/icons/linkedin.svg')" width="30"
-      /></a>
-      <a href="https://www.artstation.com/szilardhazi3d" class="cursor-pointer">
-        <img :src="require('../assets/icons/artstation.svg')" width="32" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/szilard-hazi-3d/"
-        class="cursor-pointer"
-      >
-        <img :src="require('../assets/icons/linkedin.svg')" width="30"
-      /></a>
-    </div>
+    <div class="text-white flex items-center w-full gap-x-2"></div>
   </div>
 </template>
 

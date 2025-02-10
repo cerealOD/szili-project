@@ -49,10 +49,7 @@
               3D Environment Artist at Treehouse Ninjas
             </div>
             <div class="flex items-center gap-x-1 mb-8">
-              <img
-                :src="require('../assets/icons/globe.svg')"
-                class="flex-none"
-              />
+              <img :src="require('/icons/globe.svg')" class="flex-none" />
               Budapest, Hungary
             </div>
             <div>
@@ -105,10 +102,7 @@
               Junior 3D Character Artist at RageSquid
             </div>
             <div class="flex items-center gap-x-1 mb-8">
-              <img
-                :src="require('../assets/icons/globe.svg')"
-                class="flex-none"
-              />
+              <img :src="require('/icons/globe.svg')" class="flex-none" />
               Tilburg, Netherlands
             </div>
             <div>

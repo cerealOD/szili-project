@@ -4,7 +4,7 @@
       href="/"
       class="w-full flex items-center text-white gap-x-2 text-lg hover:underline"
     >
-      <img :src="require('../assets/icons/back.svg')" />
+      <img :src="require('/icons/back.svg')" />
       Back to Home
     </a>
     <div
