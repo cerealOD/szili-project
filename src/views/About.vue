@@ -49,7 +49,7 @@
               3D Environment Artist at Treehouse Ninjas
             </div>
             <div class="flex items-center gap-x-1 mb-8">
-              <img :src="require('/icons/globe.svg')" class="flex-none" />
+              <img :src="'/icons/globe.svg'" class="flex-none" />
               Budapest, Hungary
             </div>
             <div>
@@ -102,7 +102,7 @@
               Junior 3D Character Artist at RageSquid
             </div>
             <div class="flex items-center gap-x-1 mb-8">
-              <img :src="require('/icons/globe.svg')" class="flex-none" />
+              <img :src="'/icons/globe.svg'" class="flex-none" />
               Tilburg, Netherlands
             </div>
             <div>
@@ -131,7 +131,7 @@
           v-for="image in tagsPics"
           class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
         >
-          <img :src="require(image)" width="24" class="rounded-md" />
+          <img :src="image" width="24" class="rounded-md" />
           <span>{{
             image.split("/")[image.split("/").length - 1].replaceAll(".png", "")
           }}</span>
@@ -146,7 +146,10 @@
 
 <script setup>
 const tagsObject = import.meta.glob("/src/assets/logos/*.png");
-const tagsPics = Object.keys(tagsObject);
+const tagsPics = Object.keys(tagsObject).map((string) =>
+  string.replace("/src/assets", "")
+);
+console.log(tagsPics);
 </script>
 
 <style>

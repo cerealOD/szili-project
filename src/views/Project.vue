@@ -5,7 +5,7 @@
       href="/"
       class="w-full flex items-center text-white gap-x-2 text-lg hover:underline"
     >
-      <img :src="require('/icons/back.svg')" />
+      <img :src="'/icons/back.svg'" />
       Back to Home
     </a>
     <a
@@ -13,7 +13,7 @@
       href="/projects/indiana-jones"
       class="w-full flex items-center text-white gap-x-2 text-lg hover:underline"
     >
-      <img :src="require('/icons/back.svg')" />
+      <img :src="'/icons/back.svg'" />
       Back to Indiana Jones and The Great Circle
     </a>
     <div
