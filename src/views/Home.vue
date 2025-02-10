@@ -9,66 +9,205 @@
       <div
         class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
       >
-        <RouterLink to="/projects/barbarian">
+        <RouterLink
+          to="/projects/barbarian"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover barbarian-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/barbarian_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="/projects/inarius">
+        <RouterLink
+          to="/projects/inarius"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover inarius-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/inarius_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="projects/axe">
+        <RouterLink
+          to="projects/axe"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover axe-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/axe_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="projects/indiana-jones">
+        <RouterLink
+          to="projects/indiana-jones"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jones-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/indiana_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="projects/borderlands">
+        <RouterLink
+          to="projects/borderlands"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover smg-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/smg_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="projects/bow">
+        <RouterLink
+          to="projects/bow"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover bow-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/bow_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="projects/diablo">
+        <RouterLink
+          to="projects/diablo"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover diablo-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/diablo_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-
-        <RouterLink to="projects/iron">
+        <RouterLink
+          to="projects/iron"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover iron-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/iron_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="projects/jeep">
+        <RouterLink
+          to="projects/jeep"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover jeep-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/jeep_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
-        <RouterLink to="projects/laser">
+        <RouterLink
+          to="projects/laser"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
           <div
-            class="text-2xl font-bold py-16 text-center text-white rounded-2xl bg-center bg-no-repeat bg-cover laser-thumbnail"
-            style="aspect-ratio: 1/1"
-          ></div>
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div
+              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
+            >
+              <span>Barbarian</span>
+            </div>
+          </div>
+          <img
+            :src="require('../assets/thumbnails/laser_thumbnail.png')"
+            class="rounded-2xl"
+          />
         </RouterLink>
       </div>
     </div>
@@ -89,37 +228,21 @@ export default {
 </script>
 
 <style>
+.background-overlay {
+  transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.project-container:hover {
+  .background-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08049340341605393) 26%,
+      rgba(0, 0, 0, 0.8003813585981268) 69%,
+      rgba(0, 0, 0, 0.9460396219034489) 88%
+    );
+  }
+}
 .prof-pic {
   background-image: url("../assets/prof-pic.jpg");
-}
-.barbarian-thumbnail {
-  background-image: url("../assets/thumbnails/barbarian_thumbnail.png");
-}
-.inarius-thumbnail {
-  background-image: url("../assets/thumbnails/inarius_thumbnail.png");
-}
-.axe-thumbnail {
-  background-image: url("../assets/thumbnails/axe_thumbnail.png");
-}
-.jones-thumbnail {
-  background-image: url("../assets/thumbnails/indiana_thumbnail.png");
-}
-.bow-thumbnail {
-  background-image: url("../assets/thumbnails/bow_thumbnail.png");
-}
-.diablo-thumbnail {
-  background-image: url("../assets/thumbnails/diablo_thumbnail.png");
-}
-.iron-thumbnail {
-  background-image: url("../assets/thumbnails/iron_thumbnail.png");
-}
-.jeep-thumbnail {
-  background-image: url("../assets/thumbnails/jeep_thumbnail.png");
-}
-.laser-thumbnail {
-  background-image: url("../assets/thumbnails/laser_thumbnail.png");
-}
-.smg-thumbnail {
-  background-image: url("../assets/thumbnails/smg_thumbnail.png");
 }
 </style>

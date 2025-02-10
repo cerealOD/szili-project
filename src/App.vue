@@ -20,7 +20,7 @@
         "
       >
         <nav
-          class="gap-x-16 text-white text-xl w-full flex items-center py-8 px-8 md:px-12 lg:px-16 container"
+          class="gap-x-16 text-white text-xl w-full flex items-center py-8 px-8 sm:px-16 container"
         >
           <RouterLink
             to="/"
@@ -36,7 +36,7 @@
           >
         </nav>
       </header>
-      <section class="py-12 px-8 md:px-12 md:py-16 lg:px-16 lg:pt-20 container">
+      <section class="py-12 md:py-16 lg:pt-20 container px-8 sm:px-16">
         <RouterView :key="$route.path" />
       </section>
     </main>
