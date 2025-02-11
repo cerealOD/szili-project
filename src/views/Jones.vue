@@ -29,10 +29,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
 
       <RouterLink
@@ -49,10 +46,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
         to="/projects/indiana-jones/nightmare-vol-2"
@@ -68,10 +62,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
         to="/projects/indiana-jones/shanghai"
@@ -87,10 +78,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
         to="/projects/indiana-jones/sukhothai"
@@ -106,10 +94,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
         to="/projects/indiana-jones/treehouse-vol-1"
@@ -125,10 +110,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
         to="/projects/indiana-jones/treehouse-vol-2"
@@ -144,10 +126,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
         to="/projects/indiana-jones/vatican"
@@ -163,10 +142,7 @@
             <span>Barbarian</span>
           </div>
         </div>
-        <img
-          :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-          class="rounded-2xl"
-        />
+        <img :src="'/thumbnails/barbarian_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
     </div>
   </div>

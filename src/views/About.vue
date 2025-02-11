@@ -126,15 +126,15 @@
       <div class="text-white text-2xl font-medium underline mb-8">
         Software knowledge
       </div>
+      <div>hello</div>
       <div class="flex items-center gap-2 flex-wrap">
         <div
-          v-for="image in tagsPics"
+          v-for="image in logoPics"
+          :key="image"
           class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
         >
-          <img :src="image" width="24" class="rounded-md" />
-          <span>{{
-            image.split("/")[image.split("/").length - 1].replaceAll(".png", "")
-          }}</span>
+          <img :src="'logos/' + image" width="24" class="rounded-md" />
+          <span>{{ image.replaceAll(".png", "") }}</span>
         </div>
       </div>
     </div>
@@ -145,11 +145,18 @@
 </template>
 
 <script setup>
-const tagsObject = import.meta.glob("/src/assets/logos/*.png");
-const tagsPics = Object.keys(tagsObject).map((string) =>
-  string.replace("/src/assets", "")
-);
-console.log(tagsPics);
+import { ref, onMounted } from "vue";
+const logoPics = ref([]);
+onMounted(() => {
+  fetch("/api/logos")
+    .then((response) => response.json())
+    .then((data) => {
+      logoPics.value = data;
+    })
+    .catch((error) => {
+      console.error("Error fetching icons:", error);
+    });
+});
 </script>
 
 <style>

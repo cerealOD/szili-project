@@ -25,7 +25,7 @@
             </div>
           </div>
           <img
-            :src="require('../assets/thumbnails/barbarian_thumbnail.png')"
+            :src="'/thumbnails/barbarian_thumbnail.png'"
             class="rounded-2xl"
           />
         </RouterLink>
@@ -44,10 +44,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/inarius_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/inarius_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/axe"
@@ -64,10 +61,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/axe_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/axe_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/indiana-jones"
@@ -84,10 +78,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/indiana_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/indiana_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/borderlands"
@@ -104,10 +95,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/smg_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/smg_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/bow"
@@ -124,10 +112,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/bow_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/bow_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/diablo"
@@ -144,10 +129,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/diablo_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/diablo_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/iron"
@@ -164,10 +146,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/iron_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/iron_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/jeep"
@@ -184,10 +163,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/jeep_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/jeep_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
           to="projects/laser"
@@ -204,10 +180,7 @@
               <span>Barbarian</span>
             </div>
           </div>
-          <img
-            :src="require('../assets/thumbnails/laser_thumbnail.png')"
-            class="rounded-2xl"
-          />
+          <img :src="'/thumbnails/laser_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
       </div>
     </div>

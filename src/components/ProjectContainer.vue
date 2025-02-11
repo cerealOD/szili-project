@@ -2,8 +2,9 @@
   <div class="w-full py-8">
     <Project
       :routeName="$route.params.slug"
-      :picsArray="picsArray"
-      :videoArray="vidsArray"
+      :picsArray="projectPics"
+      :videoArray="projectVids"
+      :hasMarmoset="hasMarmoset"
     >
     </Project>
   </div>
@@ -12,93 +13,73 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { ref, onMounted } from "vue";
 
 import Project from "../views/Project.vue";
 
-const inariusObject = import.meta.glob("/src/assets/inarius/*.png");
-const inariusPics = Object.keys(inariusObject);
-const inariusVidObject = import.meta.glob("/src/assets/inarius/*.mp4");
-const inariusVids = Object.keys(inariusVidObject);
-
-const axeObject = import.meta.glob("/src/assets/viking-axe/*.png");
-const axePics = Object.keys(axeObject);
-
-const barbarianObject = import.meta.glob("/src/assets/barbarian/*.jpg");
-const barbarianPics = Object.keys(barbarianObject);
-const barbarianVidObject = import.meta.glob("/src/assets/barbarian/*.mp4");
-const barbarianVids = Object.keys(barbarianVidObject);
-
-const borderlandsObject = import.meta.glob("/src/assets/borderlands/*.png");
-const borderlandsPics = Object.keys(borderlandsObject);
-
-const bowObject = import.meta.glob("/src/assets/bow/*.png");
-const bowPics = Object.keys(bowObject);
-const bowVidObject = import.meta.glob("/src/assets/bow/*.mp4");
-const bowVids = Object.keys(bowVidObject);
-
-const diabloObject = import.meta.glob("/src/assets/diablo/*.png");
-const diabloPics = Object.keys(diabloObject);
-
-const ironObject = import.meta.glob("/src/assets/iron/*.png");
-const ironPics = Object.keys(ironObject);
-
-const jeepObject = import.meta.glob("/src/assets/jeep/*.png");
-const jeepPics = Object.keys(jeepObject);
-const jeepVidObject = import.meta.glob("/src/assets/jeep/*.mp4");
-const jeepVids = Object.keys(jeepVidObject);
-
-const laserObject = import.meta.glob("/src/assets/laser/*.png");
-const laserPics = Object.keys(laserObject);
-const laserVidObject = import.meta.glob("/src/assets/laser/*.mp4");
-const laserVids = Object.keys(laserVidObject);
-
 const route = useRoute();
+const projectPics = ref([]);
+const projectVids = ref([]);
 const currentRouteName = computed(() => route.params.slug);
-const picsArray = computed(() => {
+const hasMarmoset = ref(true);
+onMounted(() => {
   if (currentRouteName.value == "barbarian") {
-    return barbarianPics;
-  }
-  if (currentRouteName.value == "axe") {
-    return axePics;
+    fetch("/api/barbarian")
+      .then((response) => response.json())
+      .then((data) => {
+        projectPics.value = data.filter((file) => file.includes("png"));
+        projectVids.value = data.filter((file) => file.includes("mp4"));
+      })
+      .catch((error) => {
+        console.error("Error fetching icons:", error);
+      });
   }
   if (currentRouteName.value == "inarius") {
-    return inariusPics;
+    fetch("/api/inarius")
+      .then((response) => response.json())
+      .then((data) => {
+        projectPics.value = data.filter((file) => file.includes("png"));
+        projectVids.value = data.filter((file) => file.includes("mp4"));
+      })
+      .catch((error) => {
+        console.error("Error fetching icons:", error);
+      });
   }
-  if (currentRouteName.value == "borderlands") {
-    return borderlandsPics;
-  }
-  if (currentRouteName.value == "bow") {
-    return bowPics;
-  }
-  if (currentRouteName.value == "diablo") {
-    return diabloPics;
-  }
-  if (currentRouteName.value == "iron") {
-    return ironPics;
-  }
-  if (currentRouteName.value == "jeep") {
-    return jeepPics;
-  }
-  if (currentRouteName.value == "laser") {
-    return laserPics;
-  }
-});
-
-const vidsArray = computed(() => {
-  if (currentRouteName.value == "barbarian") {
-    return barbarianVids;
-  }
-  if (currentRouteName.value == "inarius") {
-    return inariusVids;
-  }
-  if (currentRouteName.value == "bow") {
-    return bowVids;
-  }
-  if (currentRouteName.value == "jeep") {
-    return jeepVids;
-  }
-  if (currentRouteName.value == "laser") {
-    return laserVids;
-  }
+  // if (currentRouteName.value == "barbarian") {
+  //   fetch("/api/barbarian")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       projectPics.value = data.filter((file) => file.includes("jpg"));
+  //       projectVids.value = data.filter((file) => file.includes("mp4"));
+  //       console.log(projectPics.value);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching icons:", error);
+  //     });
+  // }
+  // if (currentRouteName.value == "barbarian") {
+  //   fetch("/api/barbarian")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       projectPics.value = data.filter((file) => file.includes("jpg"));
+  //       projectVids.value = data.filter((file) => file.includes("mp4"));
+  //       console.log(projectPics.value);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching icons:", error);
+  //     });
+  // }
+  // if (currentRouteName.value == "barbarian") {
+  //   fetch("/api/barbarian")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       projectPics.value = data.filter((file) => file.includes("jpg"));
+  //       projectVids.value = data.filter((file) => file.includes("mp4"));
+  //       console.log(projectPics.value);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching icons:", error);
+  //     });
+  // }
 });
 </script>

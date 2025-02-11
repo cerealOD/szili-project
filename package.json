@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "serve": "node server.js",
     "preview": "vite preview"
   },
   "dependencies": {
     "@chenfengyuan/vue-countdown": "^2.1.2",
     "basic-auth": "^2.0.1",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "vite-plugin-commonjs": "^0.10.1",
     "vite-plugin-require": "^1.2.14",
     "vue": "^3.4.29",
@@ -28,5 +31,10 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "vite": "^5.2.0"
-  }
+  },
+  "description": "to install:  npm install to run: npm run dev",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
