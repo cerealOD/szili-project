@@ -18,68 +18,29 @@ import { ref, onMounted } from "vue";
 import Project from "../views/Project.vue";
 
 const route = useRoute();
+const currentRouteName = computed(() => route.params.slug);
+
 const projectPics = ref([]);
 const projectVids = ref([]);
-const currentRouteName = computed(() => route.params.slug);
-const hasMarmoset = ref(true);
+
+const hasMarmoset = ref(false);
+
 onMounted(() => {
-  if (currentRouteName.value == "barbarian") {
-    fetch("/api/barbarian")
-      .then((response) => response.json())
-      .then((data) => {
-        projectPics.value = data.filter((file) => file.includes("png"));
-        projectVids.value = data.filter((file) => file.includes("mp4"));
-      })
-      .catch((error) => {
-        console.error("Error fetching icons:", error);
-      });
-  }
-  if (currentRouteName.value == "inarius") {
-    fetch("/api/inarius")
-      .then((response) => response.json())
-      .then((data) => {
-        projectPics.value = data.filter((file) => file.includes("png"));
-        projectVids.value = data.filter((file) => file.includes("mp4"));
-      })
-      .catch((error) => {
-        console.error("Error fetching icons:", error);
-      });
-  }
-  // if (currentRouteName.value == "barbarian") {
-  //   fetch("/api/barbarian")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       projectPics.value = data.filter((file) => file.includes("jpg"));
-  //       projectVids.value = data.filter((file) => file.includes("mp4"));
-  //       console.log(projectPics.value);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching icons:", error);
-  //     });
-  // }
-  // if (currentRouteName.value == "barbarian") {
-  //   fetch("/api/barbarian")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       projectPics.value = data.filter((file) => file.includes("jpg"));
-  //       projectVids.value = data.filter((file) => file.includes("mp4"));
-  //       console.log(projectPics.value);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching icons:", error);
-  //     });
-  // }
-  // if (currentRouteName.value == "barbarian") {
-  //   fetch("/api/barbarian")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       projectPics.value = data.filter((file) => file.includes("jpg"));
-  //       projectVids.value = data.filter((file) => file.includes("mp4"));
-  //       console.log(projectPics.value);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching icons:", error);
-  //     });
-  // }
+  hasMarmoset.value = [
+    "viking-axe",
+    "bow",
+    "iron",
+    "jeep",
+    "borderlands",
+  ].includes(currentRouteName.value);
+  fetch(`/api/${currentRouteName.value}`)
+    .then((response) => response.json())
+    .then((data) => {
+      projectPics.value = data.filter((file) => file.includes("png"));
+      projectVids.value = data.filter((file) => file.includes("mp4"));
+    })
+    .catch((error) => {
+      console.error("Error fetching icons:", error);
+    });
 });
 </script>

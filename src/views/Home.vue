@@ -47,7 +47,7 @@
           <img :src="'/thumbnails/inarius_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
-          to="projects/axe"
+          to="projects/viking-axe"
           class="relative project-container rounded-2xl"
           style="aspect-ratio: 1/1"
         >

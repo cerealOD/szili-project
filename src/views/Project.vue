@@ -41,6 +41,7 @@
       sheets containing Lorem Ipsum passages, and more recently with desktop
       publishing software like Aldus PageMaker including versions of Lorem Ipsum
     </div>
+    <div>{{ hasMarmoset }}</div>
     <img
       v-for="image in picsArray"
       :src="'/' + routeName + '/' + image"
@@ -51,7 +52,7 @@
       :mp4="'/' + routeName + '/' + video"
       class="mb-8"
     />
-    <div id="marmoset-container" v-if="hasMarmoset" class="mb-8"></div>
+    <marmoset v-if="hasMarmoset" :fileName="routeName" class="mb-8"></marmoset>
     <span class="text-white font-semibold text-2xl w-full mb-8"
       >Software Used</span
     >
@@ -70,107 +71,6 @@ export default {
     videoArray: Array,
     jones: Boolean,
     hasMarmoset: Boolean,
-  },
-  setup(props) {
-    let width = 0;
-    if (document.body.scrollWidth >= 375) {
-      width = 375 - 64;
-    }
-    if (document.body.scrollWidth >= 400) {
-      width = 400 - 64;
-    }
-    if (document.body.scrollWidth >= 640) {
-      width = 640 - 128;
-    }
-    if (document.body.scrollWidth >= 768) {
-      width = 768 - 128;
-    }
-    if (document.body.scrollWidth >= 1024) {
-      width = 1024 - 128;
-    }
-    if (document.body.scrollWidth >= 1280) {
-      width = 1280 - 128;
-    }
-    if (document.body.scrollWidth >= 1440) {
-      width = 1440 - 128;
-    }
-    if (document.body.scrollWidth >= 1536) {
-      width = 1536 - 128;
-    }
-    if (document.body.scrollWidth >= 1680) {
-      width = 1680 - 128;
-    }
-    // Create a reactive ref for the myViewer instance
-    const myViewer = ref(null);
-
-    onMounted(() => {
-      if (props.hasMarmoset) {
-        // Initialize the Marmoset viewer only if hasMarmoset is true
-        myViewer.value = new marmoset.WebViewer(
-          width,
-          (width * 9) / 16,
-          "https://prismatic-brioche-bc0903.netlify.app/marmoset_axe.mview"
-        );
-
-        if (window && document && myViewer.value.resize) {
-          let lastResizeTimeout = null;
-          function resizeMarmoset() {
-            let width = 0;
-            if (document.body.scrollWidth >= 375) {
-              width = 375 - 64;
-            }
-            if (document.body.scrollWidth >= 400) {
-              width = 400 - 64;
-            }
-            if (document.body.scrollWidth >= 640) {
-              width = 640 - 128;
-            }
-            if (document.body.scrollWidth >= 768) {
-              width = 768 - 128;
-            }
-            if (document.body.scrollWidth >= 1024) {
-              width = 1024 - 128;
-            }
-            if (document.body.scrollWidth >= 1280) {
-              width = 1280 - 128;
-            }
-            if (document.body.scrollWidth >= 1440) {
-              width = 1440 - 128;
-            }
-            if (document.body.scrollWidth >= 1536) {
-              width = 1536 - 128;
-            }
-            if (document.body.scrollWidth >= 1680) {
-              width = 1680 - 128;
-            }
-            if (lastResizeTimeout) {
-              clearTimeout(lastResizeTimeout);
-            }
-            lastResizeTimeout = setTimeout(function () {
-              myViewer.value.resize(width, (width * 9) / 16);
-            }, 50);
-          }
-          // Add the resize event listener
-          window.addEventListener("resize", resizeMarmoset);
-        }
-
-        // Append the viewer to the container
-        const marmosetContainer = document.getElementById("marmoset-container");
-        if (marmosetContainer) {
-          marmosetContainer.appendChild(myViewer.value.domRoot);
-        }
-
-        // Style the viewer UI
-        const marmosetViewer = document.getElementById("marmosetUI");
-        if (marmosetViewer) {
-          marmosetViewer.style.borderRadius = "30px";
-        }
-      }
-    });
-
-    return {
-      myViewer, // Expose any reactive properties if needed
-    };
   },
 };
 </script>

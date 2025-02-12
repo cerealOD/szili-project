@@ -20,33 +20,30 @@ app.use(cors());
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from Express!" });
 });
-app.get("/api/logos", (req, res) => {
-  const logosDirectory = path.join(__dirname, "public/logos");
-  fs.readdir(logosDirectory, (err, files) => {
-    if (err) {
-      return res.status(500).send("Unable to read directory");
-    }
-    const logoFiles = files.filter((file) => file.endsWith(".png")); // Filter for PNG images
-    res.json(logoFiles); // Send back the list of icon file names
-  });
-});
-app.get("/api/barbarian", (req, res) => {
-  const imgDirectory = path.join(__dirname, "public/barbarian");
-  fs.readdir(imgDirectory, (err, files) => {
-    if (err) {
-      return res.status(500).send("Unable to read directory");
-    }
 
-    res.json(files); // Send back the list of icon file names
-  });
+app.get("/api/:slug", function (req, res) {
+  if (req.params.slug !== "vite.svg" && req.params.slug !== "_redirects") {
+    const filesDirectory = path.join(__dirname, `public/${req.params.slug}`);
+    fs.readdir(filesDirectory, (err, files) => {
+      if (err) {
+        return res.status(500).send("Unable to read directory");
+      }
+      console.log(files);
+      res.json(files); // Send back the list of icon file names
+    });
+  }
 });
-app.get("/api/inarius", (req, res) => {
-  const imgDirectory = path.join(__dirname, "public/inarius");
-  fs.readdir(imgDirectory, (err, files) => {
+
+app.get("/api/indiana-jones/:slug", function (req, res) {
+  const filesDirectory = path.join(
+    __dirname,
+    `public/indiana-jones/${req.params.slug}`
+  );
+  fs.readdir(filesDirectory, (err, files) => {
     if (err) {
       return res.status(500).send("Unable to read directory");
     }
-
+    console.log(files);
     res.json(files); // Send back the list of icon file names
   });
 });
