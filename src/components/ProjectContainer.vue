@@ -33,7 +33,7 @@ onMounted(() => {
     "jeep",
     "borderlands",
   ].includes(currentRouteName.value);
-  console.log(currentRouteName.value);
+
   fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {

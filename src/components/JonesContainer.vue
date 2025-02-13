@@ -3,7 +3,6 @@
     <Project
       :routeName="'indiana-jones' + '/' + currentRouteName"
       :picsArray="projectPics"
-      :videoArray="projectVids"
       :jones="true"
     >
     </Project>
@@ -21,17 +20,14 @@ const route = useRoute();
 const currentRouteName = computed(() => route.params.slug);
 
 const projectPics = ref([]);
-const projectVids = ref([]);
 
 onMounted(() => {
-  fetch(`/api/indiana-jones/${currentRouteName.value}`)
+  fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
-      projectPics.value = data.filter((file) => file.includes("png"));
-      projectVids.value = data.filter((file) => file.includes("mp4"));
-    })
-    .catch((error) => {
-      console.error("Error fetching icons:", error);
+      for (let i = 1; i <= data[currentRouteName.value][0]; i++) {
+        projectPics.value.push(i + ".png");
+      }
     });
 });
 </script>
