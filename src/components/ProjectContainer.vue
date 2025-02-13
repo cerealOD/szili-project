@@ -33,14 +33,16 @@ onMounted(() => {
     "jeep",
     "borderlands",
   ].includes(currentRouteName.value);
-  fetch(`/api/${currentRouteName.value}`)
+  console.log(currentRouteName.value);
+  fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
-      projectPics.value = data.filter((file) => file.includes("png"));
-      projectVids.value = data.filter((file) => file.includes("mp4"));
-    })
-    .catch((error) => {
-      console.error("Error fetching icons:", error);
+      for (let i = 1; i <= data[currentRouteName.value][0]; i++) {
+        projectPics.value.push(i + ".png");
+      }
+      for (let i = 1; i <= data[currentRouteName.value][1]; i++) {
+        projectVids.value.push("vid" + i + ".mp4");
+      }
     });
 });
 </script>
