@@ -20,7 +20,7 @@
         "
       >
         <nav
-          class="gap-x-16 text-white text-xl w-full flex items-center py-8 px-8 sm:px-16 container"
+          class="gap-x-16 text-white text-lg w-full flex items-center py-6 px-8 sm:px-16 container"
         >
           <RouterLink
             to="/"

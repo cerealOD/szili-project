@@ -132,8 +132,8 @@
           :key="image"
           class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
         >
-          <img :src="'logos/' + image" width="24" class="rounded-md" />
-          <span>{{ image.replaceAll(".png", "") }}</span>
+          <img :src="'logos/' + image + '.png'" width="24" class="rounded-md" />
+          <span>{{ image }}</span>
         </div>
       </div>
     </div>
@@ -145,17 +145,35 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-const logoPics = ref([]);
-onMounted(() => {
-  fetch("/api/logos")
-    .then((response) => response.json())
-    .then((data) => {
-      logoPics.value = data;
-    })
-    .catch((error) => {
-      console.error("Error fetching icons:", error);
-    });
-});
+const logoPics = ref([
+  "3ds Max",
+  "Blender",
+  "Hansoft",
+  "idTech",
+  "Mari",
+  "Marmoset Toolbag",
+  "Marvelous Designer",
+  "Maya",
+  "MODO",
+  "Perforce",
+  "Photoshop",
+  "RizomUV",
+  "Substance 3D Designer",
+  "Substance 3D Painter",
+  "Unity",
+  "Unreal Engine",
+  "ZBrush",
+]);
+// onMounted(() => {
+//   fetch("/api/logos")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       logoPics.value = data;
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching icons:", error);
+//     });
+// });
 </script>
 
 <style>

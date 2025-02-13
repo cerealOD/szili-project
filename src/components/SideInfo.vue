@@ -80,7 +80,7 @@
 <script setup>
 const downLoadPdf = () => {
   const link = document.createElement("a");
-  link.href = "/src/assets/resume.pdf";
+  link.href = "/resume.pdf";
   link.target = "_blank";
   link.download = "Szilard Hazi - Resume";
 
