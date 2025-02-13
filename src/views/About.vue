@@ -126,7 +126,6 @@
       <div class="text-white text-2xl font-medium underline mb-8">
         Software knowledge
       </div>
-      <div>hello</div>
       <div class="flex items-center gap-2 flex-wrap">
         <div
           v-for="image in logoPics"
