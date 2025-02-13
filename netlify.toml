@@ -1,10 +1,9 @@
 [build]
-  functions = "netlify/functions"
-  publish = "dist"  # This is where your built Vue app will go
+  publish = "dist"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/api/:splat"
+  from = "/api/barbarian"
+  to = "/.netlify/functions/barbarian"
   status = 200
 
 [[redirects]]
