@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full py-8">
+  <div class="w-full">
     <Project
       :routeName="$route.params.slug"
       :picsArray="projectPics"
