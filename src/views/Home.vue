@@ -18,9 +18,7 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
+            <div class="project-text">
               <span>Barbarian</span>
             </div>
           </div>
@@ -38,10 +36,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>The Rogue Angel Inarius</span>
             </div>
           </div>
           <img :src="'/thumbnails/inarius_thumbnail.png'" class="rounded-2xl" />
@@ -55,10 +51,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Viking Axe</span>
             </div>
           </div>
           <img :src="'/thumbnails/axe_thumbnail.png'" class="rounded-2xl" />
@@ -72,10 +66,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Indiana Jones and The Great Circle</span>
             </div>
           </div>
           <img :src="'/thumbnails/indiana_thumbnail.png'" class="rounded-2xl" />
@@ -89,10 +81,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Borderlands</span>
             </div>
           </div>
           <img :src="'/thumbnails/smg_thumbnail.png'" class="rounded-2xl" />
@@ -106,10 +96,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Fantasy Bow</span>
             </div>
           </div>
           <img :src="'/thumbnails/bow_thumbnail.png'" class="rounded-2xl" />
@@ -123,10 +111,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Diablo</span>
             </div>
           </div>
           <img :src="'/thumbnails/diablo_thumbnail.png'" class="rounded-2xl" />
@@ -140,10 +126,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Antique Iron</span>
             </div>
           </div>
           <img :src="'/thumbnails/iron_thumbnail.png'" class="rounded-2xl" />
@@ -157,10 +141,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Jeep</span>
             </div>
           </div>
           <img :src="'/thumbnails/jeep_thumbnail.png'" class="rounded-2xl" />
@@ -174,10 +156,8 @@
             class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
             style="background-color: transparent; z-index: 4"
           >
-            <div
-              class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-            >
-              <span>Barbarian</span>
+            <div class="project-text">
+              <span>Laser</span>
             </div>
           </div>
           <img :src="'/thumbnails/laser_thumbnail.png'" class="rounded-2xl" />
@@ -201,6 +181,10 @@ export default {
 </script>
 
 <style>
+.project-text {
+  @apply absolute px-8 pb-6 left-0 bottom-0 text-white text-xl font-medium w-full;
+}
+
 .background-overlay {
   transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
