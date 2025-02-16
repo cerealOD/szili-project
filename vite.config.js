@@ -8,17 +8,17 @@ export default defineConfig({
   plugins: [
     vue(),
     vitePluginRequire.default(),
-    imagemin({
-      pngquant: {
-        quality: [0.65, 0.9],
-      },
-      mozjpeg: {
-        quality: 75,
-      },
-      optipng: {
-        optimizationLevel: 5,
-      },
-    }),
+    // imagemin({
+    //   pngquant: {
+    //     quality: [0.65, 0.9],
+    //   },
+    //   mozjpeg: {
+    //     quality: 75,
+    //   },
+    //   optipng: {
+    //     optimizationLevel: 5,
+    //   },
+    // }),
   ],
   server: {
     proxy: {
