@@ -59,6 +59,7 @@
       :src="'/' + routeName + '/' + image"
       class="rounded-3xl mb-8"
     />
+
     <videoPlayer
       v-for="video in videoArray"
       :mp4="'/' + routeName + '/' + video"
@@ -73,15 +74,8 @@
 </template>
 
 <script setup>
-import {
-  ref,
-  onMounted,
-  onBeforeUnmount,
-  computed,
-  onUpdated,
-  nextTick,
-} from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { ref, onUpdated, nextTick } from "vue";
+// import { useRoute, useRouter } from "vue-router";
 
 const props = defineProps({
   routeName: String,

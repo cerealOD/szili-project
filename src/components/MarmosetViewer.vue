@@ -99,9 +99,20 @@ onMounted(() => {
   }
 
   // Style the viewer UI
-  const marmosetViewer = document.getElementById("marmosetUI");
+  const marmosetViewer = document.getElementById("marmoset-container");
   if (marmosetViewer) {
-    marmosetViewer.style.borderRadius = "30px";
+    marmosetViewer.style.backgroundImage = `url('/${props.fileName}/1.png')`;
   }
 });
 </script>
+<style>
+#marmoset-container {
+  @apply rounded-3xl bg-center bg-cover bg-no-repeat;
+}
+#marmosetUI {
+  @apply rounded-3xl;
+  canvas {
+    display: none;
+  }
+}
+</style>
