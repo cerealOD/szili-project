@@ -34,7 +34,7 @@ const routes = [
     },
   },
   {
-    path: "/projects/indiana-jones",
+    path: "/projects/indiana-jones-artblast",
     name: "jones",
     component: JonesHome,
     meta: {
@@ -42,7 +42,7 @@ const routes = [
     },
   },
   {
-    path: "/projects/indiana-jones/:slug",
+    path: "/projects/indiana-jones-artblast/:slug",
     component: JonesContainer,
     name: "jonesContainer",
     meta: {

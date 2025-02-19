@@ -28,10 +28,11 @@ const hasMarmoset = ref(false);
 onMounted(() => {
   hasMarmoset.value = [
     "viking-axe",
-    "bow",
-    "iron",
+    "skull-bow",
+    "antique-iron",
     "jeep",
-    "borderlands",
+    "borderlands-smg",
+    "the-rogue-angel-inarius",
   ].includes(currentRouteName.value);
 
   fetch("/content.json")

@@ -1,19 +1,35 @@
 {
-  "barbarian": [8, 5],
-  "borderlands": [11, 0],
-  "bow": [15, 1],
-  "diablo": [10, 0],
-  "inarius": [6, 2],
-  "iron": [9,0],
-  "jeep": [11, 1],
-  "laser": [11, 1],
-  "viking-axe": [5, 0],
-  "iraq": [6],
-  "nightmare-vol-1": [10],
-  "nightmare-vol-2": [17],
-  "shanghai": [8],
-  "sukhothai": [13],
-  "treehouse-vol-1": [18],
-  "treehouse-vol-2": [6],
-  "vatican": [8]
+  "barbarian": [8, 5, "My first character on which I worked for a bit more than 2 months back in 2022. It was a challenging project with a lot of new software, workflows, trials and errors. Even if it's far from perfect I was really proud to finish my first whole character and push through a project like this.EDIT, 2023 October:Got back to retouch this old project and rework a bit. I didn't want to go crazy, because I also have to work on my upcoming projects, and would like to focus for those, but my eyes couldn't take anymore the old renders of this character. With minimum effort I was able to reach much better look, which was my real goal with this whole retouch. Basically I touched only the skin, metal and the belt gem textures, tweaked the shaders and finally add an AO maps, which last time my old GPU wasn't able to handle.. aaand that's it. Obviously there is a lot of mistakes which back then I wasn't able to see yet, but now it would take more time to fix, than I would like to spend on it. So just a quick update and I'll try to be better with the next ones. It's based on a concept art by Dexiong Gu", "Barbarian", ["3ds Max", "Maya", "Blender", "ZBrush", "RizomUV", "R3DS ZWRap", "Mari", "Substance 3D Painter", "Photoshop", "xNormal", "Marvelous Designer"]],
+
+  "borderlands-smg": [11, 0, "Quick worflow tester project, which focused to try out a boolean-dynamesh workflow and it's capabilities. I used Advanced Cell Shader for Unreal Engine 4 (also rendered the final shots in UE4), and did the whole texturing with a Livelink (RIP, such a miss from the actual UE5..) to easily see every changes in game environment. 1x 2k Texture Set 20.021 Tris Credit goes for the original concept art to HEX", "Borderlands SMG", ["3ds Max", "ZBrush", "RizomUV", "Marvelous Designer", "Substance 3D Painter", "Unreal Engine", "Marmoset Toolbag", "Photoshop"]],
+
+  "skull-bow": [15, 1, "One of my earliest 3D project from early 2022, based on a concept art by Raido Kaasik.", "Skull Bow", ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]],
+
+  "diablo": [10, 0, "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.", "Diablo", ["ZBrush"]],
+
+  "the-rogue-angel-inarius": [6, 2, "I originally started this project as back as 2023 Spring, few months before the release of Diablo 4 and I planned to be ready for the game's debut.. funny idea to think back. After all it took much-much more time to complete, than few months. Personal life and work, multiple breaks, trying out and learning new things lengthened the process so much, so it happened that I passed not even the release, but the year in which I started. Was a completely new challenge to stay on one project for that long and keep motivated to finish it after 1.5 years from the beginning, but after all I learned and developed during the process and I'm mostly happy with the result as well.", "The Rogue Angel Inarius", ["ZBrush", "Blender", "3ds Max", "Marvelous Designer", "Houdini", "Character Creator", "Substance 3D Painter", "Unreal Engine"]],
+
+  "antique-iron": [9,0, "The first art test in my life: a Coleman's Model 4A Gasoline Iron from the 20th Century (1929-1948). Requirements were an optimized mesh under 6K tris, single 2K texture set and Spec/Gloss workflow. Unfortunately it wasn't a success at the time, but helped me to develope further", "Antique Iron", ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]],
+
+  "jeep": [11, 1, "Game-ready jeep from 2022 with 58K tris and 2x4K texture sets as a practicing project of general modelling. Concept art by tryo", "Jeep", ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag"]],
+
+  "laser-controller": [11, 1, "Telesis Model 6 FQ30 Laser Controller as a general prop practice. If you look at a certain angle with enough imagination then there is a squirrel on the right side panel :)", "Laser Controller", ["3ds Max", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]],
+
+  "viking-axe": [5, 0, "A simple viking axe as a general prop practice, original model was created in 2022, but I retouched a bit in late 2023.", "Viking Axe", ["3ds Max", "ZBrush", "Substance 3D Painter", "Marmoset Toolbag"]],
+
+  "iraq": [6, 0, "As part of a small team, I was responsible for the entire underground section of the Iraq map, from the Ziggurat shaft to one of the most important scenes in the game — the reveal of the Ark. We received this environment in its alpha blockout phase and refined it through multiple iterations until it became a fully polished game area with a close collaboration of level designers. I also worked on some parts of the surface and camp area", "Iraq", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]],
+
+  "dream-vol-1": [10, 0, "Together with one of my colleagues, I was responsible for almost the entire Dream Sequence environment in Sukhothai, from prototyping to delivery. It is a complex, five-level, looping, and gradually overgrowing area with multiple puzzles. This work was highly collaborative between us and the assigned level designers", "Dream Vol. 1", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]],
+
+  "dream-vol-2": [17, 0, "Together with one of my colleagues, I was responsible for almost the entire Dream Sequence environment in Sukhothai, from prototyping to delivery. It is a complex, five-level, looping, and gradually overgrowing area with multiple puzzles. This work was highly collaborative between us and the assigned level designers", "Dream Vol. 2", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]],
+
+  "shanghai": [8, 0, "At Treehouse Ninjas, we were fully responsible for building the Shanghai map. As part of the small team assigned to this task, I was responsible for creating about a third of the buildings, a large portion of the harbor area, some props and all the Chinese signs.", "Shanghai", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]],
+
+  "sukhothai": [13, 0, "As part of the Sukhothai team at Treehouse Ninjas, I was responsible for several key elements of the underground areas and tombs. I created multiple doors, hero puzzle elements - from pedestals to keys - and squeeze spaces. Additionally, I designed the base rock structure for some of the caves.", "Sukhothai", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]],
+
+  "treehouse-vol-1": [18, 0, "I was solely responsible for the entire Treehouse area on the Sukhothai map, from the blockout phase to the final delivery, except for the treehouse model itself, which was created by colleagues. In addition, I created everything from area-specific assets to landscape sculpting, vertex painting, and set dressing. This is the environment I am most proud of, as I put a lot of work into it, and it felt really good to be trusted with such a huge task", "Treehouse Vol. 1", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]],
+
+  "treehouse-vol-2": [6, 0, "I was solely responsible for the entire Treehouse area on the Sukhothai map, from the blockout phase to the final delivery, except for the treehouse model itself, which was created by colleagues. In addition, I created everything from area-specific assets to landscape sculpting, vertex painting, and set dressing. This is the environment I am most proud of, as I put a lot of work into it, and it felt really good to be trusted with such a huge task", "Treehouse Vol. 2", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]],
+
+  "vatican": [8, 0, "At Treehouse Ninjas, we were fully responsible for building the Vatican Intro map in both its night and day versions. As part of the team, I was responsible for creating multiple statues and busts for this area; however, these were later used throughout the entire game, even as hero puzzle or quest elements. I also worked on set dressing across the map and was assigned to the final polish of the Chapel of the Condemned, which was showcased in the first images.", "Vatican", ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]]
 }

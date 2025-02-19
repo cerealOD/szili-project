@@ -1,7 +1,7 @@
 <template>
   <div class="w-full py-8">
     <Project
-      :routeName="'indiana-jones' + '/' + currentRouteName"
+      :routeName="'indiana-jones-artblast' + '/' + currentRouteName"
       :picsArray="projectPics"
       :jones="true"
     >

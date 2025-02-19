@@ -7,8 +7,38 @@
         Portfolio
       </div>
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6"
+        class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
       >
+        <RouterLink
+          to="projects/indiana-jones-artblast"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>Indiana Jones Artblast</span>
+            </div>
+          </div>
+          <img :src="'/thumbnails/indiana_thumbnail.png'" class="rounded-2xl" />
+        </RouterLink>
+        <RouterLink
+          to="/projects/the-rogue-angel-inarius"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>The Rogue Angel Inarius</span>
+            </div>
+          </div>
+          <img :src="'/thumbnails/inarius_thumbnail.png'" class="rounded-2xl" />
+        </RouterLink>
         <RouterLink
           to="/projects/barbarian"
           class="relative project-container rounded-2xl"
@@ -28,7 +58,7 @@
           />
         </RouterLink>
         <RouterLink
-          to="/projects/inarius"
+          to="projects/skull-bow"
           class="relative project-container rounded-2xl"
           style="aspect-ratio: 1/1"
         >
@@ -37,11 +67,42 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>The Rogue Angel Inarius</span>
+              <span>Skull Bow</span>
             </div>
           </div>
-          <img :src="'/thumbnails/inarius_thumbnail.png'" class="rounded-2xl" />
+          <img :src="'/thumbnails/bow_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
+        <RouterLink
+          to="projects/borderlands-smg"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>Borderlands SMG</span>
+            </div>
+          </div>
+          <img :src="'/thumbnails/smg_thumbnail.png'" class="rounded-2xl" />
+        </RouterLink>
+        <RouterLink
+          to="projects/antique-iron"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>Antique Iron</span>
+            </div>
+          </div>
+          <img :src="'/thumbnails/iron_thumbnail.png'" class="rounded-2xl" />
+        </RouterLink>
+
         <RouterLink
           to="projects/viking-axe"
           class="relative project-container rounded-2xl"
@@ -57,81 +118,7 @@
           </div>
           <img :src="'/thumbnails/axe_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
-        <RouterLink
-          to="projects/indiana-jones"
-          class="relative project-container rounded-2xl"
-          style="aspect-ratio: 1/1"
-        >
-          <div
-            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-            style="background-color: transparent; z-index: 4"
-          >
-            <div class="project-text">
-              <span>Indiana Jones and The Great Circle</span>
-            </div>
-          </div>
-          <img :src="'/thumbnails/indiana_thumbnail.png'" class="rounded-2xl" />
-        </RouterLink>
-        <RouterLink
-          to="projects/borderlands"
-          class="relative project-container rounded-2xl"
-          style="aspect-ratio: 1/1"
-        >
-          <div
-            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-            style="background-color: transparent; z-index: 4"
-          >
-            <div class="project-text">
-              <span>Borderlands</span>
-            </div>
-          </div>
-          <img :src="'/thumbnails/smg_thumbnail.png'" class="rounded-2xl" />
-        </RouterLink>
-        <RouterLink
-          to="projects/bow"
-          class="relative project-container rounded-2xl"
-          style="aspect-ratio: 1/1"
-        >
-          <div
-            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-            style="background-color: transparent; z-index: 4"
-          >
-            <div class="project-text">
-              <span>Fantasy Bow</span>
-            </div>
-          </div>
-          <img :src="'/thumbnails/bow_thumbnail.png'" class="rounded-2xl" />
-        </RouterLink>
-        <RouterLink
-          to="projects/diablo"
-          class="relative project-container rounded-2xl"
-          style="aspect-ratio: 1/1"
-        >
-          <div
-            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-            style="background-color: transparent; z-index: 4"
-          >
-            <div class="project-text">
-              <span>Diablo</span>
-            </div>
-          </div>
-          <img :src="'/thumbnails/diablo_thumbnail.png'" class="rounded-2xl" />
-        </RouterLink>
-        <RouterLink
-          to="projects/iron"
-          class="relative project-container rounded-2xl"
-          style="aspect-ratio: 1/1"
-        >
-          <div
-            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-            style="background-color: transparent; z-index: 4"
-          >
-            <div class="project-text">
-              <span>Antique Iron</span>
-            </div>
-          </div>
-          <img :src="'/thumbnails/iron_thumbnail.png'" class="rounded-2xl" />
-        </RouterLink>
+
         <RouterLink
           to="projects/jeep"
           class="relative project-container rounded-2xl"
@@ -148,7 +135,7 @@
           <img :src="'/thumbnails/jeep_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
         <RouterLink
-          to="projects/laser"
+          to="projects/laser-controller"
           class="relative project-container rounded-2xl"
           style="aspect-ratio: 1/1"
         >
@@ -157,10 +144,25 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Laser</span>
+              <span>Laser Controller</span>
             </div>
           </div>
           <img :src="'/thumbnails/laser_thumbnail.png'" class="rounded-2xl" />
+        </RouterLink>
+        <RouterLink
+          to="projects/diablo"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>Diablo</span>
+            </div>
+          </div>
+          <img :src="'/thumbnails/diablo_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
       </div>
     </div>
@@ -170,21 +172,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    goToAbout() {
-      this.$router.push("/about");
-    },
-  },
-};
-</script>
+<script setup></script>
 
 <style>
-.project-text {
-  @apply absolute px-8 pb-6 left-0 bottom-0 text-white text-xl font-medium w-full;
-}
-
 .background-overlay {
   transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }

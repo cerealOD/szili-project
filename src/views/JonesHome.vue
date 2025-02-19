@@ -10,22 +10,21 @@
     <div
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
     >
-      Indiana Jones and The Great Circle
+      Indiana Jones and The Great Circle <br />
+      Art Blast
     </div>
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
     >
       <RouterLink
-        to="/projects/indiana-jones/iraq"
+        to="/projects/indiana-jones-artblast/iraq"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
+          <div class="project-text">
             <span>Iraq</span>
           </div>
         </div>
@@ -33,17 +32,15 @@
       </RouterLink>
 
       <RouterLink
-        to="/projects/indiana-jones/nightmare-vol-1"
+        to="/projects/indiana-jones-artblast/dream-vol-1"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
-            <span>Barbarian</span>
+          <div class="project-text">
+            <span>Dream Vol. 1</span>
           </div>
         </div>
         <img
@@ -52,17 +49,15 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones/nightmare-vol-2"
+        to="/projects/indiana-jones-artblast/dream-vol-2"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
-            <span>Barbarian</span>
+          <div class="project-text">
+            <span>Dream Vol. 2</span>
           </div>
         </div>
         <img
@@ -71,48 +66,42 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones/shanghai"
+        to="/projects/indiana-jones-artblast/shanghai"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
+          <div class="project-text">
             <span>Shanghai</span>
           </div>
         </div>
         <img :src="'/thumbnails/shanghai_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones/sukhothai"
+        to="/projects/indiana-jones-artblast/sukhothai"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
+          <div class="project-text">
             <span>Sukhothai</span>
           </div>
         </div>
         <img :src="'/thumbnails/sukhothai_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones/treehouse-vol-1"
+        to="/projects/indiana-jones-artblast/treehouse-vol-1"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
+          <div class="project-text">
             <span>Treehouse Vol. 1</span>
           </div>
         </div>
@@ -122,16 +111,14 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones/treehouse-vol-2"
+        to="/projects/indiana-jones-artblast/treehouse-vol-2"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
+          <div class="project-text">
             <span>Treehouse Vol. 2</span>
           </div>
         </div>
@@ -141,16 +128,14 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones/vatican"
+        to="/projects/indiana-jones-artblast/vatican"
         class="project-container-jones"
       >
         <div
           class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
           style="background-color: transparent; z-index: 4"
         >
-          <div
-            class="absolute p-8 left-0 bottom-0 text-white text-xl font-bold"
-          >
+          <div class="project-text">
             <span>Vatican</span>
           </div>
         </div>

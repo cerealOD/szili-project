@@ -10,7 +10,7 @@
     </a>
     <a
       v-if="jones"
-      href="/projects/indiana-jones"
+      href="/projects/indiana-jones-artblast"
       class="w-full flex items-center text-white gap-x-2 sm:text-lg hover:underline"
     >
       <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
@@ -18,46 +18,27 @@
     </a>
     <div
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
-    >
-      {{ routeName }}
-    </div>
+      ref="titleContainer"
+    ></div>
     <div
       class="md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text max-h-40 overflow-hidden"
       :class="!expanded ? 'add-mask' : ''"
       id="expanding-div"
     >
-      <div id="intro-text" ref="introText">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and
-        typesetting industry. Lorem Ipsum has been the industry's standard dummy
-        text ever since the 1500s, when an unknown printer took a galley of type
-        and scrambled it to make a type specimen book. It has survived not only
-        five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum
-      </div>
+      <div id="intro-text" ref="introText"></div>
     </div>
     <button
-      class="pt-8 pb-16 text-white flex items-center gap-x-1"
+      class="pt-8 text-white flex items-center gap-x-1"
       @click="setExpanded"
+      ref="expandButton"
     >
-      <!-- <img v-if="!expanded" :src="'/icons/down.svg'" /> -->
       <img :src="expanded ? '/icons/up.svg' : '/icons/down.svg'" />
       {{ expanded ? "Read Less" : "Read More" }}
     </button>
     <img
       v-for="image in picsArray"
       :src="'/' + routeName + '/' + image"
-      class="rounded-3xl mb-8"
+      class="rounded-3xl mb-8 mt-16"
     />
 
     <videoPlayer
@@ -74,7 +55,7 @@
 </template>
 
 <script setup>
-import { ref, onUpdated, nextTick } from "vue";
+import { ref, onUpdated, nextTick, onMounted } from "vue";
 // import { useRoute, useRouter } from "vue-router";
 
 const props = defineProps({
@@ -87,6 +68,8 @@ const props = defineProps({
 
 const expanded = ref(false);
 const introText = ref(null);
+const expandButton = ref(null);
+const titleContainer = ref(null);
 const introTextHeight = ref(Number);
 
 const setExpanded = () => {
@@ -97,11 +80,29 @@ const setExpanded = () => {
   expanded.value ? (expanded.value = false) : (expanded.value = true);
 };
 
-onUpdated(() => {
-  nextTick(() => {
-    introTextHeight.value = introText.value.offsetHeight;
-    // console.log(introTextHeight.value);
-  });
+onMounted(() => {
+  if (introText.value) {
+    fetch("/content.json")
+      .then((response) => response.json())
+      .then((data) => {
+        if (props.jones) {
+          let jonesRoute = props.routeName.split("/")[1];
+          titleContainer.value.textContent = data[jonesRoute][3];
+          introText.value.textContent = data[jonesRoute][2];
+        } else {
+          titleContainer.value.textContent = data[props.routeName][3];
+          introText.value.textContent = data[props.routeName][2];
+        }
+      })
+      .then(() => {
+        introTextHeight.value = introText.value.offsetHeight;
+        console.log(introTextHeight.value);
+        if (introTextHeight.value < 160) {
+          expanded.value = true;
+          expandButton.value.style.display = "none";
+        }
+      });
+  }
 });
 </script>
 <style>

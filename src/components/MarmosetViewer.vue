@@ -47,7 +47,7 @@ onMounted(() => {
   myViewer.value = new marmoset.WebViewer(
     width,
     (width * 9) / 16,
-    `https://prismatic-brioche-bc0903.netlify.app/marmoset_${props.fileName}.mview`
+    `https://prismatic-brioche-bc0903.netlify.app/${props.fileName}.mview`
   );
 
   if (window && document && myViewer.value.resize) {
