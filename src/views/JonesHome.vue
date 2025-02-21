@@ -10,14 +10,14 @@
     <div
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
     >
-      Indiana Jones and The Great Circle <br />
+      Indiana Jones and the Great Circle <br />
       Art Blast
     </div>
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
     >
       <RouterLink
-        to="/projects/indiana-jones-artblast/iraq"
+        to="/projects/indiana-jones-art-blast/iraq"
         class="project-container-jones"
       >
         <div
@@ -32,7 +32,7 @@
       </RouterLink>
 
       <RouterLink
-        to="/projects/indiana-jones-artblast/dream-vol-1"
+        to="/projects/indiana-jones-art-blast/dream-vol-1"
         class="project-container-jones"
       >
         <div
@@ -49,7 +49,7 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones-artblast/dream-vol-2"
+        to="/projects/indiana-jones-art-blast/dream-vol-2"
         class="project-container-jones"
       >
         <div
@@ -66,7 +66,7 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones-artblast/shanghai"
+        to="/projects/indiana-jones-art-blast/shanghai"
         class="project-container-jones"
       >
         <div
@@ -80,7 +80,7 @@
         <img :src="'/thumbnails/shanghai_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones-artblast/sukhothai"
+        to="/projects/indiana-jones-art-blast/sukhothai"
         class="project-container-jones"
       >
         <div
@@ -94,7 +94,7 @@
         <img :src="'/thumbnails/sukhothai_thumbnail.png'" class="rounded-2xl" />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones-artblast/treehouse-vol-1"
+        to="/projects/indiana-jones-art-blast/treehouse-vol-1"
         class="project-container-jones"
       >
         <div
@@ -111,7 +111,7 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones-artblast/treehouse-vol-2"
+        to="/projects/indiana-jones-art-blast/treehouse-vol-2"
         class="project-container-jones"
       >
         <div
@@ -128,7 +128,7 @@
         />
       </RouterLink>
       <RouterLink
-        to="/projects/indiana-jones-artblast/vatican"
+        to="/projects/indiana-jones-art-blast/vatican"
         class="project-container-jones"
       >
         <div

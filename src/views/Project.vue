@@ -10,11 +10,11 @@
     </a>
     <a
       v-if="jones"
-      href="/projects/indiana-jones-artblast"
+      href="/projects/indiana-jones-art-blast"
       class="w-full flex items-center text-white gap-x-2 sm:text-lg hover:underline"
     >
       <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
-      Back to Indiana Jones and The Great Circle
+      Back to Indiana Jones Art Blast
     </a>
     <div
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
@@ -47,10 +47,23 @@
       class="mb-8"
     />
     <marmoset v-if="hasMarmoset" :fileName="routeName" class="mb-8"></marmoset>
-    <span class="text-white font-semibold text-2xl w-full mb-8"
-      >Software Used</span
-    >
-    <div class="text-white flex items-center w-full gap-x-2"></div>
+    <div class="w-full">
+      <span class="text-white font-semibold text-2xl">Software Used</span>
+      <div class="flex gap-2 flex-wrap mt-8">
+        <div
+          v-for="software in softwares"
+          :key="software"
+          class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
+        >
+          <img
+            :src="'/logos/' + software + '.png'"
+            width="24"
+            class="rounded-md"
+          />
+          <span>{{ software }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -71,6 +84,7 @@ const introText = ref(null);
 const expandButton = ref(null);
 const titleContainer = ref(null);
 const introTextHeight = ref(Number);
+const softwares = ref([]);
 
 const setExpanded = () => {
   let expanding = document.getElementById("expanding-div");
@@ -81,17 +95,31 @@ const setExpanded = () => {
 };
 
 onMounted(() => {
+  let jonesRoute = props.routeName.split("/")[1];
+  fetch("/content.json")
+    .then((response) => response.json())
+    .then((data) => {
+      if (props.jones) {
+        softwares.value = data[jonesRoute][4];
+      } else {
+        softwares.value = data[props.routeName][4];
+      }
+    });
   if (introText.value) {
     fetch("/content.json")
       .then((response) => response.json())
       .then((data) => {
         if (props.jones) {
-          let jonesRoute = props.routeName.split("/")[1];
           titleContainer.value.textContent = data[jonesRoute][3];
           introText.value.textContent = data[jonesRoute][2];
         } else {
           titleContainer.value.textContent = data[props.routeName][3];
-          introText.value.textContent = data[props.routeName][2];
+          let textParagraphs = data[props.routeName][2].split("/n");
+          for (let i = 0; i < textParagraphs.length; i++) {
+            const p = document.createElement("p");
+            p.textContent = textParagraphs[i];
+            introText.value.appendChild(p);
+          }
         }
       })
       .then(() => {

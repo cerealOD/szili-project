@@ -10,7 +10,7 @@
         class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
       >
         <RouterLink
-          to="projects/indiana-jones-artblast"
+          to="projects/indiana-jones-art-blast"
           class="relative project-container rounded-2xl"
           style="aspect-ratio: 1/1"
         >
@@ -19,7 +19,7 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Indiana Jones Artblast</span>
+              <span>Indiana Jones Art Blast</span>
             </div>
           </div>
           <img :src="'/thumbnails/indiana_thumbnail.png'" class="rounded-2xl" />

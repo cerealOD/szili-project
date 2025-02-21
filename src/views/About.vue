@@ -5,15 +5,26 @@
         About me
       </div>
       <div class="lg:text-lg/7 text-white" style="max-width: 1100px">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+        <p>
+          Hi, my name is Szilard and I have spent the past 3 years creating
+          visually rich and immersive game environments that serve both
+          narrative and gameplay. My experience includes working on various
+          projects, ranging from indie to AAA titles, covering tasks such as
+          creating props or tackling complete world building, progressing
+          through initial blockouts to fully set-dressed and polished locations.
+          Having collaborated closely with a team of talented artists and
+          developers, I firmly grasped the essence of teamwork, communication,
+          and attention to detail to deliver exceptional results.
+        </p>
+        <p>
+          My passion for game art and development is reflected in the artistic
+          and technical skills I possess. Being well-versed in industry-standard
+          software such as Blender, 3ds Max, ZBrush, and Substance Painter, I
+          leverage this knowledge to solve problems from multiple angles and
+          offer versatile solutions. Moreover, I am continuously seeking
+          opportunities to expand my expertise and stay up-to-date with the
+          latest advancements in the field.
+        </p>
       </div>
     </div>
     <div class="mb-16">
@@ -75,7 +86,7 @@
             </div>
             <div class="flex flex-col">
               <span class="font-semibold text-lg lg:text-xl mb-4"
-                >Indiana Jones and The Great Circle</span
+                >Indiana Jones and the Great Circle</span
               >
               <span class="mb-4 font-medium">Release date: 9 Dec, 2024</span>
               <div class="flex items-center gap-x-1 mb-2">
@@ -156,18 +167,6 @@
                 >Descenders Next</span
               >
               <span class="mb-4 font-medium">Release date: 9 Dec, 2024</span>
-              <!-- <div class="flex items-center gap-x-1 mb-2">
-                <img
-                  :src="require('/icons/metacritic.svg')"
-                  width="24"
-                  class="rounded-xl mb-4 sm:mb-0"
-                />
-                <a
-                  href="https://www.metacritic.com/game/indiana-jones-and-the-great-circle/"
-                  class="hover:underline"
-                  >Metacritic Score: 86</a
-                >
-              </div> -->
               <div class="flex items-center gap-x-1">
                 <img
                   :src="require('/icons/steam.svg')"
@@ -195,7 +194,7 @@
         :key="image"
         class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
       >
-        <img :src="'logos/' + image + '.png'" width="24" class="rounded-md" />
+        <img :src="'/logos/' + image + '.png'" width="24" class="rounded-md" />
         <span>{{ image }}</span>
       </div>
     </div>
@@ -206,8 +205,13 @@
 import { ref, onMounted } from "vue";
 const logoPics = ref([
   "3ds Max",
+  "Adobe After Effects",
   "Blender",
+  "Character Creator",
+  "FiberShop",
+  "GS CurveTools",
   "Hansoft",
+  "Houdini",
   "idTech",
   "Mari",
   "Marmoset Toolbag",
@@ -216,11 +220,14 @@ const logoPics = ref([
   "MODO",
   "Perforce",
   "Photoshop",
+  "R3DS ZWrap",
   "RizomUV",
   "Substance 3D Designer",
   "Substance 3D Painter",
+  "Substance 3D Sampler",
   "Unity",
   "Unreal Engine",
+  "xNormal",
   "ZBrush",
 ]);
 // onMounted(() => {
