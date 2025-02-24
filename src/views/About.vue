@@ -43,7 +43,7 @@
               class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
               style="width: fit-content"
             >
-              2023 - present
+              2023 January - present
             </div>
           </div>
 
@@ -129,7 +129,7 @@
               class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
               style="width: fit-content"
             >
-              2022 - 2023
+              2022 February - 2023 January
             </div>
           </div>
 
@@ -166,7 +166,7 @@
               <span class="font-semibold text-lg lg:text-xl mb-4"
                 >Descenders Next</span
               >
-              <span class="mb-4 font-medium">Release date: 9 Dec, 2024</span>
+              <span class="mb-4 font-medium">Release date: TBA </span>
               <div class="flex items-center gap-x-1">
                 <img
                   :src="require('/icons/steam.svg')"
