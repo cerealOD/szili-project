@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:px-16">
+  <div class="lg:px-16 flex flex-col items-center">
     <a
       href="/"
       class="w-full flex items-center text-white gap-x-2 sm:text-lg hover:underline"
@@ -13,6 +13,7 @@
       Indiana Jones and the Great Circle <br />
       Art Blast
     </div>
+    <ExpandingText :text="text"></ExpandingText>
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
     >
@@ -146,8 +147,18 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import ExpandingText from "../components/ExpandingText.vue";
+const text = ref("");
+
+onMounted(() => {
+  fetch("/content.json")
+    .then((response) => response.json())
+    .then((data) => {
+      text.value = data["indiana-jones"][0].replace(/\/n/g, "<br><br>"); // Replace line breaks
+    });
+});
 </script>
 <style>
 .project-container-jones {

@@ -11,7 +11,7 @@
 
 <script setup>
 import { computed } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
 
 import Project from "../views/Project.vue";

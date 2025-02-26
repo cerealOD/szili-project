@@ -43,7 +43,7 @@
               class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
               style="width: fit-content"
             >
-              2023 January - present
+              2023 January - Present
             </div>
           </div>
 

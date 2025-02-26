@@ -20,31 +20,17 @@
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
       ref="titleContainer"
     ></div>
-    <div
-      class="md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text max-h-40 overflow-hidden"
-      :class="!expanded ? 'add-mask' : ''"
-      id="expanding-div"
-    >
-      <div id="intro-text" ref="introText"></div>
-    </div>
-    <button
-      class="pt-8 text-white flex items-center gap-x-1"
-      @click="setExpanded"
-      ref="expandButton"
-    >
-      <img :src="expanded ? '/icons/up.svg' : '/icons/down.svg'" />
-      {{ expanded ? "Read Less" : "Read More" }}
-    </button>
+    <ExpandingText :text="text"></ExpandingText>
     <img
       v-for="image in picsArray"
       :src="'/' + routeName + '/' + image"
-      class="rounded-3xl mb-8 mt-16"
+      class="rounded-3xl mb-4 lg:mb-8"
     />
 
     <videoPlayer
       v-for="video in videoArray"
       :mp4="'/' + routeName + '/' + video"
-      class="mb-8"
+      class="mb-4 lg:mb-8"
     />
     <marmoset v-if="hasMarmoset" :fileName="routeName" class="mb-8"></marmoset>
     <div class="w-full">
@@ -68,8 +54,8 @@
 </template>
 
 <script setup>
-import { ref, onUpdated, nextTick, onMounted } from "vue";
-// import { useRoute, useRouter } from "vue-router";
+import { ref, onMounted } from "vue";
+import ExpandingText from "../components/ExpandingText.vue";
 
 const props = defineProps({
   routeName: String,
@@ -80,19 +66,12 @@ const props = defineProps({
 });
 
 const expanded = ref(false);
-const introText = ref(null);
+// const introText = ref(null);
 const expandButton = ref(null);
 const titleContainer = ref(null);
 const introTextHeight = ref(Number);
 const softwares = ref([]);
-
-const setExpanded = () => {
-  let expanding = document.getElementById("expanding-div");
-  !expanded.value
-    ? (expanding.style.maxHeight = `${introTextHeight.value}` + "px")
-    : (expanding.style.maxHeight = "160px");
-  expanded.value ? (expanded.value = false) : (expanded.value = true);
-};
+const text = ref("");
 
 onMounted(() => {
   let jonesRoute = props.routeName.split("/")[1];
@@ -100,37 +79,22 @@ onMounted(() => {
     .then((response) => response.json())
     .then((data) => {
       if (props.jones) {
+        titleContainer.value.textContent = data[jonesRoute][3];
         softwares.value = data[jonesRoute][4];
       } else {
+        titleContainer.value.textContent = data[props.routeName][3];
         softwares.value = data[props.routeName][4];
       }
     });
-  if (introText.value) {
-    fetch("/content.json")
-      .then((response) => response.json())
-      .then((data) => {
-        if (props.jones) {
-          titleContainer.value.textContent = data[jonesRoute][3];
-          introText.value.textContent = data[jonesRoute][2];
-        } else {
-          titleContainer.value.textContent = data[props.routeName][3];
-          let textParagraphs = data[props.routeName][2].split("/n");
-          for (let i = 0; i < textParagraphs.length; i++) {
-            const p = document.createElement("p");
-            p.textContent = textParagraphs[i];
-            introText.value.appendChild(p);
-          }
-        }
-      })
-      .then(() => {
-        introTextHeight.value = introText.value.offsetHeight;
-        console.log(introTextHeight.value);
-        if (introTextHeight.value < 160) {
-          expanded.value = true;
-          expandButton.value.style.display = "none";
-        }
-      });
-  }
+  fetch("/content.json")
+    .then((response) => response.json())
+    .then((data) => {
+      if (props.jones) {
+        text.value = data[jonesRoute][2];
+      } else {
+        text.value = data[props.routeName][2].replace(/\/n/g, "<br><br>"); // Replace line breaks
+      }
+    });
 });
 </script>
 <style>

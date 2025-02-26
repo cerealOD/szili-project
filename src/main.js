@@ -6,6 +6,7 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
 import Video from "./components/Video.vue";
 import SideInfo from "./components/SideInfo.vue";
 import MarmosetViewer from "./components/MarmosetViewer.vue";
+import ExpandingText from "./components/ExpandingText.vue";
 
 import App from "./App.vue";
 import "./index.css";
@@ -19,5 +20,6 @@ app.component("vue-countdown", VueCountdown);
 app.component("videoPlayer", Video);
 app.component("sideInfo", SideInfo);
 app.component("marmoset", MarmosetViewer);
+app.component("expandingText", ExpandingText);
 
 app.mount("#app");
