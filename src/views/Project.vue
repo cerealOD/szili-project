@@ -40,7 +40,7 @@
       ></marmoset>
     </div>
 
-    <div class="w-full">
+    <div class="w-full mt-8">
       <span class="text-white font-semibold text-2xl">Software Used</span>
       <div class="flex gap-2 flex-wrap mt-8">
         <div
