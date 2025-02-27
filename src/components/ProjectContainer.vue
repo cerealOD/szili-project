@@ -15,22 +15,9 @@ import Project from "../views/Project.vue";
 const route = useRoute();
 const currentRouteName = computed(() => route.params.slug);
 
-// const projectPics = ref([]);
-// const projectVids = ref([]);
 const projectFiles = ref([]);
 
-const hasMarmoset = ref(false);
-
 onMounted(() => {
-  hasMarmoset.value = [
-    "viking-axe",
-    "skull-bow",
-    "antique-iron",
-    "jeep",
-    "borderlands-smg",
-    "the-rogue-angel-inarius",
-  ].includes(currentRouteName.value);
-
   fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
