@@ -24,6 +24,6 @@ p {
   }
   .open-overlay {
     opacity: 1;
-    background: linear-gradient(180deg, rgba(0,0,0,0.09297979445684523) 89%, rgba(0,0,0,0.34788175524115894) 100%);
+
   }
 }
