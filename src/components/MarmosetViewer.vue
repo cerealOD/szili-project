@@ -42,7 +42,7 @@ if (document.body.scrollWidth >= 1680) {
 const myViewer = ref(null);
 
 onMounted(() => {
-  console.log(width);
+  // console.log(width);
   // Initialize the Marmoset viewer only if hasMarmoset is true
   myViewer.value = new marmoset.WebViewer(
     width,
