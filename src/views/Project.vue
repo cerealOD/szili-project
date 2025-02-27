@@ -26,7 +26,7 @@
       <resizedImg
         v-if="file.includes('png')"
         :imgSrc="'/' + routeName + '/' + file"
-        class="rounded-3xl mb-4 lg:mb-8"
+        class="mb-4 lg:mb-8"
       />
       <videoPlayer
         v-if="file.includes('mp4')"

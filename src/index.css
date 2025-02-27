@@ -8,3 +8,22 @@
 p {
   @apply mb-4;
 }
+
+.background-overlay, .open-overlay {
+  transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.project-container:hover {
+  .background-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08049340341605393) 26%,
+      rgba(0, 0, 0, 0.8003813585981268) 69%,
+      rgba(0, 0, 0, 0.9460396219034489) 88%
+    );
+  }
+  .open-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0.09297979445684523) 89%, rgba(0,0,0,0.34788175524115894) 100%);
+  }
+}

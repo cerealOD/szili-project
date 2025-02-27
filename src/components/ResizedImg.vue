@@ -1,5 +1,20 @@
 <template>
-  <img :src="resizedImage" v-if="resizedImage" alt="Resized Image" />
+  <div class="relative project-container">
+    <img
+      :src="resizedImage"
+      v-if="resizedImage"
+      alt="Resized Image"
+      class="rounded-3xl"
+    />
+    <div
+      class="open-overlay opacity-0 absolute bottom-0 left-0 w-full rounded-2xl flex justify-end p-6 h-full items-end"
+      style="background-color: transparent; z-index: 4"
+    >
+      <a :href="imgSrc" target="_blank" class="p-2 rounded-xl open-link">
+        <img src="/icons/open.svg" />
+      </a>
+    </div>
+  </div>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
@@ -40,3 +55,11 @@ onMounted(() => {
   resizeLocalImage();
 });
 </script>
+<style>
+.open-link {
+  transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.open-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+</style>
