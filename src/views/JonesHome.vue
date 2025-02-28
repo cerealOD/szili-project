@@ -1,12 +1,12 @@
 <template>
   <div class="lg:px-16 flex flex-col items-center">
-    <a
-      href="/"
+    <RouterLink
+      to="/"
       class="w-full flex items-center text-white gap-x-2 sm:text-lg hover:underline"
     >
       <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
       Back to Home
-    </a>
+    </RouterLink>
     <div
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
     >

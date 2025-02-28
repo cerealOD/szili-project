@@ -5,6 +5,7 @@
       v-if="resizedImage"
       alt="Resized Image"
       class="rounded-3xl"
+      @load="onImageLoad"
     />
     <div
       class="open-overlay opacity-0 absolute bottom-0 left-0 w-full rounded-2xl flex justify-end p-6 h-full items-end"
@@ -17,15 +18,15 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, defineEmits } from "vue";
 import pica from "pica";
 
 const props = defineProps({
   imgSrc: String,
 });
 
-// Import your local image
-// import myImage from props.imgSrc;
+// Emits event when image is loaded
+const emit = defineEmits(["loaded"]);
 
 const resizedImage = ref(null);
 
@@ -49,6 +50,12 @@ const resizeLocalImage = async () => {
 
   // Convert to Base64 and set to ref
   resizedImage.value = canvas.toDataURL("image/jpeg", 0.8);
+};
+
+// Emit event when image has fully loaded
+const onImageLoad = () => {
+  emit("loaded");
+  // console.log("image");
 };
 
 onMounted(() => {

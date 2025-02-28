@@ -4,11 +4,13 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, defineEmits } from "vue";
 
 const props = defineProps({
   fileName: String,
 });
+
+const emit = defineEmits(["loaded"]);
 
 let width = 0;
 if (document.body.scrollWidth >= 375) {
@@ -103,6 +105,10 @@ onMounted(() => {
   if (marmosetViewer) {
     marmosetViewer.style.backgroundImage = `url('/${props.fileName}/1.png')`;
   }
+  // Emit the loaded event once the viewer is initialized
+  setTimeout(() => {
+    emit("loaded");
+  }, 1000); // Adjust timeout if needed
 });
 </script>
 <style>
