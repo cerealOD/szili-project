@@ -32,7 +32,7 @@
       visit the
       <RouterLink
         to="/about"
-        class="cursor-pointer hover:underline font-medium"
+        class="inline-block cursor-pointer font-medium underlined-link"
       >
         About
       </RouterLink>
@@ -44,7 +44,7 @@
       </div>
       <a
         href="mailto:szilard.hazi91@gmail.com"
-        class="text-white hover:underline w-full mb-4 cursor-pointer flex items-center gap-x-2"
+        class="text-white w-full mb-4 cursor-pointer flex items-center gap-x-2 underlined-link"
       >
         <img :src="'/icons/mail.svg'" />
         szilard.hazi91@gmail.com

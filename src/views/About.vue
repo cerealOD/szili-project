@@ -97,7 +97,7 @@
                 />
                 <a
                   href="https://www.metacritic.com/game/indiana-jones-and-the-great-circle/"
-                  class="hover:underline"
+                  class="underlined-link"
                   >Metacritic Score: 86</a
                 >
               </div>
@@ -109,7 +109,7 @@
                 />
                 <a
                   href="https://store.steampowered.com/app/2677660/Indiana_Jones_and_the_Great_Circle/"
-                  class="hover:underline"
+                  class="underlined-link"
                   >Steam Store</a
                 >
               </div>
@@ -166,7 +166,7 @@
               <span class="font-semibold text-lg lg:text-xl mb-4"
                 >Descenders Next</span
               >
-              <span class="mb-4 font-medium">Release date: TBA </span>
+              <span class="mb-4 font-medium">Release date: 9 Apr, 2025 </span>
               <div class="flex items-center gap-x-1">
                 <img
                   :src="require('/icons/steam.svg')"
@@ -175,7 +175,7 @@
                 />
                 <a
                   href="https://store.steampowered.com/app/2375530/Descenders_Next/"
-                  class="hover:underline"
+                  class="underlined-link"
                   >Steam Store</a
                 >
               </div>

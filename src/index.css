@@ -26,3 +26,23 @@ p {
     opacity: 1;
   }
 }
+
+.underlined-link {
+  @screen lg{
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration 0.4s;
+  }
+
+}
+
+.underlined-link:hover{
+  @screen lg{
+    text-decoration-color: #eeeef1;
+  
+    /*add those for opera and mozilla support*/
+    -webkit-text-decoration-color: #eeeef1;
+    -moz-text-decoration-color: #eeeef1;
+  }
+
+ }

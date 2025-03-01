@@ -2,7 +2,7 @@
   <div class="lg:px-16 flex flex-col items-center">
     <RouterLink
       to="/"
-      class="w-full flex items-center text-white gap-x-2 sm:text-lg hover:underline"
+      class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
     >
       <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
       Back to Home

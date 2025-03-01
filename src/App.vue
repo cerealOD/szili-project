@@ -26,14 +26,14 @@
       >
         <RouterLink
           to="/"
-          class="hover:underline"
-          :class="$route.path == '/' ? 'font-bold' : ''"
+          class="underlined-link"
+          :class="$route.path == '/' ? 'font-bold !no-underline' : ''"
           >Home
         </RouterLink>
         <RouterLink
           to="/about"
-          class="hover:underline"
-          :class="$route.path == '/about' ? 'font-bold' : ''"
+          class="underlined-link"
+          :class="$route.path == '/about' ? 'font-bold !no-underline' : ''"
           >About</RouterLink
         >
       </nav>
@@ -50,7 +50,7 @@
         <span
           >by
           <a
-            class="hover:underline"
+            class="underlined-link"
             href="https://www.linkedin.com/in/manka-huszar-120758234/"
             target="_blank"
             >Manka Huszar</a
