@@ -25,8 +25,17 @@
     <div v-show="loading" class="text-white text-xl">
       <video autoplay loop muted playsinline class="lottie-video">
         <source :src="'/loader2.webm'" type="video/webm" />
-        Your browser does not support the video tag.
       </video>
+    </div>
+    <div v-show="loading" class="text-white text-xl tracking-wider">
+      <div>
+        {{
+          loadedMediaCount !== 0 || totalMediaCount !== 0
+            ? Math.round((loadedMediaCount / totalMediaCount) * 100)
+            : "0"
+        }}
+        %
+      </div>
     </div>
 
     <div v-show="!loading" v-for="file in projectFiles">
@@ -50,7 +59,7 @@
       ></marmoset>
     </div>
 
-    <div class="w-full mt-8">
+    <div v-show="!loading" class="w-full mt-8">
       <span class="text-white font-semibold text-2xl">Software Used</span>
       <div class="flex gap-2 flex-wrap mt-8">
         <div
@@ -90,7 +99,7 @@ const totalMediaCount = ref(0); // Total number of images, videos, and viewers t
 // Function to increment loaded media count
 const onMediaLoaded = () => {
   loadedMediaCount.value++;
-  console.log("loadedmediacount" + loadedMediaCount.value);
+  // console.log("loadedmediacount" + loadedMediaCount.value);
 };
 
 watchEffect(() => {
@@ -101,7 +110,7 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
-    console.log(loading.value);
+    // console.log(loading.value);
   }
 });
 

@@ -1,5 +1,8 @@
 <template>
-  <main class="flex flex-col items-center justify-center">
+  <main
+    class="flex flex-col items-center justify-between"
+    style="min-height: 100vh"
+  >
     <header
       class="sticky top-0 z-30 w-full flex justify-center"
       :class="[
@@ -14,7 +17,7 @@
         $route.path !== '/' &&
         $route.path !== '/about' &&
         $route.path !== '/indiana-jones'
-          ? 'background: linear-gradient(180deg, rgba(14, 19, 23, .5) 47.75%, rgba(14, 19, 23, .4) 60%, rgba(0, 0, 0, 0) 100%);'
+          ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); background-repeat: no-repeat;background-size: cover;background-size: 100%;'
           : ''
       "
     >
@@ -44,7 +47,15 @@
       >
         <span>Crafted with</span>
         <img src="/icons/heart.svg" class="w-4" />
-        <span>by Manka Huszar</span>
+        <span
+          >by
+          <a
+            class="hover:underline"
+            href="https://www.linkedin.com/in/manka-huszar-120758234/"
+            target="_blank"
+            >Manka Huszar</a
+          ></span
+        >
       </div>
     </footer>
   </main>
