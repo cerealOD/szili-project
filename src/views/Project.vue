@@ -1,4 +1,5 @@
 <template>
+  <!-- <lottie /> -->
   <div class="flex flex-col items-center">
     <RouterLink
       v-if="!jones"
@@ -22,11 +23,18 @@
     ></div>
     <ExpandingText :text="text"></ExpandingText>
 
-    <div v-show="loading" class="text-white text-xl">
-      <video autoplay loop muted playsinline class="lottie-video">
-        <source :src="'/loader2.webm'" type="video/webm" />
+    <!-- <div v-show="loading" class="text-white text-xl flex items-center">
+      <video autoplay loop muted playsinline class="h-64">
+        <source :src="'/loader.webm'" type="video/webm" />
       </video>
-    </div>
+    </div> -->
+
+    <Vue3Lottie
+      v-show="loading"
+      :animationData="LinesJSON"
+      :height="200"
+      :width="200"
+    />
     <div v-show="loading" class="text-white text-xl tracking-wider">
       <div>
         {{
@@ -38,20 +46,23 @@
       </div>
     </div>
 
-    <div v-show="!loading" v-for="file in projectFiles">
+    <div v-if="processImages" v-for="file in projectFiles">
       <resizedImg
+        v-show="!loading"
         v-if="file.includes('png')"
         :imgSrc="'/' + routeName + '/' + file"
         class="mb-4 lg:mb-8"
         @loaded="onMediaLoaded"
       />
       <videoPlayer
+        v-show="!loading"
         v-if="file.includes('mp4')"
         :mp4="'/' + routeName + '/' + file"
         class="mb-4 lg:mb-8"
         @loaded="onMediaLoaded"
       />
       <marmoset
+        v-show="!loading"
         v-if="file.includes('marmoset')"
         :fileName="routeName"
         class="mb-8"
@@ -80,8 +91,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, nextTick, watchEffect } from "vue";
+import { ref, onMounted, watchEffect, nextTick, watch } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
+import { useRoute } from "vue-router"; // import useRoute
+import { Vue3Lottie } from "vue3-lottie";
+
+import LinesJSON from "../assets/lines.json";
 
 const props = defineProps({
   routeName: String,
@@ -93,13 +108,13 @@ const titleContainer = ref(null);
 const softwares = ref([]);
 const text = ref("");
 const loading = ref(true);
+const processImages = ref(false);
 const loadedMediaCount = ref(0); // Tracks the number of fully loaded media
 const totalMediaCount = ref(0); // Total number of images, videos, and viewers to load
 
 // Function to increment loaded media count
 const onMediaLoaded = () => {
   loadedMediaCount.value++;
-  // console.log("loadedmediacount" + loadedMediaCount.value);
 };
 
 watchEffect(() => {
@@ -110,11 +125,13 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
-    // console.log(loading.value);
   }
 });
 
 onMounted(() => {
+  setTimeout(() => {
+    processImages.value = true;
+  }, 500);
   let jonesRoute = props.routeName.split("/")[1];
   fetch("/content.json")
     .then((response) => response.json())

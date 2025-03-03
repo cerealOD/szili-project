@@ -8,12 +8,13 @@ import SideInfo from "./components/SideInfo.vue";
 import MarmosetViewer from "./components/MarmosetViewer.vue";
 import ExpandingText from "./components/ExpandingText.vue";
 import ResizedImg from "./components/ResizedImg.vue";
+import Vue3Lottie from "vue3-lottie";
 
 import App from "./App.vue";
 import "./index.css";
 import router from "./router";
 
-const app = createApp(App).use(router);
+const app = createApp(App).use(router, Vue3Lottie);
 
 app.component("image-game", ImageGame);
 app.component("image-container", ImageContainer);
