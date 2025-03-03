@@ -23,18 +23,15 @@
     ></div>
     <ExpandingText :text="text"></ExpandingText>
 
-    <!-- <div v-show="loading" class="text-white text-xl flex items-center">
-      <video autoplay loop muted playsinline class="h-64">
-        <source :src="'/loader.webm'" type="video/webm" />
-      </video>
-    </div> -->
-
-    <Vue3Lottie
+    <div
       v-show="loading"
-      :animationData="LinesJSON"
-      :height="200"
-      :width="200"
-    />
+      class="text-white text-xl flex items-center h-[150px] w-[150px]"
+    >
+      <video autoplay loop muted playsinline>
+        <source :src="'/circle.webm'" type="video/webm" />
+      </video>
+    </div>
+
     <div v-show="loading" class="text-white text-xl tracking-wider">
       <div>
         {{
@@ -46,7 +43,7 @@
       </div>
     </div>
 
-    <div v-if="processImages" v-for="file in projectFiles">
+    <div v-for="file in projectFiles">
       <resizedImg
         v-show="!loading"
         v-if="file.includes('png')"
@@ -91,12 +88,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect, nextTick, watch } from "vue";
+import { ref, onMounted, watchEffect } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
-import { useRoute } from "vue-router"; // import useRoute
-import { Vue3Lottie } from "vue3-lottie";
-
-import LinesJSON from "../assets/lines.json";
 
 const props = defineProps({
   routeName: String,
@@ -129,9 +122,6 @@ watchEffect(() => {
 });
 
 onMounted(() => {
-  setTimeout(() => {
-    processImages.value = true;
-  }, 500);
   let jonesRoute = props.routeName.split("/")[1];
   fetch("/content.json")
     .then((response) => response.json())
