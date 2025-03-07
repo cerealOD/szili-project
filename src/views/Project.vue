@@ -23,14 +23,7 @@
     ></div>
     <ExpandingText :text="text"></ExpandingText>
 
-    <div
-      v-show="loading"
-      class="text-white text-xl flex items-center h-[150px] w-[150px]"
-    >
-      <video autoplay loop muted playsinline>
-        <source :src="'/circle.webm'" type="video/webm" />
-      </video>
-    </div>
+    <img v-show="loading" class="h-[150px] w-[150px]" src="/circle.gif">
 
     <div v-show="loading" class="text-white text-xl tracking-wider">
       <div>
