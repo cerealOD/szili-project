@@ -1,5 +1,4 @@
 <template>
-  <!-- <lottie /> -->
   <div class="flex flex-col items-center">
     <RouterLink
       v-if="!jones"
@@ -23,7 +22,15 @@
     ></div>
     <ExpandingText :text="text"></ExpandingText>
 
-    <img v-show="loading" class="h-[150px] w-[150px]" src="/circle.gif">
+    <dotlottie-player
+      src="https://lottie.host/db6daca5-18f5-40f5-a0f4-76e0e3325d27/wDnjJri2KA.lottie"
+      v-show="loading"
+      background="transparent"
+      speed="1"
+      style="width: 150px; height: 150px"
+      loop
+      autoplay
+    ></dotlottie-player>
 
     <div v-show="loading" class="text-white text-xl tracking-wider">
       <div>
@@ -81,8 +88,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted, watchEffect, nextTick, watch } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+const showPlayer = ref(false);
 
 const props = defineProps({
   routeName: String,

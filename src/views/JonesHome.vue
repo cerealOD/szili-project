@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:px-16 flex flex-col items-center">
+  <div class="flex flex-col items-center">
     <RouterLink
       to="/"
       class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
