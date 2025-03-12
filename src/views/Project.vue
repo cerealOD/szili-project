@@ -23,7 +23,7 @@
     <ExpandingText :text="text"></ExpandingText>
 
     <dotlottie-player
-      src="https://lottie.host/db6daca5-18f5-40f5-a0f4-76e0e3325d27/wDnjJri2KA.lottie"
+      src="/circle.lottie"
       v-show="loading"
       background="transparent"
       speed="1"
