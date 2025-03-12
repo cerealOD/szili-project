@@ -22,7 +22,7 @@
     ></div>
     <ExpandingText :text="text"></ExpandingText>
 
-    <dotlottie-player
+    <!-- <dotlottie-player
       src="/circle.lottie"
       v-show="loading"
       background="transparent"
@@ -30,7 +30,7 @@
       style="width: 150px; height: 150px"
       loop
       autoplay
-    ></dotlottie-player>
+    ></dotlottie-player> -->
 
     <div v-show="loading" class="text-white text-xl tracking-wider">
       <div>

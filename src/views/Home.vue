@@ -24,8 +24,8 @@
           </div>
           <img :src="'/thumbnails/indiana_thumbnail.png'" class="rounded-2xl" />
         </RouterLink>
-        <a
-          href="/projects/the-rogue-angel-inarius"
+        <RouterLink
+          to="/projects/the-rogue-angel-inarius"
           class="relative project-container rounded-2xl"
           style="aspect-ratio: 1/1"
         >
@@ -38,7 +38,7 @@
             </div>
           </div>
           <img :src="'/thumbnails/inarius_thumbnail.png'" class="rounded-2xl" />
-        </a>
+        </RouterLink>
         <RouterLink
           to="/projects/barbarian"
           class="relative project-container rounded-2xl"
