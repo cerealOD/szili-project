@@ -103,7 +103,7 @@ onMounted(() => {
   // Style the viewer UI
   const marmosetViewer = document.getElementById("marmoset-container");
   if (marmosetViewer) {
-    marmosetViewer.style.backgroundImage = `url('/${props.fileName}/1.png')`;
+    marmosetViewer.style.backgroundImage = `url('/marmoset-thumbnails/${props.fileName}-thumbnail.png')`;
   }
   // Emit the loaded event once the viewer is initialized
   setTimeout(() => {
