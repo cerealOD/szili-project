@@ -54,13 +54,13 @@
           href="https://www.artstation.com/szilardhazi3d"
           class="cursor-pointer"
         >
-          <img :src="'/icons/artstation.svg'" width="32" />
+          <img :src="'/icons/artstation.svg'" width="30" />
         </a>
         <a
           href="https://www.linkedin.com/in/szilard-hazi-3d/"
-          class="cursor-pointer"
+          class="cursor-pointer bg-white rounded-lg"
         >
-          <img :src="'/icons/linkedin.svg'" width="30"
+          <img :src="'/icons/linkedin.svg'" width="28" class="rounded-md"
         /></a>
       </div>
     </div>
@@ -75,7 +75,7 @@
         width="20"
         class="resume-svg-gray"
       />
-      <div class="text-sm font-medium text-left">Download resume</div>
+      <div class="text-sm font-medium text-left">Download Resume</div>
     </button>
   </div>
 </template>
@@ -104,8 +104,5 @@ const downLoadPdf = () => {
   .resume-svg-gray {
     display: block;
   }
-}
-.resume-download {
-  transition: all 0.25s cubic-bezier(0.25, 0.85, 0.55, 1);
 }
 </style>

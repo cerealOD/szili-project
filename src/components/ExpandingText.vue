@@ -1,7 +1,7 @@
 <template>
   <div class="mb-8 flex flex-col items-center">
     <div
-      class="md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text max-h-40 overflow-hidden"
+      class="md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text max-h-48 overflow-hidden"
       :class="!expanded ? 'add-mask' : ''"
       id="expanding-div"
     >
@@ -32,7 +32,7 @@ const setExpanded = () => {
   let expanding = document.getElementById("expanding-div");
   !expanded.value
     ? (expanding.style.maxHeight = `${introTextHeight.value}` + "px")
-    : (expanding.style.maxHeight = "160px");
+    : (expanding.style.maxHeight = "192px");
   expanded.value ? (expanded.value = false) : (expanded.value = true);
 };
 
@@ -41,7 +41,7 @@ const updateHeight = async () => {
   if (introText.value) {
     introTextHeight.value = introText.value.offsetHeight;
     // console.log("Updated height:", introTextHeight.value);
-    if (introTextHeight.value < 160) {
+    if (introTextHeight.value < 192) {
       expanded.value = true;
       expandButton.value.style.display = "none";
     }

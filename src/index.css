@@ -46,3 +46,8 @@ p {
   }
 
  }
+
+ .resume-download {
+  @apply hover:cursor-pointer;
+  transition: all 0.25s cubic-bezier(0.25, 0.85, 0.55, 1);
+}

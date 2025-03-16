@@ -21,6 +21,21 @@
       ref="titleContainer"
     ></div>
     <ExpandingText :text="text"></ExpandingText>
+    <div
+      v-if="routeName == 'double-turret-gun'"
+      class="w-full md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 flex flex-col gap-y-2 mb-8"
+    >
+      This project is available on the link below with complete breakdown,
+      source files, etc.:
+      <a
+        class="flex items-center gap-x-1 bg-gray p-2 rounded-lg text-white hover:bg-white hover:text-gray resume-download"
+        style="width: fit-content"
+        @click="downLoadPdf"
+      >
+        <img :src="'/icons/drive.svg'" width="20" />
+        <div class="text-sm font-medium text-left">Download Project</div>
+      </a>
+    </div>
 
     <!-- <dotlottie-player
       src="/circle.lottie"
