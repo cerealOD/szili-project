@@ -43,6 +43,14 @@
       </div>
     </div>
 
+    <videoPlayer
+      v-if="routeName == 'diablo-ii-environment-fan-art'"
+      v-show="!loading"
+      :mp4="'https://prismatic-brioche-bc0903.netlify.app/diablo-ii-video.mp4'"
+      class="mb-4 lg:mb-8"
+      @loaded="onMediaLoaded"
+    />
+
     <div v-for="file in projectFiles">
       <resizedImg
         v-show="!loading"
@@ -121,6 +129,24 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
+    document.addEventListener("DOMContentLoaded", function () {
+      const videos = document.querySelectorAll(".autoplay-video");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.play();
+            } else {
+              entry.target.pause();
+            }
+          });
+        },
+        { threshold: 0.5 }
+      ); // Adjust threshold as needed
+
+      videos.forEach((video) => observer.observe(video));
+    });
   }
 });
 

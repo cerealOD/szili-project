@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     validateBeforeSubmit() {
-      if (this.password === "bububaba12") {
+      if (this.password === "portfolio25") {
         this.error = false;
         localStorage.setItem("user-password", this.password);
         this.$router.push("/");

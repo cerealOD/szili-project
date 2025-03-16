@@ -1,9 +1,10 @@
 <template>
   <div class="video-wrap">
     <video
+      playsinline
+      muted
       controls="true"
-      autoplay="true"
-      class="rounded-3xl"
+      class="autoplay-video rounded-3xl"
       loop="true"
       @loadeddata="onVideoLoad"
     >

@@ -10,6 +10,24 @@
         class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:gap-4"
       >
         <RouterLink
+          to="/projects/diablo-ii-environment-fan-art"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>Double Turret Gun</span>
+            </div>
+          </div>
+          <img
+            :src="'/thumbnails/diablo_2_thumbnail.png'"
+            class="rounded-2xl"
+          />
+        </RouterLink>
+        <RouterLink
           to="projects/indiana-jones-art-blast"
           class="relative project-container rounded-2xl"
           style="aspect-ratio: 1/1"
@@ -54,6 +72,24 @@
           </div>
           <img
             :src="'/thumbnails/barbarian_thumbnail.png'"
+            class="rounded-2xl"
+          />
+        </RouterLink>
+        <RouterLink
+          to="/projects/double-turret-gun"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
+        >
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>Double Turret Gun</span>
+            </div>
+          </div>
+          <img
+            :src="'/thumbnails/double_turret_gun_thumbnail.png'"
             class="rounded-2xl"
           />
         </RouterLink>
