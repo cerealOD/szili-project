@@ -7,14 +7,14 @@
       <div class="lg:text-lg/7 text-white" style="max-width: 1100px">
         <p>
           Hi, my name is Szilard and I have spent the past 3 years creating
-          visually rich and immersive game environments that serve both
-          narrative and gameplay. My experience includes working on various
-          projects, ranging from indie to AAA titles, covering tasks such as
-          creating props or tackling complete world building, progressing
-          through initial blockouts to fully set-dressed and polished locations.
-          Having collaborated closely with a team of talented artists and
-          developers, I firmly grasped the essence of teamwork, communication,
-          and attention to detail to deliver exceptional results.
+          visually rich and immersive game environments and characters that
+          serve both narrative and gameplay. My experience includes working on
+          various projects, ranging from indie to AAA titles, covering tasks
+          such as character creation or tackling complete world-building,
+          progressing from initial blockouts to fully set-dressed and polished
+          locations. Having collaborated closely with a team of talented artists
+          and developers I have developed a strong grasp of teamwork,
+          communication, and attention to detail to deliver exceptional results.
         </p>
         <p>
           My passion for game art and development is reflected in the artistic
@@ -43,7 +43,7 @@
               class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
               style="width: fit-content"
             >
-              2023 January - Present
+              2023 January - 2025 March
             </div>
           </div>
 
@@ -54,6 +54,10 @@
           <div>
             <div class="pb-4">Crafting story-driven worlds for AAA games</div>
             <ul class="ml-6">
+              <li>
+                Shipped award-winning AAA title: Indiana Jones and the Great
+                Circle, work in several projects
+              </li>
               <li>
                 Responsible for complete environments from initial blockout
                 phase until the final touches, including building the necessary

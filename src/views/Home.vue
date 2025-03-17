@@ -19,7 +19,7 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Double Turret Gun</span>
+              <span>Diablo II Environment Fan Art</span>
             </div>
           </div>
           <img

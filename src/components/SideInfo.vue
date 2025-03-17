@@ -27,9 +27,9 @@
     </div>
     <div class="text-white border-b border-solid border-white pb-8 mb-8">
       Hi, my name is Szilard, and I’m a passionate, self-taught 3D artist with
-      over three years of industry experience, specializing in game environments
-      and character art. For more details about my experience and work, please
-      visit the
+      3+ years of industry experience, specializing in game environments and
+      character art. For more details about my experience and work, please visit
+      the
       <RouterLink
         to="/about"
         class="inline-block cursor-pointer font-medium underlined-link"

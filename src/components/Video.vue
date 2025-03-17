@@ -2,6 +2,7 @@
   <div class="video-wrap">
     <video
       playsinline
+      autoplay
       muted
       controls="true"
       class="autoplay-video rounded-3xl"
