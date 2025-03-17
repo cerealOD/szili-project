@@ -1,21 +1,23 @@
 <template>
+  <RouterLink
+    v-if="!jones"
+    to="/"
+    class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
+    style="width: fit-content"
+  >
+    <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
+    Back to Home
+  </RouterLink>
+  <RouterLink
+    v-if="jones"
+    to="/projects/indiana-jones-art-blast"
+    class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
+    style="width: fit-content"
+  >
+    <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
+    Back to Indiana Jones Art Blast
+  </RouterLink>
   <div class="flex flex-col items-center">
-    <RouterLink
-      v-if="!jones"
-      to="/"
-      class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
-    >
-      <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
-      Back to Home
-    </RouterLink>
-    <RouterLink
-      v-if="jones"
-      to="/projects/indiana-jones-art-blast"
-      class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
-    >
-      <img :src="'/icons/back.svg'" class="w-6 sm:w-9" />
-      Back to Indiana Jones Art Blast
-    </RouterLink>
     <div
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
       ref="titleContainer"
