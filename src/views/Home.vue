@@ -19,7 +19,7 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Diablo II Environment Fan Art</span>
+              <span>Diablo II Cinematic</span>
             </div>
           </div>
           <img

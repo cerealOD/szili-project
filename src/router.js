@@ -64,11 +64,11 @@ const router = createRouter({
   },
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth) {
-    if (!localStorage.getItem("user-password")) next("/protected");
-    else next();
-  } else next();
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.requiresAuth) {
+//     if (!localStorage.getItem("user-password")) next("/protected");
+//     else next();
+//   } else next();
+// });
 
 export default router;

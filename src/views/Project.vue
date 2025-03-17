@@ -28,6 +28,8 @@
       This project is available on the link below with complete breakdown,
       source files, etc.:
       <a
+        href="https://drive.google.com/file/d/17hi_S8exERHQezUEAz5RiOJSfAE2gFCZ/view?usp=sharing"
+        target="_blank"
         class="flex items-center gap-x-1 bg-gray p-2 rounded-lg text-white hover:bg-white hover:text-gray resume-download"
         style="width: fit-content"
         @click="downLoadPdf"
