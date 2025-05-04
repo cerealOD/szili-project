@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import ProjectContainer from "./components/ProjectContainer.vue";
+import Project from "./components/Project.vue";
 import JonesHome from "./views/JonesHome.vue";
 import JonesContainer from "./components/JonesContainer.vue";
 import Protected from "./components/Protected.vue";
@@ -20,7 +21,7 @@ const routes = [
   {
     path: "/projects/:slug",
     name: "projects",
-    component: ProjectContainer,
+    component: Project,
     meta: {
       requiresAuth: true,
     },

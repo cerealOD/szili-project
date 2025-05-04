@@ -9,6 +9,26 @@
       <div
         class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:gap-4"
       >
+        <div v-for="project in projects" :key="project.id">
+          <RouterLink
+            :to="`/projects/${project.slug}`"
+            class="relative project-container rounded-2xl"
+            style="aspect-ratio: 1/1"
+          >
+            <div
+              class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+              style="background-color: transparent; z-index: 4"
+            >
+              <div class="project-text">
+                <span>{{ project.title }}</span>
+              </div>
+            </div>
+            <img
+              :src="`https://directus-production-8a29.up.railway.app/assets/${project.thumbnail}`"
+              class="rounded-2xl"
+            />
+          </RouterLink>
+        </div>
         <RouterLink
           to="/projects/diablo-ii-environment-fan-art"
           class="relative project-container rounded-2xl"
@@ -208,7 +228,20 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+
+const projects = ref([]);
+
+onMounted(async () => {
+  const res = await fetch(
+    "https://directus-production-8a29.up.railway.app/items/projects"
+  );
+  const json = await res.json();
+  projects.value = json.data;
+  console.log(projects.value);
+});
+</script>
 
 <style>
 .prof-pic {

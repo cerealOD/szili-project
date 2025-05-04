@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.project-content {
+  img, video {
+    @apply rounded-3xl;
+  }
+  img {
+    @apply mb-16;
+  }
+}
 .project-text {
   @apply absolute p-8 left-0 bottom-0 text-white text-xl font-semibold w-full;
 }
