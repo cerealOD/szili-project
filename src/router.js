@@ -2,10 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import Home from "./views/Home.vue";
 import About from "./views/About.vue";
-import ProjectContainer from "./components/ProjectContainer.vue";
 import Project from "./components/Project.vue";
-import JonesHome from "./views/JonesHome.vue";
-import JonesContainer from "./components/JonesContainer.vue";
 import Protected from "./components/Protected.vue";
 
 const routes = [
@@ -27,25 +24,17 @@ const routes = [
     },
   },
   {
+    path: "/projects/:slug/:slug",
+    name: "subProjects",
+    component: Project,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: "/about",
     name: "about",
     component: About,
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/projects/indiana-jones-art-blast",
-    name: "jones",
-    component: JonesHome,
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/projects/indiana-jones-art-blast/:slug",
-    component: JonesContainer,
-    name: "jonesContainer",
     meta: {
       requiresAuth: true,
     },

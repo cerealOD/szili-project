@@ -18,131 +18,26 @@
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 sm:gap-4"
     >
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/iraq"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
+      <div v-for="project in projects" :key="project.id">
+        <RouterLink
+          :to="`/projects/indiana-jones-art-blast/${project.slug}`"
+          class="relative project-container rounded-2xl"
+          style="aspect-ratio: 1/1"
         >
-          <div class="project-text">
-            <span>Iraq</span>
+          <div
+            class="background-overlay opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
+            style="background-color: transparent; z-index: 4"
+          >
+            <div class="project-text">
+              <span>{{ project.title }}</span>
+            </div>
           </div>
-        </div>
-        <img :src="'/thumbnails/iraq_thumbnail.png'" class="rounded-2xl" />
-      </RouterLink>
-
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/dream-vol-1"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
-        >
-          <div class="project-text">
-            <span>Dream Vol. 1</span>
-          </div>
-        </div>
-        <img
-          :src="'/thumbnails/nightmare_1_thumbnail.png'"
-          class="rounded-2xl"
-        />
-      </RouterLink>
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/dream-vol-2"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
-        >
-          <div class="project-text">
-            <span>Dream Vol. 2</span>
-          </div>
-        </div>
-        <img
-          :src="'/thumbnails/nightmare_2_thumbnail.png'"
-          class="rounded-2xl"
-        />
-      </RouterLink>
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/shanghai"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
-        >
-          <div class="project-text">
-            <span>Shanghai</span>
-          </div>
-        </div>
-        <img :src="'/thumbnails/shanghai_thumbnail.png'" class="rounded-2xl" />
-      </RouterLink>
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/sukhothai"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
-        >
-          <div class="project-text">
-            <span>Sukhothai</span>
-          </div>
-        </div>
-        <img :src="'/thumbnails/sukhothai_thumbnail.png'" class="rounded-2xl" />
-      </RouterLink>
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/treehouse-vol-1"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
-        >
-          <div class="project-text">
-            <span>Treehouse Vol. 1</span>
-          </div>
-        </div>
-        <img
-          :src="'/thumbnails/treehouse_1_thumbnail.png'"
-          class="rounded-2xl"
-        />
-      </RouterLink>
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/treehouse-vol-2"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
-        >
-          <div class="project-text">
-            <span>Treehouse Vol. 2</span>
-          </div>
-        </div>
-        <img
-          :src="'/thumbnails/treehouse_2_thumbnail.png'"
-          class="rounded-2xl"
-        />
-      </RouterLink>
-      <RouterLink
-        to="/projects/indiana-jones-art-blast/vatican"
-        class="project-container-jones"
-      >
-        <div
-          class="background-overlay-jones opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl"
-          style="background-color: transparent; z-index: 4"
-        >
-          <div class="project-text">
-            <span>Vatican</span>
-          </div>
-        </div>
-        <img :src="'/thumbnails/vatican_thumbnail.png'" class="rounded-2xl" />
-      </RouterLink>
+          <img
+            :src="`https://directus-production-8a29.up.railway.app/assets/${project.thumbnail}`"
+            class="rounded-2xl"
+          />
+        </RouterLink>
+      </div>
     </div>
   </div>
 </template>
@@ -153,12 +48,15 @@ import { useRoute, useRouter } from "vue-router";
 import ExpandingText from "../components/ExpandingText.vue";
 const text = ref("");
 
-onMounted(() => {
-  fetch("/content.json")
-    .then((response) => response.json())
-    .then((data) => {
-      text.value = data["indiana-jones"][0].replace(/\/n/g, "<br><br>"); // Replace line breaks
-    });
+const projects = ref([]);
+
+onMounted(async () => {
+  const res = await fetch(
+    `https://directus-production-8a29.up.railway.app/items/projects?filter[parent_project][_eq]=2`
+  );
+  const json = await res.json();
+  projects.value = json.data;
+  console.log(projects.value);
 });
 </script>
 <style>
