@@ -48,7 +48,6 @@ onMounted(async () => {
   );
   const json = await res.json();
   projects.value = json.data;
-  console.log(projects.value);
 });
 </script>
 

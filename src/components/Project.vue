@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div v-show="!loading" class="w-full mt-8">
+    <div class="w-full mt-8">
       <span class="text-white font-semibold text-2xl">Software Used</span>
       <div class="flex gap-2 flex-wrap mt-8">
         <div
@@ -79,11 +79,12 @@
           class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
         >
           <img
-            :src="'/logos/' + software + '.png'"
-            width="24"
-            class="rounded-md"
+            :src="`https://directus-production-8a29.up.railway.app/assets/${software.icon}`"
+            height="24px"
+            width="24px"
+            class="rounded-2xl"
           />
-          <span>{{ software }}</span>
+          <span>{{ software.name }}</span>
         </div>
       </div>
     </div>
@@ -102,6 +103,7 @@ const myViewer = ref(null);
 const project = ref([]);
 const parentProject = ref([]);
 const subProjects = ref([]);
+const softwares = ref([]);
 
 let width = 0;
 if (document.body.scrollWidth >= 375) {
@@ -137,22 +139,27 @@ onMounted(async () => {
     `https://directus-production-8a29.up.railway.app/items/projects?filter[slug][_eq]=${slug}`
   );
   const json = await res.json();
-  project.value = json.data?.[0]; // assuming slug is unique
-  console.log(project.value);
+  project.value = json.data?.[0];
+  console.log(JSON.stringify(json, null, 2));
+  const softwareIds = project.value.softwares.join(",");
+
+  const resSoftwares = await fetch(
+    `https://directus-production-8a29.up.railway.app/items/softwares?filter[id][_in]=${softwareIds}`
+  );
+  const jsonSoft = await resSoftwares.json();
+  softwares.value = jsonSoft.data ?? [];
 
   const resSubProjects = await fetch(
     `https://directus-production-8a29.up.railway.app/items/projects?filter[parent_project][_eq]=${project.value.id}`
   );
   const jsonSub = await resSubProjects.json();
-  subProjects.value = jsonSub.data ?? []; // assuming slug is unique
-  console.log("subprojects: ", subProjects.value);
+  subProjects.value = jsonSub.data ?? [];
 
   const resParentProject = await fetch(
     `https://directus-production-8a29.up.railway.app/items/projects?filter[id][_eq]=${project.value.parent_project}`
   );
   const jsonParent = await resParentProject.json();
-  parentProject.value = jsonParent.data?.[0]; // assuming slug is unique
-  console.log("parent: ", parentProject.value);
+  parentProject.value = jsonParent.data?.[0];
 
   await nextTick();
 

@@ -194,12 +194,17 @@
     </div>
     <div class="flex items-center gap-2 flex-wrap">
       <div
-        v-for="image in logoPics"
-        :key="image"
+        v-for="software in softwares"
+        :key="software.id"
         class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
       >
-        <img :src="'/logos/' + image + '.png'" width="24" class="rounded-md" />
-        <span>{{ image }}</span>
+        <img
+          :src="`https://directus-production-8a29.up.railway.app/assets/${software.icon}`"
+          height="24px"
+          width="24px"
+          class="rounded-2xl"
+        />
+        <span>{{ software.name }}</span>
       </div>
     </div>
   </div>
@@ -207,43 +212,17 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-const logoPics = ref([
-  "3ds Max",
-  "Adobe After Effects",
-  "Blender",
-  "Character Creator",
-  "FiberShop",
-  "GS CurveTools",
-  "Hansoft",
-  "Houdini",
-  "idTech",
-  "Mari",
-  "Marmoset Toolbag",
-  "Marvelous Designer",
-  "Maya",
-  "MODO",
-  "Perforce",
-  "Photoshop",
-  "R3DS ZWrap",
-  "RizomUV",
-  "Substance 3D Designer",
-  "Substance 3D Painter",
-  "Substance 3D Sampler",
-  "Unity",
-  "Unreal Engine",
-  "xNormal",
-  "ZBrush",
-]);
-// onMounted(() => {
-//   fetch("/api/logos")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       logoPics.value = data;
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching icons:", error);
-//     });
-// });
+
+const softwares = ref([]);
+
+onMounted(async () => {
+  const res = await fetch(
+    "https://directus-production-8a29.up.railway.app/items/softwares"
+  );
+  const json = await res.json();
+  softwares.value = json.data;
+  console.log(softwares.value);
+});
 </script>
 
 <style>
