@@ -39,7 +39,7 @@
         class="container py-6 px-6 sm:px-16 text-white w-full text-sm font-medium flex items-center gap-x-1"
       >
         <span>Crafted with</span>
-        <img src="/icons/heart.svg" class="w-4" />
+        <img src="/icons/heart.svg" class="w-4" alt="Heart icon" />
         <span
           >by
           <a

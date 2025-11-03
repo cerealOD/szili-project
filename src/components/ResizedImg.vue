@@ -12,7 +12,7 @@
       style="background-color: transparent; z-index: 4"
     >
       <a :href="imgSrc" target="_blank" class="p-2 rounded-xl open-link">
-        <img src="/icons/open.svg" />
+        <img src="/icons/open.svg" alt="External open icon" />
       </a>
     </div>
   </div>

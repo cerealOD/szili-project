@@ -1,11 +1,9 @@
 <template>
   <div class="flex flex-col lg:flex-row justify-between">
-    <div class="order-1 lg:order-0 flex flex-col w-full">
-      <div
-        class="text-2xl md:text-3.5xl font-semibold text-white col-span-4 mb-8"
-      >
+    <section class="order-1 lg:order-0 flex flex-col w-full">
+      <h1 class="text-2xl md:text-3xl font-semibold text-white col-span-4 mb-8">
         Portfolio
-      </div>
+      </h1>
       <div
         class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:gap-4"
       >
@@ -19,13 +17,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Diablo II Cinematic</span>
+              <h2>Diablo II Cinematic</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/diablo_2_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -38,13 +37,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Indiana Jones Art Blast</span>
+              <h2>Indiana Jones Art Blast</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/indiana_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -57,13 +57,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>The Rogue Angel Inarius</span>
+              <h2>The Rogue Angel Inarius</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/inarius_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -76,13 +77,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Barbarian</span>
+              <h2>Barbarian</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/barbarian_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -95,13 +97,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Double Turret Gun</span>
+              <h2>Double Turret Gun</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/double_turret_gun_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -114,13 +117,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Skull Bow</span>
+              <h2>Skull Bow</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/bow_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -133,13 +137,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Borderlands SMG</span>
+              <h2>Borderlands SMG</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/smg_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -152,13 +157,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Antique Iron</span>
+              <h2>Antique Iron</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/iron_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
 
@@ -172,13 +178,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Viking Axe</span>
+              <h2>Viking Axe</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/axe_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
 
@@ -192,13 +199,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Jeep</span>
+              <h2>Jeep</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/jeep_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -211,13 +219,14 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Laser Controller</span>
+              <h2>Laser Controller</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/laser_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
         <RouterLink
@@ -230,20 +239,21 @@
             style="background-color: transparent; z-index: 4"
           >
             <div class="project-text">
-              <span>Diablo</span>
+              <h2>Diablo</h2>
             </div>
           </div>
           <img
             :src="'/thumbnails/diablo_thumbnail.png'"
             class="rounded-2xl"
             loading="lazy"
+            alt="Project thumbnail"
           />
         </RouterLink>
       </div>
-    </div>
-    <div class="order-0 lg:order-1">
+    </section>
+    <section class="order-0 lg:order-1">
       <sideInfo />
-    </div>
+    </section>
   </div>
 </template>
 

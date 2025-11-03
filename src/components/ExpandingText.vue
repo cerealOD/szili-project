@@ -5,7 +5,7 @@
       :class="!expanded ? 'add-mask' : ''"
       id="expanding-div"
     >
-      <div id="intro-text" ref="introText" v-html="text"></div>
+      <p id="intro-text" ref="introText" v-html="text"></p>
     </div>
     <button
       class="pt-8 text-white flex items-center gap-x-1"
