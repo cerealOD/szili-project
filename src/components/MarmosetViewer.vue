@@ -4,7 +4,7 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { ref, onMounted, defineEmits } from "vue";
+import { ref, onMounted } from "vue";
 
 const props = defineProps({
   fileName: String,

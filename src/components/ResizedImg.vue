@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, defineEmits } from "vue";
+import { ref, onMounted } from "vue";
 import pica from "pica";
 
 const props = defineProps({
@@ -35,27 +35,30 @@ const resizeLocalImage = async () => {
   img.src = new URL(`${props.imgSrc}`, import.meta.url).href;
   await new Promise((resolve) => (img.onload = resolve));
 
-  // Create an offscreen canvas for resizing
   const canvas = document.createElement("canvas");
-  if (window.innerWidth < 1440) {
-    canvas.width = 1920; // Set the desired width
-    canvas.height = (img.height / img.width) * 1920; // Maintain aspect ratio
+  let targetWidth;
+
+  if (window.innerWidth < 768) {
+    targetWidth = 768;
+  } else if (window.innerWidth < 1024) {
+    targetWidth = 1024;
+  } else if (window.innerWidth < 1440) {
+    targetWidth = 1920;
   } else {
-    canvas.width = 2560; // Set the desired width
-    canvas.height = (img.height / img.width) * 2560; // Maintain aspect ratio
+    targetWidth = 2560;
   }
+
+  canvas.width = targetWidth;
+  canvas.height = (img.height / img.width) * targetWidth;
 
   const picaInstance = pica();
   await picaInstance.resize(img, canvas);
 
-  // Convert to Base64 and set to ref
   resizedImage.value = canvas.toDataURL("image/jpeg", 0.8);
 };
 
-// Emit event when image has fully loaded
 const onImageLoad = () => {
   emit("loaded");
-  // console.log("image");
 };
 
 onMounted(() => {

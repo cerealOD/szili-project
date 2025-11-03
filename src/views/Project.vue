@@ -41,16 +41,6 @@
       </a>
     </div>
 
-    <!-- <dotlottie-player
-      src="/circle.lottie"
-      v-show="loading"
-      background="transparent"
-      speed="1"
-      style="width: 150px; height: 150px"
-      loop
-      autoplay
-    ></dotlottie-player> -->
-
     <div v-show="loading" class="text-white text-xl tracking-wider">
       <div>
         {{
@@ -131,11 +121,9 @@ const titleContainer = ref(null);
 const softwares = ref([]);
 const text = ref("");
 const loading = ref(true);
-const processImages = ref(false);
-const loadedMediaCount = ref(0); // Tracks the number of fully loaded media
-const totalMediaCount = ref(0); // Total number of images, videos, and viewers to load
+const loadedMediaCount = ref(0);
+const totalMediaCount = ref(0);
 
-// Function to increment loaded media count
 const onMediaLoaded = () => {
   loadedMediaCount.value++;
 };
@@ -148,24 +136,23 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
-    document.addEventListener("DOMContentLoaded", function () {
-      const videos = document.querySelectorAll(".autoplay-video");
+    let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.play();
-            } else {
-              entry.target.pause();
-            }
-          });
-        },
-        { threshold: 0.5 }
-      ); // Adjust threshold as needed
+    if ("IntersectionObserver" in window) {
+      let lazyVideoObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (video) {
+          if (video.isIntersecting) {
+            video.target.play();
+            video.target.classList.remove("autoplay-video");
+            lazyVideoObserver.unobserve(video.target);
+          }
+        });
+      });
 
-      videos.forEach((video) => observer.observe(video));
-    });
+      lazyVideos.forEach(function (lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+      });
+    }
   }
 });
 
@@ -188,7 +175,7 @@ onMounted(() => {
       if (props.jones) {
         text.value = data[jonesRoute][1];
       } else {
-        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); // Replace line breaks
+        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); //replace line breaks
       }
     });
 });

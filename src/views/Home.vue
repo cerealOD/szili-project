@@ -25,6 +25,7 @@
           <img
             :src="'/thumbnails/diablo_2_thumbnail.png'"
             class="rounded-2xl"
+            loading="lazy"
           />
         </RouterLink>
         <RouterLink
@@ -40,7 +41,11 @@
               <span>Indiana Jones Art Blast</span>
             </div>
           </div>
-          <img :src="'/thumbnails/indiana_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/indiana_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
         <RouterLink
           to="/projects/the-rogue-angel-inarius"
@@ -55,7 +60,11 @@
               <span>The Rogue Angel Inarius</span>
             </div>
           </div>
-          <img :src="'/thumbnails/inarius_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/inarius_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
         <RouterLink
           to="/projects/barbarian"
@@ -73,6 +82,7 @@
           <img
             :src="'/thumbnails/barbarian_thumbnail.png'"
             class="rounded-2xl"
+            loading="lazy"
           />
         </RouterLink>
         <RouterLink
@@ -91,6 +101,7 @@
           <img
             :src="'/thumbnails/double_turret_gun_thumbnail.png'"
             class="rounded-2xl"
+            loading="lazy"
           />
         </RouterLink>
         <RouterLink
@@ -106,7 +117,11 @@
               <span>Skull Bow</span>
             </div>
           </div>
-          <img :src="'/thumbnails/bow_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/bow_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
         <RouterLink
           to="projects/borderlands-smg"
@@ -121,7 +136,11 @@
               <span>Borderlands SMG</span>
             </div>
           </div>
-          <img :src="'/thumbnails/smg_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/smg_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
         <RouterLink
           to="projects/antique-iron"
@@ -136,7 +155,11 @@
               <span>Antique Iron</span>
             </div>
           </div>
-          <img :src="'/thumbnails/iron_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/iron_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
 
         <RouterLink
@@ -152,7 +175,11 @@
               <span>Viking Axe</span>
             </div>
           </div>
-          <img :src="'/thumbnails/axe_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/axe_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
 
         <RouterLink
@@ -168,7 +195,11 @@
               <span>Jeep</span>
             </div>
           </div>
-          <img :src="'/thumbnails/jeep_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/jeep_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
         <RouterLink
           to="projects/laser-controller"
@@ -183,7 +214,11 @@
               <span>Laser Controller</span>
             </div>
           </div>
-          <img :src="'/thumbnails/laser_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/laser_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
         <RouterLink
           to="projects/diablo"
@@ -198,7 +233,11 @@
               <span>Diablo</span>
             </div>
           </div>
-          <img :src="'/thumbnails/diablo_thumbnail.png'" class="rounded-2xl" />
+          <img
+            :src="'/thumbnails/diablo_thumbnail.png'"
+            class="rounded-2xl"
+            loading="lazy"
+          />
         </RouterLink>
       </div>
     </div>
