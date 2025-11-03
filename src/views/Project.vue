@@ -96,11 +96,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect, nextTick, watch } from "vue";
+import { ref, onMounted, watchEffect } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
-import { useRoute } from "vue-router";
-const route = useRoute();
-const showPlayer = ref(false);
 
 const props = defineProps({
   routeName: String,

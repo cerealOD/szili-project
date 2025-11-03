@@ -2,8 +2,6 @@
   <div id="marmoset-container"></div>
 </template>
 <script setup>
-import { computed } from "vue";
-import { useRoute, useRouter } from "vue-router";
 import { ref, onMounted } from "vue";
 
 const props = defineProps({
@@ -44,7 +42,6 @@ if (document.body.scrollWidth >= 1680) {
 const myViewer = ref(null);
 
 onMounted(() => {
-  // console.log(width);
   // Initialize the Marmoset viewer only if hasMarmoset is true
   myViewer.value = new marmoset.WebViewer(
     width,

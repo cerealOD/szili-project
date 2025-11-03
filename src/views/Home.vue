@@ -257,8 +257,6 @@
   </div>
 </template>
 
-<script setup></script>
-
 <style>
 .prof-pic {
   background-image: url("../assets/prof-pic.jpg");

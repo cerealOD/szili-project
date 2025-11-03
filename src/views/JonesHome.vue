@@ -176,7 +176,7 @@ onMounted(() => {
   fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
-      text.value = data["indiana-jones"][0].replace(/\/n/g, "<br><br>"); // Replace line breaks
+      text.value = data["indiana-jones"][0].replace(/\/n/g, "<br><br>"); // replace line breaks
     });
 });
 </script>

@@ -25,7 +25,6 @@ const props = defineProps({
   imgSrc: String,
 });
 
-// Emits event when image is loaded
 const emit = defineEmits(["loaded"]);
 
 const resizedImage = ref(null);

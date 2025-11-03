@@ -37,10 +37,10 @@ const setExpanded = () => {
 };
 
 const updateHeight = async () => {
-  await nextTick(); // Wait for DOM updates
+  await nextTick();
+
   if (introText.value) {
     introTextHeight.value = introText.value.offsetHeight;
-    // console.log("Updated height:", introTextHeight.value);
     if (introTextHeight.value < 192) {
       expanded.value = true;
       expandButton.value.style.display = "none";

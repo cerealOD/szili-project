@@ -101,7 +101,6 @@ const downLoadPdf = () => {
   link.target = "_blank";
   link.download = "Szilard Hazi - Resume";
 
-  // Simulate a click on the element <a>
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
