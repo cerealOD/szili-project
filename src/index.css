@@ -39,8 +39,8 @@ p {
 .underlined-link:hover{
   @screen lg{
     text-decoration-color: #eeeef1;
-  
-    /*add those for opera and mozilla support*/
+
+    /*opera and mozilla support*/
     -webkit-text-decoration-color: #eeeef1;
     -moz-text-decoration-color: #eeeef1;
   }

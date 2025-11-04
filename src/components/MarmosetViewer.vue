@@ -105,7 +105,7 @@ onMounted(() => {
   // Emit the loaded event once the viewer is initialized
   setTimeout(() => {
     emit("loaded");
-  }, 1000); // Adjust timeout if needed
+  }, 1000);
 });
 </script>
 <style>

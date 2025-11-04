@@ -4,14 +4,20 @@
     class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
     style="width: fit-content"
   >
-    <img :src="'/icons/back.svg'" class="w-6 sm:w-9" alt="Back arrow icon" />
+    <img
+      :src="'/icons/back.svg'"
+      class="w-6 sm:w-9"
+      alt=""
+      aria-hidden="true"
+    />
     {{ jones ? "Back to Indiana Jones Art Blast" : "Back to Home " }}
   </RouterLink>
   <div class="flex flex-col items-center">
     <h1
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
-      ref="titleContainer"
-    ></h1>
+    >
+      {{ title }}
+    </h1>
     <ExpandingText :text="text"></ExpandingText>
     <p
       v-if="routeName == 'double-turret-gun'"
@@ -22,24 +28,30 @@
       <a
         href="https://drive.google.com/file/d/17hi_S8exERHQezUEAz5RiOJSfAE2gFCZ/view?usp=sharing"
         target="_blank"
+        rel="noopener noreferrer"
         class="flex items-center gap-x-1 bg-gray p-2 rounded-lg text-white hover:bg-white hover:text-gray resume-download"
         style="width: fit-content"
-        @click="downLoadPdf"
+        aria-label="Download Double Turret Gun project from Google Drive"
       >
         <img :src="'/icons/drive.svg'" width="20" alt="Google Drive logo" />
         <span class="text-sm font-medium text-left">Download Project</span>
       </a>
     </p>
 
-    <div v-show="loading" class="text-white text-xl tracking-wider">
-      <div>
+    <div
+      v-show="loading"
+      class="text-white text-xl tracking-wider"
+      role="status"
+      aria-live="polite"
+    >
+      <p>
+        Loading gallery:
         {{
           loadedMediaCount !== 0 || totalMediaCount !== 0
             ? Math.round((loadedMediaCount / totalMediaCount) * 100)
             : "0"
-        }}
-        %
-      </div>
+        }}%
+      </p>
     </div>
 
     <videoPlayer
@@ -75,7 +87,7 @@
     </div>
 
     <div v-show="!loading" class="w-full mt-8">
-      <span class="text-white font-semibold text-2xl">Software Used</span>
+      <h2 class="text-white font-semibold text-2xl">Software Used</h2>
       <div class="flex gap-2 flex-wrap mt-8">
         <div
           v-for="software in softwares"
@@ -144,16 +156,18 @@ watchEffect(() => {
   }
 });
 
+const title = ref("");
+
 onMounted(() => {
   let jonesRoute = props.routeName.split("/")[1];
   fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
       if (props.jones) {
-        titleContainer.value.textContent = data[jonesRoute][2];
+        title.value = data[jonesRoute][2];
         softwares.value = data[jonesRoute][3];
       } else {
-        titleContainer.value.textContent = data[props.routeName][2];
+        title.value = data[props.routeName][2];
         softwares.value = data[props.routeName][3];
       }
     });

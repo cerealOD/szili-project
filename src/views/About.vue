@@ -29,27 +29,32 @@
   </section>
 
   <section class="mb-16">
-    <h1 class="text-white text-2xl md:text-3xl font-medium mb-12">
+    <h2 class="text-white text-2xl md:text-3xl font-medium mb-12">
       Work history
-    </h1>
-    <div
-      class="rounded-2xl bg-menu-gray p-6 flex flex-col lg:flex-row sm:gap-x-16 2xl:gap-x-64 mb-4"
-    >
-      <div class="flex flex-col text-white lg:w-1/2 2xl:w-2/3">
+    </h2>
+    <article class="work-story">
+      <div class="work-story-text-container">
         <div class="flex flex-col mb-2">
-          <h2 class="font-bold text-lg lg:text-2xl lg:pt-4 mb-2">
+          <h3 class="font-bold text-lg lg:text-2xl lg:pt-4 mb-2">
             3D Environment Artist at Treehouse Ninjas
-          </h2>
+          </h3>
           <span
             class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
             style="width: fit-content"
           >
-            Jan 2023 - March 2025
+            <time datetime="2023-01">Jan 2023</time>
+            -
+            <time datetime="2025-03">March 2025</time>
           </span>
         </div>
 
         <span class="flex items-center gap-x-1 mb-8">
-          <img :src="'/icons/globe.svg'" class="flex-none" alt="Globe icon" />
+          <img
+            :src="'/icons/globe.svg'"
+            class="flex-none"
+            alt=""
+            aria-hidden="true"
+          />
           Budapest, Hungary
         </span>
         <div>
@@ -59,7 +64,7 @@
           <ul class="ml-6 text-white text-opacity-85">
             <li>
               Shipped award-winning AAA title: Indiana Jones and the Great
-              Circle, work in several projects
+              Circle, worked on several other projects
             </li>
             <li>
               Responsible for complete environments from initial blockout phase
@@ -79,11 +84,8 @@
           </ul>
         </div>
       </div>
-      <div
-        class="flex flex-col text-white bg-gray rounded-xl p-4 mt-4 lg:mt-0 flex-none lg:w-1/2 2xl:w-1/3"
-        style="height: fit-content"
-      >
-        <h2 class="font-bold text-lg lg:text-2xl mb-4">Main Project</h2>
+      <div class="work-story-project-container">
+        <h3 class="font-bold text-lg lg:text-2xl mb-4">Main Project</h3>
         <div class="flex flex-col sm:flex-row gap-x-4">
           <div class="flex-none">
             <img
@@ -93,9 +95,9 @@
             />
           </div>
           <div class="flex flex-col">
-            <h3 class="font-medium text-lg lg:text-xl mb-4">
+            <h4 class="font-medium text-lg lg:text-xl mb-4">
               Indiana Jones and the Great Circle
-            </h3>
+            </h4>
             <span class="mb-4 font-semibold text-white text-opacity-80"
               >Release date: 9 Dec, 2024</span
             >
@@ -128,25 +130,30 @@
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="rounded-2xl bg-menu-gray p-6 flex flex-col lg:flex-row sm:gap-x-16 2xl:gap-x-64 mb-4"
-    >
-      <div class="flex flex-col text-white lg:w-1/2 2xl:w-2/3">
+    </article>
+    <article class="work-story">
+      <div class="work-story-text-container">
         <div class="flex flex-col mb-2">
-          <h2 class="font-bold text-lg lg:text-2xl lg:pt-4 mb-2">
+          <h3 class="font-bold text-lg lg:text-2xl lg:pt-4 mb-2">
             Junior 3D Character Artist at RageSquid
-          </h2>
+          </h3>
           <span
             class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
             style="width: fit-content"
           >
-            Feb 2022 - Jan 2023
+            <time datetime="2022-02">Feb 2022</time>
+            -
+            <time datetime="2023-01">Jan 2023</time>
           </span>
         </div>
 
         <span class="flex items-center gap-x-1 mb-8">
-          <img :src="'/icons/globe.svg'" class="flex-none" alt="Globe icon" />
+          <img
+            :src="'/icons/globe.svg'"
+            class="flex-none"
+            alt=""
+            aria-hidden="true"
+          />
           Tilburg, Netherlands
         </span>
         <div>
@@ -162,11 +169,8 @@
           </ul>
         </div>
       </div>
-      <div
-        class="flex flex-col text-white bg-gray rounded-xl p-4 mt-4 lg:mt-0 flex-none lg:w-1/2 2xl:w-1/3"
-        style="height: fit-content"
-      >
-        <h2 class="font-bold text-lg lg:text-2xl mb-4">Main Project</h2>
+      <div class="work-story-project-container">
+        <h3 class="font-bold text-lg lg:text-2xl mb-4">Main Project</h3>
         <div class="flex flex-col sm:flex-row gap-x-4">
           <div class="flex-none">
             <img
@@ -176,7 +180,7 @@
             />
           </div>
           <div class="flex flex-col">
-            <h3 class="font-medium text-lg lg:text-xl mb-4">Descenders Next</h3>
+            <h4 class="font-medium text-lg lg:text-xl mb-4">Descenders Next</h4>
             <span class="mb-4 font-semibold text-white text-opacity-80"
               >Release date: 9 Apr, 2025
             </span>
@@ -196,13 +200,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </article>
   </section>
 
   <section>
-    <h1 class="text-white text-2xl md:text-3xl font-medium mb-8">
+    <h2 class="text-white text-2xl md:text-3xl font-medium mb-8">
       Software knowledge
-    </h1>
+    </h2>
     <div class="flex items-center gap-2 flex-wrap">
       <span
         v-for="software in softwares"
@@ -223,6 +227,7 @@
 
 <script setup>
 import { ref } from "vue";
+
 const softwares = ref([
   "3ds Max",
   "Adobe After Effects",
@@ -253,6 +258,16 @@ const softwares = ref([
 </script>
 
 <style>
+.work-story {
+  @apply rounded-2xl bg-menu-gray p-6 flex flex-col lg:flex-row sm:gap-x-16 2xl:gap-x-64 mb-4;
+}
+.work-story-text-container {
+  @apply flex flex-col text-white lg:w-1/2 2xl:w-2/3;
+}
+.work-story-project-container {
+  @apply flex flex-col text-white bg-gray rounded-xl p-4 mt-4 lg:mt-0 flex-none lg:w-1/2 2xl:w-1/3;
+  height: fit-content;
+}
 li {
   list-style-type: disc;
   padding-bottom: 12px;

@@ -3,15 +3,20 @@
     class="bg-menu-gray shadow-lg rounded-2xl p-8 flex flex-col lg:ml-8 lg:items-center lg:w-[360px] mb-16 lg:mb-0 lg:sticky lg:top-[156px]"
   >
     <div class="flex gap-x-4 flex-col sm:flex-row lg:flex-col lg:items-center">
-      <div
-        class="bg-center bg-no-repeat bg-cover h-32 w-32 sm:h-24 sm:w-24 lg:h-36 lg:w-36 rounded-full prof-pic mb-8 flex-none"
-      ></div>
+      <figure class="mb-8 flex-none lg:items-center">
+        <img
+          src="../assets/prof-pic.jpg"
+          alt="Portrait of Szilard Hazi"
+          class="bg-center bg-no-repeat bg-cover h-32 w-32 sm:h-24 sm:w-24 lg:h-36 lg:w-36 rounded-full"
+        />
+      </figure>
+
       <div class="flex flex-col lg:items-center">
-        <h1
+        <h2
           class="text-white text-xl lg:text-3xl font-bold lg:whitespace-nowrap mb-2 lg:mb-4"
         >
           Szilard Hazi
-        </h1>
+        </h2>
         <span
           class="text-white text-opacity-90 lg:text-lg font-semibold lg:whitespace-nowrap lg:mb-1"
         >
@@ -20,7 +25,12 @@
         <span
           class="text-white text-opacity-70 text-sm lg:text-base font-medium lg:whitespace-nowrap mb-8 flex items-center gap-x-1"
         >
-          <img :src="'/icons/globe.svg'" class="w-5 h-5" alt="Globe icon" />
+          <img
+            :src="'/icons/globe.svg'"
+            class="w-5 h-5"
+            alt=""
+            aria-hidden="true"
+          />
           Budapest, Hungary
         </span>
       </div>
@@ -45,14 +55,16 @@
       <a
         href="mailto:szilard.hazi91@gmail.com"
         class="mt-6 text-white w-full mb-4 cursor-pointer flex items-center gap-x-2 underlined-link"
+        aria-label="Email Szilard Hazi"
       >
-        <img :src="'/icons/mail.svg'" alt="Mail icon" />
+        <img :src="'/icons/mail.svg'" alt="" aria-hidden="true" />
         szilard.hazi91@gmail.com
       </a>
       <div class="text-white flex items-center w-full gap-x-2">
         <a
           href="https://www.artstation.com/szilardhazi3d"
           class="cursor-pointer"
+          aria-label="Szilard Hazi on ArtStation"
         >
           <img
             :src="'/icons/artstation.svg'"
@@ -63,6 +75,7 @@
         <a
           href="https://www.linkedin.com/in/szilard-hazi-3d/"
           class="cursor-pointer bg-white rounded-lg"
+          aria-label="Szilard Hazi on LinkedIn"
         >
           <img
             :src="'/icons/linkedin.svg'"
@@ -73,6 +86,8 @@
       </div>
     </div>
     <button
+      type="button"
+      aria-label="Download Szilard Hazi's resume as PDF"
       class="flex items-center gap-x-1 bg-gray p-2 rounded-lg text-white hover:bg-white hover:text-gray resume-download text-sm font-medium text-left"
       style="width: fit-content"
       @click="downLoadPdf"
