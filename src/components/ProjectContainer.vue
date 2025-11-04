@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full">
+  <main class="w-full">
     <Project :routeName="$route.params.slug" :projectFiles="projectFiles">
     </Project>
-  </div>
+  </main>
 </template>
 
 <script setup>

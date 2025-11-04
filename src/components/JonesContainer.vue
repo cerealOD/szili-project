@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full py-8">
+  <main class="w-full py-8">
     <Project
       :routeName="'indiana-jones-art-blast' + '/' + currentRouteName"
       :projectFiles="projectFiles"
       :jones="true"
     >
     </Project>
-  </div>
+  </main>
 </template>
 
 <script setup>

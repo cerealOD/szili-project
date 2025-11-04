@@ -1,5 +1,5 @@
 <template>
-  <main
+  <div
     class="flex flex-col items-center justify-between"
     style="min-height: 100vh"
   >
@@ -31,9 +31,11 @@
         >
       </nav>
     </header>
+
     <div class="pt-12 pb-20 md:py-16 lg:pt-20 container px-6 sm:px-16">
       <RouterView :key="$route.path" />
     </div>
+
     <footer class="w-full flex justify-center bg-menu-gray">
       <div
         class="container py-6 px-6 sm:px-16 text-white w-full text-sm font-medium flex items-center gap-x-1"
@@ -51,7 +53,7 @@
         >
       </div>
     </footer>
-  </main>
+  </div>
 </template>
 <style>
 .header-img {
