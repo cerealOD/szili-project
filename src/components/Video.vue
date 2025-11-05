@@ -3,8 +3,7 @@
     <video
       playsinline
       controls
-      muted
-      preload="auto"
+      autoplay
       class="autoplay-video rounded-3xl"
       loop
       @loadeddata="onVideoLoad"
