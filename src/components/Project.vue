@@ -62,28 +62,27 @@
       @loaded="onMediaLoaded"
     />
 
-    <div v-for="file in projectFiles">
-      <resizedImg
-        v-show="!loading"
-        v-if="file.includes('png')"
-        :imgSrc="'/' + routeName + '/' + file"
-        class="mb-4 lg:mb-8"
-        @loaded="onMediaLoaded"
-      />
-      <videoPlayer
-        v-show="!loading"
-        v-if="file.includes('mp4')"
-        :mp4="'/' + routeName + '/' + file"
-        class="mb-4 lg:mb-8"
-        @loaded="onMediaLoaded"
-      />
-      <marmoset
-        v-show="!loading"
-        v-if="file.includes('marmoset')"
-        :fileName="routeName"
-        class="mb-8"
-        @loaded="onMediaLoaded"
-      ></marmoset>
+    <div class="flex flex-col items-center gap-y-4 lg:gap-y-8">
+      <div v-for="file in projectFiles">
+        <resizedImg
+          v-show="!loading"
+          v-if="file.includes('png')"
+          :imgSrc="'/' + routeName + '/' + file"
+          @loaded="onMediaLoaded"
+        />
+        <videoPlayer
+          v-show="!loading"
+          v-if="file.includes('mp4')"
+          :mp4="'/' + routeName + '/' + file"
+          @loaded="onMediaLoaded"
+        />
+        <marmoset
+          v-show="!loading"
+          v-if="file.includes('marmoset')"
+          :fileName="routeName"
+          @loaded="onMediaLoaded"
+        ></marmoset>
+      </div>
     </div>
 
     <div v-show="!loading" class="w-full mt-8">
