@@ -64,19 +64,21 @@
 
     <div v-for="file in projectFiles">
       <resizedImg
+        v-show="!loading"
         v-if="file.includes('png')"
         :imgSrc="'/' + routeName + '/' + file"
         class="mb-4 lg:mb-8"
         @loaded="onMediaLoaded"
       />
       <videoPlayer
+        v-show="!loading"
         v-if="file.includes('mp4')"
         :mp4="'/' + routeName + '/' + file"
         class="mb-4 lg:mb-8"
         @loaded="onMediaLoaded"
       />
-
       <marmoset
+        v-show="!loading"
         v-if="file.includes('marmoset')"
         :fileName="routeName"
         class="mb-8"
@@ -137,23 +139,23 @@ watchEffect(() => {
   ) {
     loading.value = false;
     // if everything loaded, autoplay videos as they scroll in
-    let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
+    // let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
 
-    if ("IntersectionObserver" in window) {
-      let lazyVideoObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (video) {
-          if (video.isIntersecting) {
-            video.target.play();
-            video.target.classList.remove("autoplay-video");
-            lazyVideoObserver.unobserve(video.target);
-          }
-        });
-      });
+    // if ("IntersectionObserver" in window) {
+    //   let lazyVideoObserver = new IntersectionObserver(function (entries) {
+    //     entries.forEach(function (video) {
+    //       if (video.isIntersecting) {
+    //         video.target.play();
+    //         video.target.classList.remove("autoplay-video");
+    //         lazyVideoObserver.unobserve(video.target);
+    //       }
+    //     });
+    //   });
 
-      lazyVideos.forEach(function (lazyVideo) {
-        lazyVideoObserver.observe(lazyVideo);
-      });
-    }
+    //   lazyVideos.forEach(function (lazyVideo) {
+    //     lazyVideoObserver.observe(lazyVideo);
+    //   });
+    // }
   }
 });
 
