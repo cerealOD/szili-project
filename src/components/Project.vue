@@ -57,33 +57,33 @@
     <videoPlayer
       v-if="routeName == 'diablo-ii-environment-fan-art'"
       v-show="!loading"
+      :muted="false"
       :mp4="'https://prismatic-brioche-bc0903.netlify.app/diablo-ii-video.mp4'"
       class="mb-4 lg:mb-8"
       @loaded="onMediaLoaded"
     />
 
-    <div v-for="file in projectFiles">
-      <resizedImg
-        v-show="!loading"
-        v-if="file.includes('png')"
-        :imgSrc="'/' + routeName + '/' + file"
-        class="mb-4 lg:mb-8"
-        @loaded="onMediaLoaded"
-      />
-      <videoPlayer
-        v-show="!loading"
-        v-if="file.includes('mp4')"
-        :mp4="'/' + routeName + '/' + file"
-        class="mb-4 lg:mb-8"
-        @loaded="onMediaLoaded"
-      />
-      <marmoset
-        v-show="!loading"
-        v-if="file.includes('marmoset')"
-        :fileName="routeName"
-        class="mb-8"
-        @loaded="onMediaLoaded"
-      ></marmoset>
+    <div class="flex flex-col items-center gap-y-4 lg:gap-y-8">
+      <div v-for="file in projectFiles">
+        <resizedImg
+          v-show="!loading"
+          v-if="file.includes('png')"
+          :imgSrc="'/' + routeName + '/' + file"
+          @loaded="onMediaLoaded"
+        />
+        <videoPlayer
+          v-show="!loading"
+          v-if="file.includes('mp4')"
+          :mp4="'/' + routeName + '/' + file"
+          @loaded="onMediaLoaded"
+        />
+        <marmoset
+          v-show="!loading"
+          v-if="file.includes('marmoset')"
+          :fileName="routeName"
+          @loaded="onMediaLoaded"
+        ></marmoset>
+      </div>
     </div>
 
     <div v-show="!loading" class="w-full mt-8">
@@ -108,7 +108,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted, watchEffect, onBeforeUnmount } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
 
 const props = defineProps({
@@ -117,12 +117,13 @@ const props = defineProps({
   jones: Boolean,
 });
 
+const isMobile = ref(false);
 const title = ref("");
 const softwares = ref([]);
 const text = ref("");
 const loading = ref(true);
 
-//vars for showing loading percentage
+// Refs for showing loading percentage
 const loadedMediaCount = ref(0);
 const totalMediaCount = ref(0);
 
@@ -138,28 +139,37 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
-    // if everything loaded, autoplay videos as they scroll in
-    let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
 
-    if ("IntersectionObserver" in window) {
-      let lazyVideoObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (video) {
-          if (video.isIntersecting) {
-            video.target.play();
-            video.target.classList.remove("autoplay-video");
-            lazyVideoObserver.unobserve(video.target);
-          }
+    // If desktop, start videos as they scroll in
+    if (!isMobile.value) {
+      let lazyVideos = [...document.querySelectorAll(".project-video")];
+
+      if ("IntersectionObserver" in window) {
+        let lazyVideoObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (video) {
+            if (video.isIntersecting) {
+              video.target.play();
+              // Remove class so it won't be selected later
+              video.target.classList.remove("project-video");
+              // Unobserve once already scrolled in
+              lazyVideoObserver.unobserve(video.target);
+            }
+          });
         });
-      });
 
-      lazyVideos.forEach(function (lazyVideo) {
-        lazyVideoObserver.observe(lazyVideo);
-      });
+        lazyVideos.forEach(function (lazyVideo) {
+          lazyVideoObserver.observe(lazyVideo);
+        });
+      }
     }
   }
 });
 
 onMounted(() => {
+  // Check the device type
+  isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  // Fetch data
   let jonesRoute = props.routeName.split("/")[1];
   fetch("/content.json")
     .then((response) => response.json())
@@ -178,7 +188,7 @@ onMounted(() => {
       if (props.jones) {
         text.value = data[jonesRoute][1];
       } else {
-        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); //replace line breaks
+        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); // Replace line breaks
       }
     });
 });

@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full py-8">
+  <main class="py-8">
     <Project
       :routeName="'indiana-jones-art-blast' + '/' + currentRouteName"
       :projectFiles="projectFiles"
