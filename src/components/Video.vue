@@ -3,10 +3,10 @@
     <video
       playsinline
       controls
-      autoplay
+      muted
       class="autoplay-video rounded-3xl"
       loop
-      @loadeddata="onVideoLoad"
+      @canplay="onVideoLoad"
     >
       <source :src="mp4" type="video/mp4" />
     </video>
