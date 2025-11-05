@@ -64,21 +64,19 @@
 
     <div v-for="file in projectFiles">
       <resizedImg
-        v-show="!loading"
         v-if="file.includes('png')"
         :imgSrc="'/' + routeName + '/' + file"
         class="mb-4 lg:mb-8"
         @loaded="onMediaLoaded"
       />
       <videoPlayer
-        v-show="!loading"
         v-if="file.includes('mp4')"
         :mp4="'/' + routeName + '/' + file"
         class="mb-4 lg:mb-8"
         @loaded="onMediaLoaded"
       />
+
       <marmoset
-        v-show="!loading"
         v-if="file.includes('marmoset')"
         :fileName="routeName"
         class="mb-8"
