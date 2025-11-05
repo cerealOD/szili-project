@@ -108,7 +108,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted, watchEffect, onBeforeUnmount } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
 
 const props = defineProps({
@@ -117,6 +117,7 @@ const props = defineProps({
   jones: Boolean,
 });
 
+const isSmall = ref(false);
 const title = ref("");
 const softwares = ref([]);
 const text = ref("");
@@ -139,27 +140,31 @@ watchEffect(() => {
   ) {
     loading.value = false;
     // if everything loaded, autoplay videos as they scroll in
-    // let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
+    if (!isSmall.value) {
+      let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
 
-    // if ("IntersectionObserver" in window) {
-    //   let lazyVideoObserver = new IntersectionObserver(function (entries) {
-    //     entries.forEach(function (video) {
-    //       if (video.isIntersecting) {
-    //         video.target.play();
-    //         video.target.classList.remove("autoplay-video");
-    //         lazyVideoObserver.unobserve(video.target);
-    //       }
-    //     });
-    //   });
+      if ("IntersectionObserver" in window) {
+        let lazyVideoObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (video) {
+            if (video.isIntersecting) {
+              video.target.play();
+              video.target.classList.remove("autoplay-video");
+              lazyVideoObserver.unobserve(video.target);
+            }
+          });
+        });
 
-    //   lazyVideos.forEach(function (lazyVideo) {
-    //     lazyVideoObserver.observe(lazyVideo);
-    //   });
-    // }
+        lazyVideos.forEach(function (lazyVideo) {
+          lazyVideoObserver.observe(lazyVideo);
+        });
+      }
+    }
   }
 });
 
 onMounted(() => {
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize());
   let jonesRoute = props.routeName.split("/")[1];
   fetch("/content.json")
     .then((response) => response.json())
@@ -182,6 +187,13 @@ onMounted(() => {
       }
     });
 });
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkScreenSize());
+});
+
+const checkScreenSize = () => {
+  isSmall.value = window.innerWidth < 768;
+};
 </script>
 <style>
 .expanding-text {
