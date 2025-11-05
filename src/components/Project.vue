@@ -40,12 +40,12 @@
 
     <div
       v-show="loading"
-      class="text-white text-xl tracking-wider"
+      class="text-white font-medium text-base md:text-lg lg:text-xl"
       role="status"
       aria-live="polite"
     >
-      <p>
-        Loading gallery:
+      Loading gallery:
+      <p class="tracking-wider inline">
         {{
           loadedMediaCount !== 0 || totalMediaCount !== 0
             ? Math.round((loadedMediaCount / totalMediaCount) * 100)
@@ -117,10 +117,12 @@ const props = defineProps({
   jones: Boolean,
 });
 
-const titleContainer = ref(null);
+const title = ref("");
 const softwares = ref([]);
 const text = ref("");
 const loading = ref(true);
+
+//vars for showing loading percentage
 const loadedMediaCount = ref(0);
 const totalMediaCount = ref(0);
 
@@ -136,6 +138,7 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
+    // if everything loaded, autoplay videos as they scroll in
     let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
 
     if ("IntersectionObserver" in window) {
@@ -155,8 +158,6 @@ watchEffect(() => {
     }
   }
 });
-
-const title = ref("");
 
 onMounted(() => {
   let jonesRoute = props.routeName.split("/")[1];

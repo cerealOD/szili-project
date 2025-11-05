@@ -8,6 +8,7 @@
           src="../assets/prof-pic.jpg"
           alt="Portrait of Szilard Hazi"
           class="bg-center bg-no-repeat bg-cover h-32 w-32 sm:h-24 sm:w-24 lg:h-36 lg:w-36 rounded-full"
+          loading="lazy"
         />
       </figure>
 
