@@ -117,13 +117,13 @@ const props = defineProps({
   jones: Boolean,
 });
 
-const isSmall = ref(false);
+const isMobile = ref(false);
 const title = ref("");
 const softwares = ref([]);
 const text = ref("");
 const loading = ref(true);
 
-//vars for showing loading percentage
+// Refs for showing loading percentage
 const loadedMediaCount = ref(0);
 const totalMediaCount = ref(0);
 
@@ -139,32 +139,34 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
-    // if everything loaded, autoplay videos as they scroll in
-    if (!isSmall.value) {
-      let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
-
-      if ("IntersectionObserver" in window) {
-        let lazyVideoObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (video) {
-            if (video.isIntersecting) {
-              video.target.play();
-              video.target.classList.remove("autoplay-video");
-              lazyVideoObserver.unobserve(video.target);
-            }
-          });
-        });
-
-        lazyVideos.forEach(function (lazyVideo) {
-          lazyVideoObserver.observe(lazyVideo);
-        });
-      }
-    }
   }
 });
 
 onMounted(() => {
-  checkScreenSize();
-  window.addEventListener("resize", checkScreenSize());
+  // Check the device type
+  isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  // If desktop, start videos as they scroll in
+  if (!isMobile.value) {
+    let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
+
+    if ("IntersectionObserver" in window) {
+      let lazyVideoObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (video) {
+          if (video.isIntersecting) {
+            video.target.play();
+            video.target.classList.remove("autoplay-video");
+            lazyVideoObserver.unobserve(video.target);
+          }
+        });
+      });
+
+      lazyVideos.forEach(function (lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+      });
+    }
+  }
+
+  // Fetch data
   let jonesRoute = props.routeName.split("/")[1];
   fetch("/content.json")
     .then((response) => response.json())
@@ -183,17 +185,10 @@ onMounted(() => {
       if (props.jones) {
         text.value = data[jonesRoute][1];
       } else {
-        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); //replace line breaks
+        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); // Replace line breaks
       }
     });
 });
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", checkScreenSize());
-});
-
-const checkScreenSize = () => {
-  isSmall.value = window.innerWidth < 768;
-};
 </script>
 <style>
 .expanding-text {

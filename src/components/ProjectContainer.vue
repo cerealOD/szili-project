@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full">
+  <main>
     <Project :routeName="$route.params.slug" :projectFiles="projectFiles">
     </Project>
   </main>

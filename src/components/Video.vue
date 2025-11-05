@@ -3,7 +3,7 @@
     <video
       playsinline
       controls
-      :autoplay="isSmall"
+      :autoplay="isMobile"
       class="autoplay-video rounded-3xl"
       loop
       @loadeddata="onVideoLoad"
@@ -14,30 +14,21 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const props = defineProps({
   mp4: String,
 });
 
-const isSmall = ref(false);
+const isMobile = ref(false);
 
 onMounted(() => {
-  checkScreenSize();
-  window.addEventListener("resize", checkScreenSize());
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", checkScreenSize());
+  isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 });
 
 const emit = defineEmits(["loaded"]);
 
 const onVideoLoad = () => {
   emit("loaded");
-};
-
-const checkScreenSize = () => {
-  isSmall.value = window.innerWidth < 768;
 };
 </script>
