@@ -4,9 +4,9 @@
       playsinline
       controls
       :muted="muted"
-      :autoplay="isMobile"
       class="autoplay-video rounded-3xl"
       loop
+      preload="metadata"
       @loadeddata="onVideoLoad"
     >
       <source :src="mp4" type="video/mp4" />
@@ -22,11 +22,7 @@ defineProps({
   muted: { type: Boolean, default: true },
 });
 
-const isMobile = ref(false);
-
-onMounted(() => {
-  isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-});
+onMounted(() => {});
 
 const emit = defineEmits(["loaded"]);
 
