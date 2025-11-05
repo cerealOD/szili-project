@@ -57,6 +57,7 @@
     <videoPlayer
       v-if="routeName == 'diablo-ii-environment-fan-art'"
       v-show="!loading"
+      :muted="false"
       :mp4="'https://prismatic-brioche-bc0903.netlify.app/diablo-ii-video.mp4'"
       class="mb-4 lg:mb-8"
       @loaded="onMediaLoaded"
@@ -138,32 +139,34 @@ watchEffect(() => {
     loadedMediaCount.value >= totalMediaCount.value
   ) {
     loading.value = false;
+
+    // If desktop, start videos as they scroll in
+    if (!isMobile.value) {
+      let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
+      console.log(lazyVideos);
+
+      if ("IntersectionObserver" in window) {
+        let lazyVideoObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (video) {
+            if (video.isIntersecting) {
+              video.target.play();
+              video.target.classList.remove("autoplay-video");
+              lazyVideoObserver.unobserve(video.target);
+            }
+          });
+        });
+
+        lazyVideos.forEach(function (lazyVideo) {
+          lazyVideoObserver.observe(lazyVideo);
+        });
+      }
+    }
   }
 });
 
 onMounted(() => {
   // Check the device type
   isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  // If desktop, start videos as they scroll in
-  if (!isMobile.value) {
-    let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
-
-    if ("IntersectionObserver" in window) {
-      let lazyVideoObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (video) {
-          if (video.isIntersecting) {
-            video.target.play();
-            video.target.classList.remove("autoplay-video");
-            lazyVideoObserver.unobserve(video.target);
-          }
-        });
-      });
-
-      lazyVideos.forEach(function (lazyVideo) {
-        lazyVideoObserver.observe(lazyVideo);
-      });
-    }
-  }
 
   // Fetch data
   let jonesRoute = props.routeName.split("/")[1];

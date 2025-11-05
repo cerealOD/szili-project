@@ -3,6 +3,7 @@
     <video
       playsinline
       controls
+      :muted="muted"
       :autoplay="isMobile"
       class="autoplay-video rounded-3xl"
       loop
@@ -16,8 +17,9 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
-const props = defineProps({
+defineProps({
   mp4: String,
+  muted: { type: Boolean, default: true },
 });
 
 const isMobile = ref(false);
