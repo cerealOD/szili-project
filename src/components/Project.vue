@@ -142,15 +142,16 @@ watchEffect(() => {
 
     // If desktop, start videos as they scroll in
     if (!isMobile.value) {
-      let lazyVideos = [...document.querySelectorAll(".autoplay-video")];
-      console.log(lazyVideos);
+      let lazyVideos = [...document.querySelectorAll(".project-video")];
 
       if ("IntersectionObserver" in window) {
         let lazyVideoObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (video) {
             if (video.isIntersecting) {
               video.target.play();
-              video.target.classList.remove("autoplay-video");
+              // Remove class so it won't be selected later
+              video.target.classList.remove("project-video");
+              // Unobserve once already scrolled in
               lazyVideoObserver.unobserve(video.target);
             }
           });
