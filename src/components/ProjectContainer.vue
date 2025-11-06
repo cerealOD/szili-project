@@ -1,7 +1,6 @@
 <template>
   <main>
-    <Project :routeName="$route.params.slug" :projectFiles="projectFiles">
-    </Project>
+    <Project :routeName="$route.params.slug" :project="project"> </Project>
   </main>
 </template>
 
@@ -9,19 +8,17 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
+import { useContentData } from "@/composables/useContentData.js";
 
 import Project from "./Project.vue";
 
 const route = useRoute();
 const currentRouteName = computed(() => route.params.slug);
 
-const projectFiles = ref([]);
+const project = ref({});
 
-onMounted(() => {
-  fetch("/content.json")
-    .then((response) => response.json())
-    .then((data) => {
-      projectFiles.value = data[currentRouteName.value][0];
-    });
+onMounted(async () => {
+  const data = await useContentData();
+  project.value = data[currentRouteName.value];
 });
 </script>

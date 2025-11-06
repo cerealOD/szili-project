@@ -5,7 +5,7 @@
       :class="!expanded ? 'add-mask' : ''"
       id="expanding-div"
     >
-      <p id="intro-text" ref="introText" v-html="text"></p>
+      <p id="intro-text" ref="introText" v-html="realText"></p>
     </div>
     <button
       class="pt-8 text-white flex items-center gap-x-1"
@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup>
-import { ref, nextTick, watch } from "vue";
+import { ref, nextTick, watch, onMounted, computed } from "vue";
 const expanded = ref(false);
 const introText = ref(null);
 const expandButton = ref(null);
@@ -27,6 +27,8 @@ const introTextHeight = ref(Number);
 const props = defineProps({
   text: String,
 });
+
+const realText = computed(() => props.text.replace(/\/n/g, "<br><br>"));
 
 const setExpanded = () => {
   let expanding = document.getElementById("expanding-div");
@@ -47,7 +49,7 @@ const updateHeight = async () => {
     }
   }
 };
-
+onMounted(updateHeight);
 watch(() => props.text, updateHeight);
 </script>
 <style>

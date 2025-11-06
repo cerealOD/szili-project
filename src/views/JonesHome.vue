@@ -217,14 +217,13 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
+import { useContentData } from "@/composables/useContentData.js";
+
 const text = ref("");
 
-onMounted(() => {
-  fetch("/content.json")
-    .then((response) => response.json())
-    .then((data) => {
-      text.value = data["indiana-jones"][0].replace(/\/n/g, "<br><br>"); // Replace line breaks
-    });
+onMounted(async () => {
+  const data = await useContentData();
+  text.value = data["indiana-jones"][0];
 });
 </script>
 <style>
