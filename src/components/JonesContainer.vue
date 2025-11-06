@@ -1,5 +1,5 @@
 <template>
-  <main class="py-8">
+  <main>
     <Project
       :routeName="'indiana-jones-art-blast' + '/' + currentRouteName"
       :projectFiles="projectFiles"
@@ -25,7 +25,7 @@ onMounted(() => {
   fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
-      projectFiles.value = data[currentRouteName.value][0];
+      projectFiles.value = data[currentRouteName.value]["files"];
     });
 });
 </script>

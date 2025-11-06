@@ -21,7 +21,7 @@ onMounted(() => {
   fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
-      projectFiles.value = data[currentRouteName.value][0];
+      projectFiles.value = data[currentRouteName.value]["files"];
     });
 });
 </script>

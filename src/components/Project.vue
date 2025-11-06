@@ -165,32 +165,30 @@ watchEffect(() => {
   }
 });
 
-onMounted(() => {
+onMounted(async () => {
   // Check the device type
   isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   // Fetch data
   let jonesRoute = props.routeName.split("/")[1];
+  const currentRoute = props.jones ? jonesRoute : props.routeName;
+
   fetch("/content.json")
     .then((response) => response.json())
     .then((data) => {
-      if (props.jones) {
-        title.value = data[jonesRoute][2];
-        softwares.value = data[jonesRoute][3];
-      } else {
-        title.value = data[props.routeName][2];
-        softwares.value = data[props.routeName][3];
-      }
+      softwares.value = data[currentRoute]["software"];
     });
-  fetch("/content.json")
-    .then((response) => response.json())
-    .then((data) => {
-      if (props.jones) {
-        text.value = data[jonesRoute][1];
-      } else {
-        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); // Replace line breaks
-      }
-    });
+
+  // Fetch project from directus by slug
+  const res = await fetch(
+    `https://directus-production-8a29.up.railway.app/items/projects?filter[slug][_eq]=${
+      props.jones ? jonesRoute : props.routeName
+    }`
+  );
+  const projectJson = await res.json();
+
+  title.value = projectJson.data[0].title;
+  text.value = projectJson.data[0].description;
 });
 </script>
 <style>
