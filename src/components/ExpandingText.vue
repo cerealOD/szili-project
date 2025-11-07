@@ -1,7 +1,7 @@
 <template>
-  <div class="mb-8 flex flex-col items-center">
+  <div class="mb-14 flex flex-col items-center">
     <div
-      class="md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text max-h-48 overflow-hidden"
+      class="text-sm sm:text-base md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text max-h-48 overflow-hidden"
       :class="!expanded ? 'add-mask' : ''"
       id="expanding-div"
     >

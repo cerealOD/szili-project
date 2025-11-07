@@ -1,113 +1,116 @@
 <template>
-  <RouterLink
-    :to="jones ? '/projects/indiana-jones-art-blast' : '/'"
-    class="w-full flex items-center text-white gap-x-2 sm:text-lg underlined-link"
-    style="width: fit-content"
-  >
-    <img
-      :src="'/icons/back.svg'"
-      class="w-6 sm:w-9"
-      alt=""
-      aria-hidden="true"
-    />
-    {{ jones ? "Back to Indiana Jones Art Blast" : "Back to Home " }}
-  </RouterLink>
-  <div class="flex flex-col items-center">
-    <h1
-      v-if="title"
-      class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
+  <div class="min-h-[100vh]">
+    <RouterLink
+      :to="jones ? '/projects/indiana-jones-art-blast' : '/'"
+      class="w-full flex items-center text-white gap-x-2 text-sm sm:text-base lg:text-lg underlined-link"
+      style="width: fit-content"
     >
-      {{ title }}
-    </h1>
-    <div
-      v-else
-      class="h-16 w-64 bg-gray-700 animate-pulse rounded-md my-16"
-    ></div>
-
-    <ExpandingText v-if="text" :text="text"></ExpandingText>
-
-    <p
-      v-if="routeName == 'double-turret-gun'"
-      class="w-full md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 flex flex-col gap-y-2 mb-8"
-    >
-      This project is available on the link below with complete breakdown,
-      source files, etc.:
-      <a
-        href="https://drive.google.com/file/d/17hi_S8exERHQezUEAz5RiOJSfAE2gFCZ/view?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-x-1 bg-gray p-2 rounded-lg text-white hover:bg-white hover:text-gray resume-download"
-        style="width: fit-content"
-        aria-label="Download Double Turret Gun project from Google Drive"
+      <img
+        :src="'/icons/back.svg'"
+        class="w-6 sm:w-9"
+        alt=""
+        aria-hidden="true"
+      />
+      {{ jones ? "Back to Indiana Jones Art Blast" : "Back to Home " }}
+    </RouterLink>
+    <div class="flex flex-col items-center">
+      <h1
+        v-if="title"
+        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium py-10 md:py-12 lg:py-16text-center text-white"
       >
-        <img :src="'/icons/drive.svg'" width="20" alt="Google Drive logo" />
-        <span class="text-sm font-medium text-left">Download Project</span>
-      </a>
-    </p>
+        {{ title }}
+      </h1>
+      <div
+        v-else
+        class="h-16 w-64 bg-gray-700 animate-pulse rounded-md my-16"
+      ></div>
 
-    <div
-      v-show="loading"
-      class="text-white font-medium text-base md:text-lg lg:text-xl"
-      role="status"
-      aria-live="polite"
-    >
-      Loading gallery:
-      <p class="tracking-wider inline">
-        {{
-          loadedMediaCount !== 0 || totalMediaCount !== 0
-            ? Math.round((loadedMediaCount / totalMediaCount) * 100)
-            : "0"
-        }}%
-      </p>
-    </div>
+      <ExpandingText v-if="text" :text="text"></ExpandingText>
 
-    <videoPlayer
-      v-if="routeName == 'diablo-ii-environment-fan-art'"
-      v-show="!loading"
-      :muted="false"
-      :mp4="'https://prismatic-brioche-bc0903.netlify.app/diablo-ii-video.mp4'"
-      class="mb-4 lg:mb-8"
-      @loaded="onMediaLoaded"
-    />
-
-    <div class="flex flex-col items-center gap-y-4 lg:gap-y-8">
-      <div v-for="file in projectFiles">
-        <resizedImg
-          v-show="!loading"
-          v-if="file.includes('png')"
-          :imgSrc="'/' + routeName + '/' + file"
-          @loaded="onMediaLoaded"
-        />
-        <videoPlayer
-          v-show="!loading"
-          v-if="file.includes('mp4')"
-          :mp4="'/' + routeName + '/' + file"
-          @loaded="onMediaLoaded"
-        />
-        <marmoset
-          v-show="!loading"
-          v-if="file.includes('marmoset')"
-          :fileName="routeName"
-          @loaded="onMediaLoaded"
-        ></marmoset>
-      </div>
-    </div>
-
-    <div v-show="!loading" class="w-full mt-8">
-      <h2 class="text-white font-semibold text-2xl">Software Used</h2>
-      <div class="flex gap-2 flex-wrap mt-8">
-        <div
-          v-for="software in softwares"
-          :key="software"
-          class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white"
+      <p
+        v-if="routeName == 'double-turret-gun'"
+        class="w-full md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 flex flex-col gap-y-2 mb-8"
+      >
+        This project is available on the link below with complete breakdown,
+        source files, etc.:
+        <a
+          href="https://drive.google.com/file/d/17hi_S8exERHQezUEAz5RiOJSfAE2gFCZ/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-x-1 bg-gray p-2 rounded-lg text-white hover:bg-white hover:text-gray resume-download"
+          style="width: fit-content"
+          aria-label="Download Double Turret Gun project from Google Drive"
         >
-          <img
-            :src="'/logos/' + software + '.png'"
-            width="24"
-            class="rounded-md"
-            :alt="software + ' logo'"
+          <img :src="'/icons/drive.svg'" width="20" alt="Google Drive logo" />
+          <span class="text-sm font-medium text-left">Download Project</span>
+        </a>
+      </p>
+
+      <div
+        v-show="loading"
+        class="text-white font-medium text-base md:text-lg lg:text-xl"
+        role="status"
+        aria-live="polite"
+      >
+        Loading gallery:
+        <p class="tracking-wider inline">
+          {{
+            loadedMediaCount !== 0 || totalMediaCount !== 0
+              ? Math.round((loadedMediaCount / totalMediaCount) * 100)
+              : "0"
+          }}%
+        </p>
+      </div>
+
+      <videoPlayer
+        v-if="routeName == 'diablo-ii-environment-fan-art'"
+        v-show="!loading"
+        :muted="false"
+        :mp4="'https://prismatic-brioche-bc0903.netlify.app/diablo-ii-video.mp4'"
+        class="mb-4 lg:mb-8"
+        @loaded="onMediaLoaded"
+      />
+
+      <div class="flex flex-col items-center gap-y-4 lg:gap-y-8">
+        <div v-for="file in projectFiles">
+          <resizedImg
+            v-show="!loading"
+            v-if="file.includes('png')"
+            :imgSrc="'/' + routeName + '/' + file"
+            @loaded="onMediaLoaded"
           />
-          <span>{{ software }}</span>
+          <videoPlayer
+            v-show="!loading"
+            v-if="file.includes('mp4')"
+            :mp4="'/' + routeName + '/' + file"
+            @loaded="onMediaLoaded"
+          />
+          <marmoset
+            v-show="!loading"
+            v-if="file.includes('marmoset')"
+            :fileName="routeName"
+            @loaded="onMediaLoaded"
+          ></marmoset>
+        </div>
+      </div>
+
+      <div v-show="!loading" class="w-full mt-12 lg:mt-16">
+        <h2 class="text-white font-semibold text-lg sm:text-xl lg:text-2xl">
+          Software Used
+        </h2>
+        <div class="flex gap-2 flex-wrap mt-8">
+          <div
+            v-for="software in softwares"
+            :key="software"
+            class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white text-sm lg:text-base"
+          >
+            <img
+              :src="'/logos/' + software + '.png'"
+              class="rounded-md w-4 lg:w-6"
+              :alt="software + ' logo'"
+            />
+            <span>{{ software }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -124,11 +127,10 @@ const props = defineProps({
   jones: Boolean,
 });
 
-const projectFiles = computed(() => props.project[0]);
-const text = computed(() => props.project[1]);
-
-const title = computed(() => props.project[2]);
-const softwares = computed(() => props.project[3]);
+const projectFiles = computed(() => props.project["files"]);
+const text = computed(() => props.project["description"]);
+const title = computed(() => props.project["title"]);
+const softwares = computed(() => props.project["software"]);
 
 const isMobile = ref(false);
 

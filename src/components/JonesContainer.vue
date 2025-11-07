@@ -1,5 +1,5 @@
 <template>
-  <main class="py-8">
+  <main>
     <Project
       :routeName="'indiana-jones-art-blast' + '/' + currentRouteName"
       :project="project"
@@ -24,6 +24,7 @@ const project = ref({});
 
 onMounted(async () => {
   const data = await useContentData();
-  project.value = data[currentRouteName.value];
+  project.value =
+    data["indiana-jones-art-blast"]["sub-projects"][currentRouteName.value];
 });
 </script>

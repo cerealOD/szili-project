@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="flex flex-col items-center justify-between"
-    style="min-height: 100vh"
-  >
+  <div class="flex flex-col items-center justify-between min-h-[100vh]">
     <header
       class="sticky top-0 z-30 w-full flex justify-center"
       :class="[
@@ -15,7 +12,7 @@
       ]"
     >
       <nav
-        class="gap-x-16 text-white text-lg w-full flex items-center py-6 px-6 sm:px-16 container"
+        class="gap-x-8 sm:gap-x-14 md:gap-x-16 text-white text-base sm:text-lg w-full flex items-center py-5 px-6 sm:p-6 sm:px-16 container"
       >
         <RouterLink
           to="/"
@@ -32,7 +29,7 @@
       </nav>
     </header>
 
-    <div class="pt-12 pb-20 md:py-16 lg:pt-20 container px-6 sm:px-16">
+    <div class="pt-8 pb-20 md:py-12 container px-6 sm:px-16">
       <RouterView :key="$route.path" />
     </div>
 

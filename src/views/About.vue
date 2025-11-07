@@ -1,9 +1,7 @@
 <template>
   <main>
     <section class="mb-16">
-      <h1 class="text-white text-2xl md:text-3xl font-medium mb-12">
-        About me
-      </h1>
+      <h1 class="main-title">About me</h1>
       <div
         class="lg:text-lg/7 text-white text-opacity-85"
         style="max-width: 1000px"
@@ -32,26 +30,21 @@
     </section>
 
     <section class="mb-16">
-      <h2 class="text-white text-2xl md:text-3xl font-medium mb-12">
-        Work history
-      </h2>
+      <h2 class="main-title">Work history</h2>
       <article class="work-story">
         <div class="work-story-text-container">
           <div class="flex flex-col mb-2">
-            <h3 class="font-bold text-lg lg:text-2xl lg:pt-4 mb-2">
-              3D Environment Artist at Treehouse Ninjas
-            </h3>
-            <span
-              class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
-              style="width: fit-content"
-            >
+            <span class="date-label" style="width: fit-content">
               <time datetime="2023-01">Jan 2023</time>
               -
               <time datetime="2025-03">March 2025</time>
             </span>
+            <h3 class="role-title">
+              3D Environment Artist at Treehouse Ninjas
+            </h3>
           </div>
 
-          <span class="flex items-center gap-x-1 mb-8">
+          <span class="location-tag">
             <img
               :src="'/icons/globe.svg'"
               class="flex-none"
@@ -61,10 +54,10 @@
             Budapest, Hungary
           </span>
           <div>
-            <p class="pb-4 text-lg font-medium">
+            <p class="role-subtitle">
               Crafting story-driven worlds for AAA games
             </p>
-            <ul class="ml-6 text-white text-opacity-85">
+            <ul class="role-list">
               <li>
                 Shipped award-winning AAA title: Indiana Jones and the Great
                 Circle, worked on several other projects
@@ -88,8 +81,8 @@
           </div>
         </div>
         <div class="work-story-project-container">
-          <h3 class="font-bold text-lg lg:text-2xl mb-4">Main Project</h3>
-          <div class="flex flex-col sm:flex-row gap-x-4">
+          <h3 class="main-project">Main Project</h3>
+          <div class="main-project-container">
             <div class="flex-none">
               <img
                 :src="require('../assets/jones-cover.jpg')"
@@ -98,17 +91,12 @@
               />
             </div>
             <div class="flex flex-col">
-              <h4 class="font-medium text-lg lg:text-xl mb-4">
-                Indiana Jones and the Great Circle
-              </h4>
-              <span class="mb-4 font-semibold text-white text-opacity-80"
-                >Release date: 9 Dec, 2024</span
-              >
-              <div class="flex items-center gap-x-1 mb-2">
+              <h4 class="project-title">Indiana Jones and the Great Circle</h4>
+              <span class="release-date">Release date: 9 Dec, 2024</span>
+              <div class="scores-container mb-2">
                 <img
                   :src="require('/icons/metacritic.svg')"
-                  width="24"
-                  class="rounded-xl"
+                  class="rounded-xl w-4 sm:w-6"
                   alt="Metacritic logo"
                 />
                 <a
@@ -117,11 +105,10 @@
                   >Metacritic Score: 86</a
                 >
               </div>
-              <div class="flex items-center gap-x-1">
+              <div class="scores-container">
                 <img
                   :src="require('/icons/steam.svg')"
-                  width="24"
-                  class="rounded-xl"
+                  class="rounded-xl w-4 sm:w-6"
                   alt="Steam logo"
                 />
                 <a
@@ -137,20 +124,15 @@
       <article class="work-story">
         <div class="work-story-text-container">
           <div class="flex flex-col mb-2">
-            <h3 class="font-bold text-lg lg:text-2xl lg:pt-4 mb-2">
-              Junior 3D Character Artist at RageSquid
-            </h3>
-            <span
-              class="rounded-lg bg-gray p-2 text-sm font-semibold text-green whitespace-nowrap mb-2 2xl:mb-0"
-              style="width: fit-content"
-            >
+            <span class="date-label" style="width: fit-content">
               <time datetime="2022-02">Feb 2022</time>
               -
               <time datetime="2023-01">Jan 2023</time>
             </span>
+            <h3 class="role-title">Junior 3D Character Artist at RageSquid</h3>
           </div>
 
-          <span class="flex items-center gap-x-1 mb-8">
+          <span class="location-tag">
             <img
               :src="'/icons/globe.svg'"
               class="flex-none"
@@ -160,10 +142,10 @@
             Tilburg, Netherlands
           </span>
           <div>
-            <div class="pb-4 text-lg font-medium">
+            <p class="role-subtitle">
               I have worked on their upcoming title - Descencers Next
-            </div>
-            <ul class="ml-6 text-white text-opacity-85">
+            </p>
+            <ul class="role-list">
               <li>
                 Sculpted highpoly character models by following given
                 proportions to match existing animations
@@ -173,8 +155,8 @@
           </div>
         </div>
         <div class="work-story-project-container">
-          <h3 class="font-bold text-lg lg:text-2xl mb-4">Main Project</h3>
-          <div class="flex flex-col sm:flex-row gap-x-4">
+          <h3 class="main-project">Main Project</h3>
+          <div class="main-project-container">
             <div class="flex-none">
               <img
                 :src="require('../assets/descenders-cover.jpg')"
@@ -183,17 +165,12 @@
               />
             </div>
             <div class="flex flex-col">
-              <h4 class="font-medium text-lg lg:text-xl mb-4">
-                Descenders Next
-              </h4>
-              <span class="mb-4 font-semibold text-white text-opacity-80"
-                >Release date: 9 Apr, 2025
-              </span>
-              <div class="flex items-center gap-x-1">
+              <h4 class="project-title">Descenders Next</h4>
+              <span class="release-date">Release date: 9 Apr, 2025 </span>
+              <div class="scores-container">
                 <img
                   :src="require('/icons/steam.svg')"
-                  width="24"
-                  class="rounded-xl"
+                  class="rounded-xl w-4 sm:w-6"
                   alt="Steam logo"
                 />
                 <a
@@ -209,23 +186,21 @@
     </section>
 
     <section>
-      <h2 class="text-white text-2xl md:text-3xl font-medium mb-8">
-        Software knowledge
-      </h2>
+      <h2 class="main-title">Software knowledge</h2>
+
       <div class="flex items-center gap-2 flex-wrap">
-        <span
+        <div
           v-for="software in softwares"
           :key="software"
-          class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white text-sm font-medium"
+          class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white text-sm lg:text-base"
         >
           <img
             :src="'/logos/' + software + '.png'"
-            width="24"
-            class="rounded-md"
+            class="rounded-md w-4 lg:w-6"
             :alt="software + ' logo'"
           />
-          {{ software }}
-        </span>
+          <span>{{ software }}</span>
+        </div>
       </div>
     </section>
   </main>
@@ -271,11 +246,44 @@ const softwares = ref([
   @apply flex flex-col text-white lg:w-1/2 2xl:w-2/3;
 }
 .work-story-project-container {
-  @apply flex flex-col text-white bg-gray rounded-xl p-4 mt-4 lg:mt-0 flex-none lg:w-1/2 2xl:w-1/3;
+  @apply flex flex-col text-white bg-gray rounded-xl p-4 mt-4 lg:mt-0 flex-none lg:w-1/2 2xl:w-1/3 shadow-lg;
   height: fit-content;
 }
 li {
   list-style-type: disc;
   padding-bottom: 12px;
+}
+.project-title {
+  @apply font-medium text-base sm:text-lg lg:text-xl mb-2;
+}
+.release-date {
+  @apply mb-4 lg:mb-8 font-semibold text-white text-opacity-80 text-sm;
+}
+.scores-container {
+  @apply flex items-center gap-x-1 text-sm;
+}
+.main-title {
+  @apply text-white text-2xl md:text-3xl font-medium mb-8;
+}
+.date-label {
+  @apply rounded-lg bg-gray p-2 text-xs sm:text-sm font-semibold text-green whitespace-nowrap mb-8;
+}
+.location-tag {
+  @apply flex items-center gap-x-1 mb-8 text-sm sm:text-base;
+}
+.role-title {
+  @apply font-bold text-lg lg:text-2xl mb-1;
+}
+.role-subtitle {
+  @apply text-base sm:text-lg font-medium sm:mb-6;
+}
+.role-list {
+  @apply ml-6 text-white text-opacity-90 text-sm sm:text-base;
+}
+.main-project {
+  @apply font-bold text-lg lg:text-2xl mb-4;
+}
+.main-project-container {
+  @apply flex flex-col sm:flex-row gap-x-4;
 }
 </style>

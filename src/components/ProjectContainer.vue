@@ -5,9 +5,8 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
 import { useRoute } from "vue-router";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useContentData } from "@/composables/useContentData.js";
 
 import Project from "./Project.vue";

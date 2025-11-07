@@ -14,7 +14,7 @@
 
       <div class="flex flex-col lg:items-center">
         <h2
-          class="text-white text-xl lg:text-3xl font-bold lg:whitespace-nowrap mb-2 lg:mb-4"
+          class="text-white text-lg md:text-xl lg:text-3xl font-bold lg:whitespace-nowrap mb-2 lg:mb-4"
         >
           Szilard Hazi
         </h2>
@@ -24,7 +24,7 @@
           3D Environment & character art
         </span>
         <span
-          class="text-white text-opacity-70 text-sm lg:text-base font-medium lg:whitespace-nowrap mb-8 flex items-center gap-x-1"
+          class="text-white text-opacity-70 text-sm lg:text-base font-medium lg:whitespace-nowrap mb-8 flex items-center gap-x-1 mt-1"
         >
           <img
             :src="'/icons/globe.svg'"
@@ -36,7 +36,9 @@
         </span>
       </div>
     </div>
-    <p class="text-white border-b border-solid border-white pb-8 mb-8">
+    <p
+      class="text-white border-b border-solid border-white pb-8 mb-8 text-sm sm:text-base"
+    >
       Hi, my name is Szilard, and I’m a passionate, self-taught 3D artist with
       3+ years of industry experience, specializing in game environments and
       character art. For more details about my experience and work, please visit
@@ -50,15 +52,20 @@
       tab.
     </p>
     <div class="border-b border-solid border-white pb-8 mb-8 w-full">
-      <span class="text-white font-medium text-left w-full">
+      <h3 class="text-white font-medium text-left w-full text-base">
         Contact & Socials
-      </span>
+      </h3>
       <a
         href="mailto:szilard.hazi91@gmail.com"
-        class="mt-6 text-white w-full mb-4 cursor-pointer flex items-center gap-x-2 underlined-link"
+        class="mt-6 text-white w-full mb-4 cursor-pointer flex items-center gap-x-2 underlined-link text-sm sm:text-base"
         aria-label="Email Szilard Hazi"
       >
-        <img :src="'/icons/mail.svg'" alt="" aria-hidden="true" />
+        <img
+          :src="'/icons/mail.svg'"
+          alt=""
+          aria-hidden="true"
+          class="w-4 sm:w-6"
+        />
         szilard.hazi91@gmail.com
       </a>
       <div class="text-white flex items-center w-full gap-x-2">
@@ -69,7 +76,7 @@
         >
           <img
             :src="'/icons/artstation.svg'"
-            width="30"
+            class="w-6 sm:w-[30px]"
             alt="Artstation logo"
           />
         </a>
@@ -80,8 +87,7 @@
         >
           <img
             :src="'/icons/linkedin.svg'"
-            width="28"
-            class="rounded-md"
+            class="rounded-md w-6 sm:w-7"
             alt="LinkedIn logo"
         /></a>
       </div>
