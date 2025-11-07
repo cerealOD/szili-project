@@ -14,11 +14,18 @@
   </RouterLink>
   <div class="flex flex-col items-center">
     <h1
+      v-if="title"
       class="text-3xl lg:text-4xl xl:text-5xl font-medium py-16 text-center text-white"
     >
       {{ title }}
     </h1>
-    <ExpandingText :text="text"></ExpandingText>
+    <div
+      v-else
+      class="h-16 w-64 bg-gray-700 animate-pulse rounded-md my-16"
+    ></div>
+
+    <ExpandingText v-if="text" :text="text"></ExpandingText>
+
     <p
       v-if="routeName == 'double-turret-gun'"
       class="w-full md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 flex flex-col gap-y-2 mb-8"
@@ -108,19 +115,23 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect, onBeforeUnmount } from "vue";
+import { ref, onMounted, watchEffect, computed } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
 
 const props = defineProps({
   routeName: String,
-  projectFiles: Array,
+  project: Object,
   jones: Boolean,
 });
 
+const projectFiles = computed(() => props.project[0]);
+const text = computed(() => props.project[1]);
+
+const title = computed(() => props.project[2]);
+const softwares = computed(() => props.project[3]);
+
 const isMobile = ref(false);
-const title = ref("");
-const softwares = ref([]);
-const text = ref("");
+
 const loading = ref(true);
 
 // Refs for showing loading percentage
@@ -132,7 +143,7 @@ const onMediaLoaded = () => {
 };
 
 watchEffect(() => {
-  totalMediaCount.value = props.projectFiles.length;
+  totalMediaCount.value = projectFiles.value?.length || 0;
 
   if (
     totalMediaCount.value > 0 &&
@@ -165,32 +176,9 @@ watchEffect(() => {
   }
 });
 
-onMounted(() => {
+onMounted(async () => {
   // Check the device type
   isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  // Fetch data
-  let jonesRoute = props.routeName.split("/")[1];
-  fetch("/content.json")
-    .then((response) => response.json())
-    .then((data) => {
-      if (props.jones) {
-        title.value = data[jonesRoute][2];
-        softwares.value = data[jonesRoute][3];
-      } else {
-        title.value = data[props.routeName][2];
-        softwares.value = data[props.routeName][3];
-      }
-    });
-  fetch("/content.json")
-    .then((response) => response.json())
-    .then((data) => {
-      if (props.jones) {
-        text.value = data[jonesRoute][1];
-      } else {
-        text.value = data[props.routeName][1].replace(/\/n/g, "<br><br>"); // Replace line breaks
-      }
-    });
 });
 </script>
 <style>

@@ -5,7 +5,7 @@
       :class="!expanded ? 'add-mask' : ''"
       id="expanding-div"
     >
-      <p id="intro-text" ref="introText" v-html="text"></p>
+      <p id="intro-text" ref="introText" v-html="realText"></p>
     </div>
     <button
       class="pt-8 text-white flex items-center gap-x-1"
@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup>
-import { ref, nextTick, watch } from "vue";
+import { ref, nextTick, watch, onMounted, computed } from "vue";
 const expanded = ref(false);
 const introText = ref(null);
 const expandButton = ref(null);
@@ -27,6 +27,8 @@ const introTextHeight = ref(Number);
 const props = defineProps({
   text: String,
 });
+
+const realText = computed(() => props.text.replace(/\/n/g, "<br><br>"));
 
 const setExpanded = () => {
   let expanding = document.getElementById("expanding-div");
@@ -38,17 +40,20 @@ const setExpanded = () => {
 
 const updateHeight = async () => {
   await nextTick();
-
-  if (introText.value) {
-    introTextHeight.value = introText.value.offsetHeight;
-    if (introTextHeight.value < 192) {
-      expanded.value = true;
-      expandButton.value.style.display = "none";
+  // Wait for DOM to finish updating, so we surely get the text
+  requestAnimationFrame(() => {
+    if (introText.value) {
+      introTextHeight.value = introText.value.offsetHeight;
+      if (introTextHeight.value < 192) {
+        expanded.value = true;
+        expandButton.value.style.display = "none";
+      }
     }
-  }
+  });
 };
-
-watch(() => props.text, updateHeight);
+onMounted(updateHeight);
+// Use post option to wait for DOM update
+watch(() => props.text, updateHeight, { flush: "post" });
 </script>
 <style>
 .expanding-text {
