@@ -117,7 +117,6 @@
 <script setup>
 import { ref, onMounted, watchEffect, computed } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
-import { useContentData } from "@/composables/useContentData.js";
 
 const props = defineProps({
   routeName: String,

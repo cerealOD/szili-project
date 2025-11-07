@@ -40,17 +40,20 @@ const setExpanded = () => {
 
 const updateHeight = async () => {
   await nextTick();
-
-  if (introText.value) {
-    introTextHeight.value = introText.value.offsetHeight;
-    if (introTextHeight.value < 192) {
-      expanded.value = true;
-      expandButton.value.style.display = "none";
+  // Wait for DOM to finish updating, so we surely get the text
+  requestAnimationFrame(() => {
+    if (introText.value) {
+      introTextHeight.value = introText.value.offsetHeight;
+      if (introTextHeight.value < 192) {
+        expanded.value = true;
+        expandButton.value.style.display = "none";
+      }
     }
-  }
+  });
 };
 onMounted(updateHeight);
-watch(() => props.text, updateHeight);
+// Use post option to wait for DOM update
+watch(() => props.text, updateHeight, { flush: "post" });
 </script>
 <style>
 .expanding-text {
