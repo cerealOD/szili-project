@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-[100vh]">
-    <RouterLink
-      :to="jones ? '/projects/indiana-jones-art-blast' : '/'"
+    <button
+      @click="goBack"
       class="w-full flex items-center text-white gap-x-2 text-sm sm:text-base lg:text-lg underlined-link"
       style="width: fit-content"
     >
@@ -12,7 +12,7 @@
         aria-hidden="true"
       />
       {{ jones ? "Back to Indiana Jones Art Blast" : "Back to Home " }}
-    </RouterLink>
+    </button>
     <div class="flex flex-col items-center">
       <h1
         v-if="title"
@@ -120,6 +120,7 @@
 <script setup>
 import { ref, onMounted, watchEffect, computed } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
+import { useRouter } from "vue-router";
 
 const props = defineProps({
   routeName: String,
@@ -134,14 +135,25 @@ const softwares = computed(() => props.project["software"]);
 
 const isMobile = ref(false);
 
-const loading = ref(true);
-
 // Refs for showing loading percentage
 const loadedMediaCount = ref(0);
 const totalMediaCount = ref(0);
+const loading = ref(true);
+
+const router = useRouter();
 
 const onMediaLoaded = () => {
   loadedMediaCount.value++;
+};
+
+const goBack = () => {
+  if (window.history.length > 1) {
+    router.back();
+  } else {
+    props.jones
+      ? router.push("/")
+      : router.push("/projects/indiana-jones-art-blast");
+  }
 };
 
 watchEffect(() => {

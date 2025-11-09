@@ -48,7 +48,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return { top: 0 }; // Opens new page with scrollposition at top
+    if (savedPosition) {
+      return savedPosition; // When going back, preserve scroll state
+    } else {
+      return { top: 0 }; // When opening new page start at top
+    }
   },
 });
 

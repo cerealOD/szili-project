@@ -1,7 +1,7 @@
 <template>
   <main>
-    <RouterLink
-      to="/"
+    <button
+      @click="goBack"
       class="w-full flex items-center text-white gap-x-2 text-sm sm:text-base lg:text-lg underlined-link"
       style="width: fit-content"
     >
@@ -12,7 +12,7 @@
         aria-hidden="true"
       />
       Back to Home
-    </RouterLink>
+    </button>
     <div class="flex flex-col items-center">
       <h1
         class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium py-10 md:py-12 lg:py-16 text-center text-white"
@@ -58,9 +58,20 @@
 import { ref, onMounted } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
 import { useContentData } from "@/composables/useContentData.js";
+import { useRouter } from "vue-router";
 
 const text = ref("");
 const projects = ref({});
+
+const router = useRouter();
+
+const goBack = () => {
+  if (window.history.length > 1) {
+    router.back();
+  } else {
+    router.push("/");
+  }
+};
 
 onMounted(async () => {
   const data = await useContentData();
