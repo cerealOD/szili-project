@@ -29,7 +29,7 @@
 
       <p
         v-if="routeName == 'double-turret-gun'"
-        class="w-full md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 flex flex-col gap-y-2 mb-8"
+        class="w-full text-sm sm:text-base md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 flex flex-col gap-y-2 mb-8"
       >
         This project is available on the link below with complete breakdown,
         source files, etc.:
@@ -42,13 +42,16 @@
           aria-label="Download Double Turret Gun project from Google Drive"
         >
           <img :src="'/icons/drive.svg'" width="20" alt="Google Drive logo" />
-          <span class="text-sm font-medium text-left">Download Project</span>
+          <span
+            class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-left"
+            >Download Project</span
+          >
         </a>
       </p>
 
       <div
         v-show="loading"
-        class="text-white font-medium text-base md:text-lg lg:text-xl"
+        class="text-white font-medium text-sm sm:text-base md:text-lg lg:text-xl"
         role="status"
         aria-live="polite"
       >

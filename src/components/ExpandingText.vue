@@ -1,14 +1,19 @@
 <template>
-  <div class="mb-14 flex flex-col items-center">
+  <div class="mb-4 lg:mb-12 flex flex-col items-center">
     <div
-      class="text-sm sm:text-base md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text max-h-48 overflow-hidden"
+      class="text-sm sm:text-base md:text-lg lg:text-xl font-light text-white lg:px-32 xl:px-40 2xl:px-64 expanding-text min-h-[150px] lg:min-h-[380px] max-h-[150px] lg:max-h-[380px] overflow-hidden"
       :class="!expanded ? 'add-mask' : ''"
-      id="expanding-div"
+      ref="expandingDiv"
     >
-      <p id="intro-text" ref="introText" v-html="realText"></p>
+      <p
+        id="intro-text"
+        ref="introText"
+        v-html="realText"
+        style="line-height: 1.5"
+      ></p>
     </div>
     <button
-      class="pt-8 text-white flex items-center gap-x-1"
+      class="pt-8 text-white flex items-center gap-x-1 text-sm sm:text-base text-opacity-80"
       @click="setExpanded"
       ref="expandButton"
     >
@@ -19,6 +24,7 @@
 </template>
 <script setup>
 import { ref, nextTick, watch, onMounted, computed } from "vue";
+const expandingDiv = ref(null);
 const expanded = ref(false);
 const introText = ref(null);
 const expandButton = ref(null);
@@ -31,22 +37,31 @@ const props = defineProps({
 const realText = computed(() => props.text.replace(/\/n/g, "<br><br>"));
 
 const setExpanded = () => {
-  let expanding = document.getElementById("expanding-div");
-  !expanded.value
-    ? (expanding.style.maxHeight = `${introTextHeight.value}` + "px")
-    : (expanding.style.maxHeight = "192px");
-  expanded.value ? (expanded.value = false) : (expanded.value = true);
+  if (expandingDiv.value) {
+    !expanded.value
+      ? (expandingDiv.value.style.maxHeight = `${introTextHeight.value}` + "px")
+      : (expandingDiv.value.style.maxHeight = getComputedStyle(
+          expandingDiv.value
+        ).minHeight);
+    expanded.value = !expanded.value;
+  }
 };
 
 const updateHeight = async () => {
   await nextTick();
   // Wait for DOM to finish updating, so we surely get the text
   requestAnimationFrame(() => {
-    if (introText.value) {
-      introTextHeight.value = introText.value.offsetHeight;
-      if (introTextHeight.value < 192) {
-        expanded.value = true;
-        expandButton.value.style.display = "none";
+    if (expandingDiv.value) {
+      if (introText.value) {
+        introTextHeight.value = introText.value.offsetHeight;
+        if (
+          introTextHeight.value <
+          parseFloat(getComputedStyle(expandingDiv.value).minHeight)
+        ) {
+          expanded.value = true;
+          expandButton.value.style.display = "none";
+          expandingDiv.value.style.minHeight = 0;
+        }
       }
     }
   });
