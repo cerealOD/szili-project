@@ -27,13 +27,13 @@
         <RouterLink
           v-for="(project, key) in projects"
           :key="key"
-          :to="'/projects/indiana-jones-art-blast/' + key"
+          :to="'/game-art/indiana-jones-art-blast/' + key"
           class="project-container"
         >
           <article>
             <figure>
               <img
-                :src="'/thumbnails/' + project['thumbnail'] + '.png'"
+                :src="'/game-art/thumbnails/' + project['thumbnail'] + '.png'"
                 class="rounded-2xl"
                 alt="Project thumbnail"
               />
@@ -75,8 +75,8 @@ const goBack = () => {
 
 onMounted(async () => {
   const data = await useContentData();
-  projects.value = data["indiana-jones-art-blast"]["sub-projects"];
-  text.value = data["indiana-jones-art-blast"]["description"];
+  projects.value = data["game-art"]["indiana-jones-art-blast"]["sub-projects"];
+  text.value = data["game-art"]["indiana-jones-art-blast"]["description"];
 });
 
 const replaceLineBreaks = (text) => {

@@ -25,6 +25,8 @@ const project = ref({});
 onMounted(async () => {
   const data = await useContentData();
   project.value =
-    data["indiana-jones-art-blast"]["sub-projects"][currentRouteName.value];
+    data["game-art"]["indiana-jones-art-blast"]["sub-projects"][
+      currentRouteName.value
+    ];
 });
 </script>

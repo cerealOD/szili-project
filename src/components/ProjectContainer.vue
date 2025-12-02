@@ -18,6 +18,6 @@ const project = ref({});
 
 onMounted(async () => {
   const data = await useContentData();
-  project.value = data[currentRouteName.value];
+  project.value = data["game-art"][currentRouteName.value];
 });
 </script>

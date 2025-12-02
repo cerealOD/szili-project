@@ -1,16 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-between min-h-[100vh]">
-    <header
-      class="sticky top-0 z-30 w-full flex justify-center"
-      :class="[
-        $route.path !== '/' &&
-        $route.path !== '/about' &&
-        $route.path !== '/projects/indiana-jones-art-blast'
-          ? 'header-img'
-          : 'bg-menu-gray',
-        $route.path == '/protected' ? 'hidden' : 'flex',
-      ]"
-    >
+    <header class="header-styles">
       <nav
         class="gap-x-8 sm:gap-x-14 md:gap-x-16 text-white text-base sm:text-lg w-full flex items-center py-5 px-6 sm:p-6 sm:px-16 container"
       >
@@ -18,7 +8,13 @@
           to="/"
           class="underlined-link"
           :class="$route.path == '/' ? 'font-bold !no-underline' : ''"
-          >Home
+          >Archviz
+        </RouterLink>
+        <RouterLink
+          to="/game-art"
+          class="underlined-link"
+          :class="$route.path == '/game-art' ? 'font-bold !no-underline' : ''"
+          >Game Art
         </RouterLink>
         <RouterLink
           to="/about"
@@ -53,7 +49,8 @@
   </div>
 </template>
 <style>
-.header-img {
+.header-styles {
+  @apply sticky top-0 z-30 w-full flex justify-center;
   background-image: linear-gradient(
     hsl(0, 0%, 0%) 0%,
     hsla(0, 0%, 0%, 0.738) 19%,
