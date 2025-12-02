@@ -142,12 +142,29 @@
     }
   },
   "archviz": {
-    "example-url-name": {
-      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"],
+    "modern-apartment-living-space": {
+      "files": ["1.png", "2.png", "3.png", "4.png"],
       "description": "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.",
-      "thumbnail": "diablo_thumbnail",
-      "title": "Example",
-      "software": ["ZBrush"]
+      "title": "Modern Apartment Living Space",
+      "software": ["3ds Max", "V-Ray", "Photoshop"]
+    },
+    "single-family-house": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png"],
+      "description": "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.",
+      "title": "Single-Family House",
+      "software": ["3ds Max", "V-Ray", "Photoshop"]
+    },
+    "alpine-chalet": {
+      "files": ["1.png", "2.png", "3.png", "4.png"],
+      "description": "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.",
+      "title": "Alpine Chalet",
+      "software": ["3ds Max", "V-Ray", "Photoshop"]
+    },
+    "multi-family-housing": {
+      "files": ["1.png", "2.png", "3.png"],
+      "description": "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.",
+      "title": "Multi-Family Housing",
+      "software": ["3ds Max", "V-Ray", "Photoshop"]
     }
   }
 }
