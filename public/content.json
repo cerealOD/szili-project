@@ -1,142 +1,153 @@
 {
-  "diablo-ii-environment-fan-art": {
-    "files": ["1.png", "2.png", "3.png"],
-    "description": "This short environment project in Unreal Engine was a personal challenge to expand my technical skills and environment-building knowledge. I wanted to keep it manageable yet meaningful, so I chose to recreate a scene from one of my favorite Diablo cinematics. The scene appeared simple at first but proved to be a rewarding challenge in capturing its atmosphere./nThe main goal was to focus on the environment rather than spending time on detailed modeling or texturing, working from big to small and aiming to capture the overall vibe instead of obsessing over tiny details. Even with this in mind, one of the most demanding aspects was integrating the characters, refining their animations, and adding subtle environmental details like heat haze in the distance or blowing dust across the landscape. These small yet impactful elements, along with the project itself, pushed my skills further and overall I learned a lot during the process.",
-    "thumbnail": "diablo_2_thumbnail",
-    "title": "Diablo II Environment Fan Art",
-    "software": ["Unreal Engine", "Blender", "Marvelous Designer", "Photoshop", "Adobe After Effects", "ZBrush"]
-  },
-  "indiana-jones-art-blast": {
-    "description": "At Treehouse Ninjas Studio, I was fortunate to be part of the development team for the critically acclaimed AAA - title Indiana Jones and the Great Circle. During the project, we were entrusted with creating entire main areas for the game and were responsible for developing complete environments from the initial blockout phase to the final touches. This included building necessary elements, from modular components to unique assets and props, and fully integrating them into the engine. I am really proud that I created some areas from start to finish, as well as assets that were widely used throughout the entire game./nThe two-year development process was both challenging and incredibly rewarding. It pushed me to refine my technical and artistic skills while adapting to new workflows and problem-solving in a fast-paced environment. I enjoyed the balance of working independently on key areas while also collaborating closely with a talented team of artists and designers. Sharing ideas, tackling obstacles together, and seeing our combined efforts come to life made the experience even more fulfilling. It was a truly inspiring project that reinforced my passion for game development./nUnfortunately at the moment I can only show in-game screenshots, but as promised in the future we will get an approval to share more art and also there will be an artbook, featured with Treehouse Ninjas' and my work as well.",
-    "thumbnail": "indiana_thumbnail",
-    "title": "Indiana Jones /nArt Blast",
-    "sub-projects":{
-      "iraq": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
-        "description": "As part of a small team, I was responsible for the entire underground section of the Iraq map, from the Ziggurat shaft to one of the most important scenes in the game — the reveal of the Ark. We received this environment in its alpha blockout phase and refined it through multiple iterations until it became a fully polished game area with a close collaboration of level designers. I also worked on some parts of the surface and camp area.",
-        "thumbnail": "iraq_thumbnail",
-        "title": "Iraq",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
-      },
-      "dream-vol-1": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png"],
-        "description": "Together with one of my colleagues, I was responsible for almost the entire Dream Sequence environment in Sukhothai, from prototyping to delivery. It is a complex, five-level, looping, and gradually overgrowing area with multiple puzzles. This work was highly collaborative between us and the assigned level designers.",
-        "thumbnail": "nightmare_1_thumbnail",
-        "title": "Dream Vol. 1",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
-      },
-      "dream-vol-2": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png", "16.png", "17.png"],
-        "description": "Together with one of my colleagues, I was responsible for almost the entire Dream Sequence environment in Sukhothai, from prototyping to delivery. It is a complex, five-level, looping, and gradually overgrowing area with multiple puzzles. This work was highly collaborative between us and the assigned level designers.",
-        "thumbnail": "nightmare_2_thumbnail",
-        "title": "Dream Vol. 2",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
-      },
-      "shanghai": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
-        "description": "At Treehouse Ninjas, we were fully responsible for building the Shanghai map. As part of the small team assigned to this task, I was responsible for creating about a third of the buildings, a large portion of the harbor area, some props and all the Chinese signs.",
-        "thumbnail": "shanghai_thumbnail",
-        "title": "Shanghai",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
-      },
-      "sukhothai": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png"],
-        "description": "As part of the Sukhothai team at Treehouse Ninjas, I was responsible for several key elements of the underground areas and tombs. I created multiple doors, hero puzzle elements - from pedestals to keys - and squeeze spaces. Additionally, I designed the base rock structure for some of the caves.",
-        "thumbnail": "sukhothai_thumbnail",
-        "title": "Sukhothai",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
-      },
-      "treehouse-vol-1": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png", "16.png", "17.png", "18.png"],
-        "description": "I was solely responsible for the entire Treehouse area on the Sukhothai map, from the blockout phase to the final delivery, except for the treehouse model itself, which was created by colleagues. In addition, I created everything from area-specific assets to landscape sculpting, vertex painting, and set dressing. This is the environment I am most proud of, as I put a lot of work into it, and it felt really good to be trusted with such a huge task.",
-        "thumbnail": "treehouse_1_thumbnail",
-        "title": "Treehouse Vol. 1",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
-      },
-      "treehouse-vol-2": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
-        "description": "I was solely responsible for the entire Treehouse area on the Sukhothai map, from the blockout phase to the final delivery, except for the treehouse model itself, which was created by colleagues. In addition, I created everything from area-specific assets to landscape sculpting, vertex painting, and set dressing. This is the environment I am most proud of, as I put a lot of work into it, and it felt really good to be trusted with such a huge task.",
-        "thumbnail": "treehouse_2_thumbnail",
-        "title": "Treehouse Vol. 2",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
-      },
-      "vatican": {
-        "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
-        "description": "At Treehouse Ninjas, we were fully responsible for building the Vatican Intro map in both its night and day versions. As part of the team, I was responsible for creating multiple statues and busts for this area; however, these were later used throughout the entire game, even as hero puzzle or quest elements. I also worked on set dressing across the map and was assigned to the final polish of the Chapel of the Condemned, which was showcased in the first images.",
-        "thumbnail": "vatican_thumbnail",
-        "title": "Vatican",
-        "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+  "game-art": {
+    "diablo-ii-environment-fan-art": {
+      "files": ["1.png", "2.png", "3.png"],
+      "description": "This short environment project in Unreal Engine was a personal challenge to expand my technical skills and environment-building knowledge. I wanted to keep it manageable yet meaningful, so I chose to recreate a scene from one of my favorite Diablo cinematics. The scene appeared simple at first but proved to be a rewarding challenge in capturing its atmosphere./nThe main goal was to focus on the environment rather than spending time on detailed modeling or texturing, working from big to small and aiming to capture the overall vibe instead of obsessing over tiny details. Even with this in mind, one of the most demanding aspects was integrating the characters, refining their animations, and adding subtle environmental details like heat haze in the distance or blowing dust across the landscape. These small yet impactful elements, along with the project itself, pushed my skills further and overall I learned a lot during the process.",
+      "thumbnail": "diablo_2_thumbnail",
+      "title": "Diablo II Environment Fan Art",
+      "software": ["Unreal Engine", "Blender", "Marvelous Designer", "Photoshop", "Adobe After Effects", "ZBrush"]
+    },
+    "indiana-jones-art-blast": {
+      "description": "At Treehouse Ninjas Studio, I was fortunate to be part of the development team for the critically acclaimed AAA - title Indiana Jones and the Great Circle. During the project, we were entrusted with creating entire main areas for the game and were responsible for developing complete environments from the initial blockout phase to the final touches. This included building necessary elements, from modular components to unique assets and props, and fully integrating them into the engine. I am really proud that I created some areas from start to finish, as well as assets that were widely used throughout the entire game./nThe two-year development process was both challenging and incredibly rewarding. It pushed me to refine my technical and artistic skills while adapting to new workflows and problem-solving in a fast-paced environment. I enjoyed the balance of working independently on key areas while also collaborating closely with a talented team of artists and designers. Sharing ideas, tackling obstacles together, and seeing our combined efforts come to life made the experience even more fulfilling. It was a truly inspiring project that reinforced my passion for game development./nUnfortunately at the moment I can only show in-game screenshots, but as promised in the future we will get an approval to share more art and also there will be an artbook, featured with Treehouse Ninjas' and my work as well.",
+      "thumbnail": "indiana_thumbnail",
+      "title": "Indiana Jones /nArt Blast",
+      "sub-projects":{
+        "iraq": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
+          "description": "As part of a small team, I was responsible for the entire underground section of the Iraq map, from the Ziggurat shaft to one of the most important scenes in the game — the reveal of the Ark. We received this environment in its alpha blockout phase and refined it through multiple iterations until it became a fully polished game area with a close collaboration of level designers. I also worked on some parts of the surface and camp area.",
+          "thumbnail": "iraq_thumbnail",
+          "title": "Iraq",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        },
+        "dream-vol-1": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png"],
+          "description": "Together with one of my colleagues, I was responsible for almost the entire Dream Sequence environment in Sukhothai, from prototyping to delivery. It is a complex, five-level, looping, and gradually overgrowing area with multiple puzzles. This work was highly collaborative between us and the assigned level designers.",
+          "thumbnail": "nightmare_1_thumbnail",
+          "title": "Dream Vol. 1",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        },
+        "dream-vol-2": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png", "16.png", "17.png"],
+          "description": "Together with one of my colleagues, I was responsible for almost the entire Dream Sequence environment in Sukhothai, from prototyping to delivery. It is a complex, five-level, looping, and gradually overgrowing area with multiple puzzles. This work was highly collaborative between us and the assigned level designers.",
+          "thumbnail": "nightmare_2_thumbnail",
+          "title": "Dream Vol. 2",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        },
+        "shanghai": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
+          "description": "At Treehouse Ninjas, we were fully responsible for building the Shanghai map. As part of the small team assigned to this task, I was responsible for creating about a third of the buildings, a large portion of the harbor area, some props and all the Chinese signs.",
+          "thumbnail": "shanghai_thumbnail",
+          "title": "Shanghai",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        },
+        "sukhothai": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png"],
+          "description": "As part of the Sukhothai team at Treehouse Ninjas, I was responsible for several key elements of the underground areas and tombs. I created multiple doors, hero puzzle elements - from pedestals to keys - and squeeze spaces. Additionally, I designed the base rock structure for some of the caves.",
+          "thumbnail": "sukhothai_thumbnail",
+          "title": "Sukhothai",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        },
+        "treehouse-vol-1": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png", "16.png", "17.png", "18.png"],
+          "description": "I was solely responsible for the entire Treehouse area on the Sukhothai map, from the blockout phase to the final delivery, except for the treehouse model itself, which was created by colleagues. In addition, I created everything from area-specific assets to landscape sculpting, vertex painting, and set dressing. This is the environment I am most proud of, as I put a lot of work into it, and it felt really good to be trusted with such a huge task.",
+          "thumbnail": "treehouse_1_thumbnail",
+          "title": "Treehouse Vol. 1",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        },
+        "treehouse-vol-2": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
+          "description": "I was solely responsible for the entire Treehouse area on the Sukhothai map, from the blockout phase to the final delivery, except for the treehouse model itself, which was created by colleagues. In addition, I created everything from area-specific assets to landscape sculpting, vertex painting, and set dressing. This is the environment I am most proud of, as I put a lot of work into it, and it felt really good to be trusted with such a huge task.",
+          "thumbnail": "treehouse_2_thumbnail",
+          "title": "Treehouse Vol. 2",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        },
+        "vatican": {
+          "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
+          "description": "At Treehouse Ninjas, we were fully responsible for building the Vatican Intro map in both its night and day versions. As part of the team, I was responsible for creating multiple statues and busts for this area; however, these were later used throughout the entire game, even as hero puzzle or quest elements. I also worked on set dressing across the map and was assigned to the final polish of the Chapel of the Condemned, which was showcased in the first images.",
+          "thumbnail": "vatican_thumbnail",
+          "title": "Vatican",
+          "software": ["idTech", "Blender", "MODO", "ZBrush", "Substance 3D Painter", "Photoshop", "Hansoft", "Perforce", "Marmoset Toolbag"]
+        }
       }
+    },
+    "the-rogue-angel-inarius": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "vid1.mp4", "5.png", "vid2.mp4", "marmoset", "6.png"],
+      "description": "I originally started this project as back as 2023 Spring, few months before the release of Diablo 4 and I planned to be ready for the game's debut.. funny idea to think back. After all it took much-much more time to complete, than few months. /nPersonal life and work, multiple breaks, trying out and learning new things lengthened the process so much, so it happened that I passed not even the release, but the year in which I started. Was a completely new challenge to stay on one project for that long and keep motivated to finish it after 1.5 years from the beginning, but after all I learned and developed during the process and I'm mostly happy with the result as well.",
+      "thumbnail": "inarius_thumbnail",
+      "title": "The Rogue Angel - Inarius",
+      "software": ["ZBrush", "Blender", "3ds Max", "Marvelous Designer", "Houdini", "Character Creator", "Substance 3D Painter", "Unreal Engine"]
+    },
+    "barbarian": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "vid1.mp4", "vid2.mp4", "vid3.mp4", "5.png", "vid4.mp4", "6.png", "vid5.mp4", "7.png", "8.png"],
+      "description": "My first character on which I worked for a bit more than 2 months back in 2022. It was a challenging project with a lot of new software, workflows, trials and errors. Even if it's far from perfect I was really proud to finish my first whole character and push through a project like this./nEDIT, 2023 October: Got back to retouch this old project and rework a bit. I didn't want to go crazy, because I also have to work on my upcoming projects, and would like to focus for those, but my eyes couldn't take anymore the old renders of this character. With minimum effort I was able to reach much better look, which was my real goal with this whole retouch. Basically I touched only the skin, metal and the belt gem textures, tweaked the shaders and finally add an AO maps, which last time my old GPU wasn't able to handle.. aaand that's it./nObviously there are a lot of mistakes which back then I wasn't able to see yet, but now it would take more time to fix, than I would like to spend on it. So just a quick update and I'll try to be better with the next ones. It's based on a concept art by Dexiong Gu",
+      "thumbnail": "barbarian_thumbnail",
+      "title": "Barbarian",
+      "software": ["3ds Max", "Maya", "Blender", "ZBrush", "RizomUV", "R3DS ZWrap", "Mari", "Substance 3D Painter", "Photoshop", "xNormal", "Marvelous Designer"]
+    },
+    "double-turret-gun": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "marmoset", "6.png", "7.png", "8.png"],
+      "description": "Recently, I took an art test, which I can share since there was no signed NDA. That said, I won’t mention the studio’s name directly. The task was quite challenging for me, as hard surface modeling isn’t really my strongest area. However, in the end, the test was very well received, and I can say I passed. So, I thought I’d share it - not necessarily as a portfolio piece, but rather as a demonstration of my capabilities for future applications, as I’m currently looking for new opportunities.",
+      "thumbnail": "double_turret_gun_thumbnail",
+      "title": "Double Turret Gun",
+      "software": ["Blender", "Substance 3D Painter", "Photoshop", "Marmoset Toolbag", "RizomUV"]
+    },
+    "skull-bow": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "marmoset", "12.png"],
+      "description": "One of my earliest 3D project from early 2022, based on a concept art by Raido Kaasik.",
+      "thumbnail": "bow_thumbnail",
+      "title": "Skull Bow",
+      "software": ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]
+    },
+    "borderlands-smg": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "marmoset", "10.png"],
+      "description": "Quick worflow tester project, which focused to try out a boolean-dynamesh workflow and it's capabilities. I used Advanced Cell Shader for Unreal Engine 4 (also rendered the final shots in UE4), and did the whole texturing with a Livelink (RIP, such a miss from the actual UE5..) to easily see every changes in game environment./n1x 2k Texture set & 20.021 Tris/nCredit goes for the original concept art to HEX",
+      "thumbnail": "smg_thumbnail",
+      "title": "Borderlands SMG",
+      "software": ["3ds Max", "ZBrush", "RizomUV", "Marvelous Designer", "Substance 3D Painter", "Unreal Engine", "Marmoset Toolbag", "Photoshop"]
+    },
+    "antique-iron": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "marmoset", "8.png"],
+      "description": "The first art test in my life: a Coleman's Model 4A Gasoline Iron from the 20th Century (1929-1948)./nRequirements were an optimized mesh under 6K tris, single 2K texture set and Spec/Gloss workflow. Unfortunately it wasn't a success at the time, but helped me to develop further.",
+      "thumbnail": "iron_thumbnail",
+      "title": "Antique Iron",
+      "software": ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]
+    },
+    "viking-axe": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "marmoset", "5.png"],
+      "description": "A simple viking axe as a general prop practice, original model was created in 2022, but I retouched a bit in late 2023.",
+      "thumbnail": "axe_thumbnail",
+      "title": "Viking Axe",
+      "software": ["3ds Max", "ZBrush", "Substance 3D Painter", "Marmoset Toolbag"]
+    },
+    "jeep": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "vid1.mp4", "marmoset", "10.png"],
+      "description": "Game-ready jeep from 2022 with 58K tris and 2x4K texture sets as a practicing project of general modelling. Concept art by tryo",
+      "thumbnail": "jeep_thumbnail",
+      "title": "Jeep",
+      "software": ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag"]
+    },
+    "laser-controller": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "vid1.mp4", "10.png"],
+      "description": "Telesis Model 6 FQ30 Laser Controller as a general prop practice. If you look at a certain angle with enough imagination then there is a squirrel on the right side panel :)",
+      "thumbnail": "laser_thumbnail",
+      "title": "Laser Controller",
+      "software": ["3ds Max", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]
+    },
+    "diablo": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"],
+      "description": "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.",
+      "thumbnail": "diablo_thumbnail",
+      "title": "Diablo",
+      "software": ["ZBrush"]
     }
   },
-  "the-rogue-angel-inarius": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "vid1.mp4", "5.png", "vid2.mp4", "marmoset", "6.png"],
-    "description": "I originally started this project as back as 2023 Spring, few months before the release of Diablo 4 and I planned to be ready for the game's debut.. funny idea to think back. After all it took much-much more time to complete, than few months. /nPersonal life and work, multiple breaks, trying out and learning new things lengthened the process so much, so it happened that I passed not even the release, but the year in which I started. Was a completely new challenge to stay on one project for that long and keep motivated to finish it after 1.5 years from the beginning, but after all I learned and developed during the process and I'm mostly happy with the result as well.",
-    "thumbnail": "inarius_thumbnail",
-    "title": "The Rogue Angel - Inarius",
-    "software": ["ZBrush", "Blender", "3ds Max", "Marvelous Designer", "Houdini", "Character Creator", "Substance 3D Painter", "Unreal Engine"]
-  },
-  "barbarian": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "vid1.mp4", "vid2.mp4", "vid3.mp4", "5.png", "vid4.mp4", "6.png", "vid5.mp4", "7.png", "8.png"],
-    "description": "My first character on which I worked for a bit more than 2 months back in 2022. It was a challenging project with a lot of new software, workflows, trials and errors. Even if it's far from perfect I was really proud to finish my first whole character and push through a project like this./nEDIT, 2023 October: Got back to retouch this old project and rework a bit. I didn't want to go crazy, because I also have to work on my upcoming projects, and would like to focus for those, but my eyes couldn't take anymore the old renders of this character. With minimum effort I was able to reach much better look, which was my real goal with this whole retouch. Basically I touched only the skin, metal and the belt gem textures, tweaked the shaders and finally add an AO maps, which last time my old GPU wasn't able to handle.. aaand that's it./nObviously there are a lot of mistakes which back then I wasn't able to see yet, but now it would take more time to fix, than I would like to spend on it. So just a quick update and I'll try to be better with the next ones. It's based on a concept art by Dexiong Gu",
-    "thumbnail": "barbarian_thumbnail",
-    "title": "Barbarian",
-    "software": ["3ds Max", "Maya", "Blender", "ZBrush", "RizomUV", "R3DS ZWrap", "Mari", "Substance 3D Painter", "Photoshop", "xNormal", "Marvelous Designer"]
-  },
-  "double-turret-gun": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "marmoset", "6.png", "7.png", "8.png"],
-    "description": "Recently, I took an art test, which I can share since there was no signed NDA. That said, I won’t mention the studio’s name directly. The task was quite challenging for me, as hard surface modeling isn’t really my strongest area. However, in the end, the test was very well received, and I can say I passed. So, I thought I’d share it - not necessarily as a portfolio piece, but rather as a demonstration of my capabilities for future applications, as I’m currently looking for new opportunities.",
-    "thumbnail": "double_turret_gun_thumbnail",
-    "title": "Double Turret Gun",
-    "software": ["Blender", "Substance 3D Painter", "Photoshop", "Marmoset Toolbag", "RizomUV"]
-  },
-  "skull-bow": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "marmoset", "12.png"],
-    "description": "One of my earliest 3D project from early 2022, based on a concept art by Raido Kaasik.",
-    "thumbnail": "bow_thumbnail",
-    "title": "Skull Bow",
-    "software": ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]
-  },
-  "borderlands-smg": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "marmoset", "10.png"],
-    "description": "Quick worflow tester project, which focused to try out a boolean-dynamesh workflow and it's capabilities. I used Advanced Cell Shader for Unreal Engine 4 (also rendered the final shots in UE4), and did the whole texturing with a Livelink (RIP, such a miss from the actual UE5..) to easily see every changes in game environment./n1x 2k Texture set & 20.021 Tris/nCredit goes for the original concept art to HEX",
-    "thumbnail": "smg_thumbnail",
-    "title": "Borderlands SMG",
-    "software": ["3ds Max", "ZBrush", "RizomUV", "Marvelous Designer", "Substance 3D Painter", "Unreal Engine", "Marmoset Toolbag", "Photoshop"]
-  },
-  "antique-iron": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "marmoset", "8.png"],
-    "description": "The first art test in my life: a Coleman's Model 4A Gasoline Iron from the 20th Century (1929-1948)./nRequirements were an optimized mesh under 6K tris, single 2K texture set and Spec/Gloss workflow. Unfortunately it wasn't a success at the time, but helped me to develop further.",
-    "thumbnail": "iron_thumbnail",
-    "title": "Antique Iron",
-    "software": ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]
-  },
-  "viking-axe": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "marmoset", "5.png"],
-    "description": "A simple viking axe as a general prop practice, original model was created in 2022, but I retouched a bit in late 2023.",
-    "thumbnail": "axe_thumbnail",
-    "title": "Viking Axe",
-    "software": ["3ds Max", "ZBrush", "Substance 3D Painter", "Marmoset Toolbag"]
-  },
-  "jeep": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "vid1.mp4", "marmoset", "10.png"],
-    "description": "Game-ready jeep from 2022 with 58K tris and 2x4K texture sets as a practicing project of general modelling. Concept art by tryo",
-    "thumbnail": "jeep_thumbnail",
-    "title": "Jeep",
-    "software": ["3ds Max", "ZBrush", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag"]
-  },
-  "laser-controller": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "vid1.mp4", "10.png"],
-    "description": "Telesis Model 6 FQ30 Laser Controller as a general prop practice. If you look at a certain angle with enough imagination then there is a squirrel on the right side panel :)",
-    "thumbnail": "laser_thumbnail",
-    "title": "Laser Controller",
-    "software": ["3ds Max", "RizomUV", "Substance 3D Painter", "Marmoset Toolbag", "Photoshop"]
-  },
-  "diablo": {
-    "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"],
-    "description": "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.",
-    "thumbnail": "diablo_thumbnail",
-    "title": "Diablo",
-    "software": ["ZBrush"]
+  "archviz": {
+    "example-url-name": {
+      "files": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"],
+      "description": "A fan project from late 2021, but after the sculpting I dropped to be able focusing more on other works, but later I still kept it as a representation of my sculpting skills.",
+      "thumbnail": "diablo_thumbnail",
+      "title": "Example",
+      "software": ["ZBrush"]
+    }
   }
 }

@@ -1,21 +1,22 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import Home from "./views/Home.vue";
+import GameArtHome from "./views/GameArtHome.vue";
+import ArchvizHome from "./views/ArchvizHome.vue";
 import Protected from "./components/Protected.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: Home,
+    component: ArchvizHome,
     meta: {
       requiresAuth: true,
     },
   },
-  { path: "/projects", redirect: "/" },
+  { path: "/archviz", redirect: "/" },
+  { path: "/game-art", name: "gameArt", component: GameArtHome },
   {
-    path: "/projects/:slug",
-    name: "projects",
+    path: "/game-art/:slug",
     component: () => import("./components/ProjectContainer.vue"),
     meta: { requiresAuth: true },
   },
@@ -26,13 +27,13 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/projects/indiana-jones-art-blast",
+    path: "/game-art/indiana-jones-art-blast",
     name: "jones",
     component: () => import("./views/JonesHome.vue"),
     meta: { requiresAuth: true },
   },
   {
-    path: "/projects/indiana-jones-art-blast/:slug",
+    path: "/game-art/indiana-jones-art-blast/:slug",
     name: "jonesContainer",
     component: () => import("./components/JonesContainer.vue"),
     meta: { requiresAuth: true },

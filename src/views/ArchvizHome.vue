@@ -4,20 +4,18 @@
       <h1 class="text-2xl md:text-3xl font-semibold text-white col-span-4 mb-8">
         Portfolio
       </h1>
-      <div
-        class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:gap-4"
-      >
+      <div class="grid grid-cols-1 gap-8">
         <RouterLink
           v-for="(project, key) in projects"
           :key="key"
-          :to="'/projects/' + key"
+          :to="'/archviz/' + key"
           class="project-container"
-          style="aspect-ratio: 1/1"
+          style="aspect-ratio: 16/9"
         >
           <article>
             <figure>
               <img
-                :src="'/thumbnails/' + project['thumbnail'] + '.png'"
+                :src="'/archviz/thumbnails/' + '1' + '.jpeg'"
                 class="rounded-2xl"
                 loading="lazy"
                 alt="Project thumbnail"
@@ -49,7 +47,7 @@ const projects = ref({});
 
 onMounted(async () => {
   const data = await useContentData();
-  projects.value = data;
+  projects.value = data["archviz"];
 });
 
 const replaceLineBreaks = (text) => {

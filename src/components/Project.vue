@@ -79,13 +79,13 @@
           <resizedImg
             v-show="!loading"
             v-if="file.includes('png')"
-            :imgSrc="'/' + routeName + '/' + file"
+            :imgSrc="'/game-art/' + routeName + '/' + file"
             @loaded="onMediaLoaded"
           />
           <videoPlayer
             v-show="!loading"
             v-if="file.includes('mp4')"
-            :mp4="'/' + routeName + '/' + file"
+            :mp4="'/game-art/' + routeName + '/' + file"
             @loaded="onMediaLoaded"
           />
           <marmoset
@@ -154,8 +154,8 @@ const goBack = () => {
     router.back();
   } else {
     props.jones
-      ? router.push("/")
-      : router.push("/projects/indiana-jones-art-blast");
+      ? router.push("/game-art")
+      : router.push("/game-art/indiana-jones-art-blast");
   }
 };
 
@@ -194,6 +194,7 @@ watchEffect(() => {
 });
 
 onMounted(async () => {
+  console.log(props.routeName);
   // Check the device type
   isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 });
