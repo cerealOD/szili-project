@@ -78,14 +78,14 @@
         <div v-for="file in projectFiles">
           <resizedImg
             v-show="!loading"
-            v-if="file.includes('png')"
-            :imgSrc="'/game-art/' + routeName + '/' + file"
+            v-if="file.includes('png') || file.includes('jpg')"
+            :imgSrc="'/' + currentRoute + '/' + routeName + '/' + file"
             @loaded="onMediaLoaded"
           />
           <videoPlayer
             v-show="!loading"
             v-if="file.includes('mp4')"
-            :mp4="'/game-art/' + routeName + '/' + file"
+            :mp4="'/' + currentRoute + '/' + routeName + '/' + file"
             @loaded="onMediaLoaded"
           />
           <marmoset
@@ -123,7 +123,7 @@
 <script setup>
 import { ref, onMounted, watchEffect, computed } from "vue";
 import ExpandingText from "../components/ExpandingText.vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 
 const props = defineProps({
   routeName: String,
@@ -135,6 +135,7 @@ const projectFiles = computed(() => props.project["files"]);
 const text = computed(() => props.project["description"]);
 const title = computed(() => props.project["title"]);
 const softwares = computed(() => props.project["software"]);
+const currentRoute = ref("");
 
 const isMobile = ref(false);
 
@@ -144,6 +145,7 @@ const totalMediaCount = ref(0);
 const loading = ref(true);
 
 const router = useRouter();
+const route = useRoute();
 
 const onMediaLoaded = () => {
   loadedMediaCount.value++;
@@ -194,8 +196,9 @@ watchEffect(() => {
 });
 
 onMounted(async () => {
-  console.log(props.routeName);
+  currentRoute.value = route.fullPath.split("/")[1];
   // Check the device type
+
   isMobile.value = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 });
 </script>

@@ -2,23 +2,23 @@
   <div class="flex flex-col items-center justify-between min-h-[100vh]">
     <header class="header-styles">
       <nav
-        class="gap-x-8 sm:gap-x-14 md:gap-x-16 text-white text-base sm:text-lg w-full flex items-center py-5 px-6 sm:p-6 sm:px-16 container"
+        class="gap-x-8 sm:gap-x-14 md:gap-x-16 text-white text-base sm:text-lg w-full flex items-center justify-between sm:justify-start py-5 px-6 sm:p-6 sm:px-16 container"
       >
         <RouterLink
           to="/"
-          class="underlined-link"
+          class="underlined-link px-2 lg:px-0"
           :class="$route.path == '/' ? 'font-bold !no-underline' : ''"
           >Archviz
         </RouterLink>
         <RouterLink
           to="/game-art"
-          class="underlined-link"
+          class="underlined-link px-2 lg:px-0"
           :class="$route.path == '/game-art' ? 'font-bold !no-underline' : ''"
           >Game Art
         </RouterLink>
         <RouterLink
           to="/about"
-          class="underlined-link"
+          class="underlined-link px-2 lg:px-0"
           :class="$route.path == '/about' ? 'font-bold !no-underline' : ''"
           >About</RouterLink
         >

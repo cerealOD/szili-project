@@ -7,24 +7,21 @@
         style="max-width: 1000px"
       >
         <p>
-          Hi, my name is Szilard and I have spent the past 3 years creating
-          visually rich and immersive game environments and characters that
-          serve both narrative and gameplay. My experience includes working on
-          various projects, ranging from indie to AAA titles, covering tasks
-          such as character creation or tackling complete world-building,
-          progressing from initial blockouts to fully set-dressed and polished
-          locations. Having collaborated closely with a team of talented artists
-          and developers I have developed a strong grasp of teamwork,
-          communication, and attention to detail to deliver exceptional results.
+          I have spent the past 3 years creating visually rich, immersive game
+          environments that support both narrative and gameplay. My experience
+          spans a wide range of projects from indie productions to the biggest
+          AAA game titles, where I contributed to everything from detailed prop
+          creation to complete environment builds. Collaborating closely with
+          talented artists and developers has strengthened my understanding of
+          teamwork, communication, and the attention to detail required to
+          deliver high-quality results.
         </p>
         <p>
-          My passion for game art and development is reflected in the artistic
-          and technical skills I possess. Being well-versed in industry-standard
-          software such as Blender, 3ds Max, ZBrush, and Substance Painter, I
-          leverage this knowledge to solve problems from multiple angles and
-          offer versatile solutions. Moreover, I am continuously seeking
-          opportunities to expand my expertise and stay up-to-date with the
-          latest advancements in the field.
+          Over the past 6 months, I have expanded my focus into architectural
+          visualization, applying my environment-art foundations to craft
+          realistic, atmospheric spaces. During this time, I have developed a
+          dedicated archviz portfolio that reflects my growing expertise and
+          commitment to this new direction.
         </p>
       </div>
     </section>
@@ -196,7 +193,7 @@
         >
           <img
             :src="'/logos/' + software + '.png'"
-            class="rounded-md w-4 lg:w-6"
+            class="rounded-md h-4 lg:h-6"
             :alt="software + ' logo'"
           />
           <span>{{ software }}</span>
@@ -207,35 +204,15 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { useContentData } from "@/composables/useContentData.js";
 
-const softwares = ref([
-  "3ds Max",
-  "Adobe After Effects",
-  "Blender",
-  "Character Creator",
-  "FiberShop",
-  "GS CurveTools",
-  "Hansoft",
-  "Houdini",
-  "idTech",
-  "Mari",
-  "Marmoset Toolbag",
-  "Marvelous Designer",
-  "Maya",
-  "MODO",
-  "Perforce",
-  "Photoshop",
-  "R3DS ZWrap",
-  "RizomUV",
-  "Substance 3D Designer",
-  "Substance 3D Painter",
-  "Substance 3D Sampler",
-  "Unity",
-  "Unreal Engine",
-  "xNormal",
-  "ZBrush",
-]);
+const softwares = ref([]);
+
+onMounted(async () => {
+  const data = await useContentData();
+  softwares.value = data["softwares"];
+});
 </script>
 
 <style>

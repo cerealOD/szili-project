@@ -2,10 +2,10 @@
   <div class="flex flex-col lg:flex-row justify-between">
     <main class="order-1 lg:order-0 flex flex-col w-full">
       <h1 class="text-2xl md:text-3xl font-semibold text-white col-span-4 mb-8">
-        Portfolio
+        Projects
       </h1>
       <div
-        class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:gap-4"
+        class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"
       >
         <RouterLink
           v-for="(project, key) in projects"
@@ -18,7 +18,7 @@
             <figure>
               <img
                 :src="'/game-art/thumbnails/' + project['thumbnail'] + '.png'"
-                class="rounded-2xl"
+                class="rounded-xl"
                 loading="lazy"
                 alt="Project thumbnail"
               />

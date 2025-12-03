@@ -2,33 +2,35 @@
   <div class="flex flex-col lg:flex-row justify-between">
     <main class="order-1 lg:order-0 flex flex-col w-full">
       <h1 class="text-2xl md:text-3xl font-semibold text-white col-span-4 mb-8">
-        Portfolio
+        Projects
       </h1>
-      <div class="grid grid-cols-1 gap-8">
+      <div class="flex flex-col gap-4 md:gap-8 lg:gap-6 xl:gap-8">
         <RouterLink
           v-for="(project, key) in projects"
           :key="key"
           :to="'/archviz/' + key"
-          class="project-container"
+          class="relative shadow-lg transition-transform duration-200 ease-out hover:scale-[1.02] hover:shadow-2xl"
           style="aspect-ratio: 16/9"
         >
           <article>
             <figure>
               <img
-                :src="'/archviz/thumbnails/' + '1' + '.jpeg'"
-                class="rounded-2xl"
+                :src="'/archviz/thumbnails/' + key + '.jpg'"
+                class="rounded-xl xl:rounded-2xl"
                 loading="lazy"
                 alt="Project thumbnail"
               />
               <figcaption class="sr-only">{{ project["title"] }}</figcaption>
             </figure>
             <div
-              class="background-overlay"
-              style="background-color: transparent; z-index: 4"
+              class="absolute top-4 right-4 bg-menu-gray rounded-md xl:rounded-lg p-2 text-white/90 font-medium transition-all duration-300 ease-out overflow-hidden max-w-[18rem] group-hover:max-w-[26rem] text-xs xl:text-sm"
             >
-              <div class="project-text">
-                <h2 v-html="replaceLineBreaks(project['title'])"></h2>
-              </div>
+              <h2 class="whitespace-nowrap">
+                {{ project["title"]
+                }}<span class="hidden group-hover:inline font-semibold">
+                  - View Project</span
+                >
+              </h2>
             </div>
           </article>
         </RouterLink>
