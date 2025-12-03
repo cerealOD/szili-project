@@ -49,6 +49,7 @@ const projects = ref({});
 
 onMounted(async () => {
   const data = await useContentData();
+  console.log("netlify");
   projects.value = data["archviz"];
 });
 
