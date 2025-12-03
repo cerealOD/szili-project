@@ -28,7 +28,6 @@ app.get("/api/:slug", function (req, res) {
       if (err) {
         return res.status(500).send("Unable to read directory");
       }
-      console.log(files);
       res.json(files); // Send back the list of icon file names
     });
   }
@@ -43,7 +42,6 @@ app.get("/api/indiana-jones/:slug", function (req, res) {
     if (err) {
       return res.status(500).send("Unable to read directory");
     }
-    console.log(files);
     res.json(files); // Send back the list of icon file names
   });
 });

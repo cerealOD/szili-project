@@ -9,7 +9,7 @@
           v-for="(project, key) in projects"
           :key="key"
           :to="'/archviz/' + key"
-          class="relative shadow-lg transition-transform duration-200 ease-out hover:scale-[1.02] hover:shadow-2xl"
+          class="relative shadow-lg rounded-xl xl:rounded-2xl transition-transform duration-200 ease-out hover:scale-[1.01] hover:shadow-2xl"
           style="aspect-ratio: 16/9"
         >
           <article>
@@ -17,19 +17,15 @@
               <img
                 :src="'/archviz/thumbnails/' + key + '.jpg'"
                 class="rounded-xl xl:rounded-2xl"
-                loading="lazy"
                 alt="Project thumbnail"
               />
               <figcaption class="sr-only">{{ project["title"] }}</figcaption>
             </figure>
             <div
-              class="absolute top-4 right-4 bg-menu-gray rounded-md xl:rounded-lg p-2 text-white/90 font-medium transition-all duration-300 ease-out overflow-hidden max-w-[18rem] group-hover:max-w-[26rem] text-xs xl:text-sm"
+              class="absolute bottom-4 left-4 bg-menu-gray rounded-md xl:rounded-lg px-4 py-2 text-white/90 font-medium transition-all duration-300 ease-out overflow-hidden max-w-[18rem] group-hover:max-w-[26rem] text-xs xl:text-sm"
             >
               <h2 class="whitespace-nowrap">
-                {{ project["title"]
-                }}<span class="hidden group-hover:inline font-semibold">
-                  - View Project</span
-                >
+                {{ project["title"] }}
               </h2>
             </div>
           </article>
@@ -49,7 +45,6 @@ const projects = ref({});
 
 onMounted(async () => {
   const data = await useContentData();
-  console.log("netlify");
   projects.value = data["archviz"];
 });
 

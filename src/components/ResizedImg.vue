@@ -49,7 +49,6 @@ const resizedImage = ref(null);
 
 const resizeLocalImage = async () => {
   const img = new Image();
-  console.log(props.imgSrc);
   img.src = new URL(`${props.imgSrc}`, import.meta.url).href;
   await new Promise((resolve) => (img.onload = resolve));
 
