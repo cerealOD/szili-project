@@ -15,7 +15,7 @@
           <article>
             <figure>
               <img
-                :src="'/archviz/thumbnails/' + key + '.jpg'"
+                :src="imgSrc(key)"
                 class="rounded-xl xl:rounded-2xl"
                 alt="Project thumbnail"
               />
@@ -48,8 +48,14 @@ onMounted(async () => {
   projects.value = data["archviz"];
 });
 
-const replaceLineBreaks = (text) => {
-  return text.replace(/\/n/g, "<br>");
+const imgSrc = (key) => {
+  const path = `/archviz/thumbnails/${key}.jpg`;
+
+  if (import.meta.env.PROD) {
+    return `/.netlify/images?url=${encodeURIComponent(path)}&w=640&fm=auto`;
+  }
+
+  return path;
 };
 </script>
 
