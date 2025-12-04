@@ -52,7 +52,7 @@ const imgSrc = (key) => {
   const path = `/archviz/thumbnails/${key}.jpg`;
 
   if (import.meta.env.PROD) {
-    return `/.netlify/images?url=${encodeURIComponent(path)}&w=640&fm=auto`;
+    return `/.netlify/images?url=${encodeURIComponent(path)}&w=640`;
   }
 
   return path;
