@@ -4,7 +4,7 @@
       :src="resizedImage"
       v-if="resizedImage"
       alt="Resized Image"
-      class="rounded-xl xl:rounded-2xl"
+      class="rounded-lg sm:rounded-xl xl:rounded-2xl"
       @load="onImageLoad"
     />
     <div

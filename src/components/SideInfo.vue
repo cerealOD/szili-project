@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-menu-gray shadow-lg rounded-xl xl:rounded-2xl p-8 flex flex-col lg:ml-8 lg:items-center lg:w-[360px] mb-16 lg:mb-0 lg:sticky lg:top-[124px]"
+    class="bg-menu-gray shadow-lg rounded-lg sm:rounded-xl xl:rounded-2xl p-8 flex flex-col lg:ml-8 lg:items-center lg:w-[360px] mb-16 lg:mb-0 lg:sticky lg:top-[124px]"
   >
     <div class="flex gap-x-4 flex-col sm:flex-row lg:flex-col lg:items-center">
       <figure class="mb-4 flex-none lg:items-center">
