@@ -2,48 +2,51 @@
   <div class="flex flex-col items-center justify-between min-h-[100vh]">
     <header class="header-styles">
       <nav
-        class="gap-x-8 sm:gap-x-14 md:gap-x-16 text-white text-base sm:text-lg w-full flex items-center py-5 px-6 sm:p-6 sm:px-16 container"
+        class="gap-x-8 sm:gap-x-14 md:gap-x-16 text-white text-sm sm:text-base md:text-lg w-full flex items-center justify-between sm:justify-start py-5 px-4 sm:p-6 sm:px-16 container"
       >
         <RouterLink
           to="/"
-          class="underlined-link"
+          class="underlined-link px-2 lg:px-0"
           :class="$route.path == '/' ? 'font-bold !no-underline' : ''"
           >Archviz
         </RouterLink>
         <RouterLink
           to="/game-art"
-          class="underlined-link"
+          class="underlined-link px-2 lg:px-0"
           :class="$route.path == '/game-art' ? 'font-bold !no-underline' : ''"
           >Game Art
         </RouterLink>
         <RouterLink
           to="/about"
-          class="underlined-link"
+          class="underlined-link px-2 lg:px-0"
           :class="$route.path == '/about' ? 'font-bold !no-underline' : ''"
           >About</RouterLink
         >
       </nav>
     </header>
 
-    <div class="pt-8 pb-20 md:py-12 container px-6 sm:px-16">
+    <div class="pt-8 pb-20 md:py-12 container px-4 sm:px-16">
       <RouterView :key="$route.path" />
     </div>
 
     <footer class="w-full flex justify-center bg-menu-gray">
       <div
-        class="container py-6 px-6 sm:px-16 text-white w-full text-sm font-medium flex items-center gap-x-1"
+        class="container py-6 px-4 sm:px-16 text-white w-full text-xs sm:text-sm font-medium flex items-center justify-between"
       >
-        <span>Crafted with</span>
-        <img src="/icons/heart.svg" class="w-4" alt="Heart icon" />
-        <span
-          >by
-          <a
-            class="underlined-link"
-            href="https://www.linkedin.com/in/manka-huszar-120758234/"
-            target="_blank"
-            >Manka Huszar</a
-          ></span
-        >
+        <div class="flex items-center gap-x-1">
+          <span>Crafted with</span>
+          <img src="/icons/heart.svg" class="w-4" alt="Heart icon" />
+          <span
+            >by
+            <a
+              class="underlined-link"
+              href="https://www.linkedin.com/in/manka-huszar-120758234/"
+              target="_blank"
+              >Manka Huszar</a
+            ></span
+          >
+        </div>
+        <span>© 2025</span>
       </div>
     </footer>
   </div>

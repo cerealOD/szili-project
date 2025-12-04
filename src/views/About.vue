@@ -7,24 +7,21 @@
         style="max-width: 1000px"
       >
         <p>
-          Hi, my name is Szilard and I have spent the past 3 years creating
-          visually rich and immersive game environments and characters that
-          serve both narrative and gameplay. My experience includes working on
-          various projects, ranging from indie to AAA titles, covering tasks
-          such as character creation or tackling complete world-building,
-          progressing from initial blockouts to fully set-dressed and polished
-          locations. Having collaborated closely with a team of talented artists
-          and developers I have developed a strong grasp of teamwork,
-          communication, and attention to detail to deliver exceptional results.
+          I have spent the past 3 years creating visually rich, immersive game
+          environments that support both narrative and gameplay. My experience
+          spans a wide range of projects from indie productions to the biggest
+          AAA game titles, where I contributed to everything from detailed prop
+          creation to complete environment builds. Collaborating closely with
+          talented artists and developers has strengthened my understanding of
+          teamwork, communication, and the attention to detail required to
+          deliver high-quality results.
         </p>
         <p>
-          My passion for game art and development is reflected in the artistic
-          and technical skills I possess. Being well-versed in industry-standard
-          software such as Blender, 3ds Max, ZBrush, and Substance Painter, I
-          leverage this knowledge to solve problems from multiple angles and
-          offer versatile solutions. Moreover, I am continuously seeking
-          opportunities to expand my expertise and stay up-to-date with the
-          latest advancements in the field.
+          Over the past 6 months, I have expanded my focus into architectural
+          visualization, applying my environment-art foundations to craft
+          realistic, atmospheric spaces. During this time, I have developed a
+          dedicated archviz portfolio that reflects my growing expertise and
+          commitment to this new direction.
         </p>
       </div>
     </section>
@@ -33,14 +30,21 @@
       <h2 class="main-title">Work history</h2>
       <article class="work-story">
         <div class="work-story-text-container">
-          <div class="flex flex-col mb-2">
+          <div class="flex flex-col">
             <span class="date-label" style="width: fit-content">
               <time datetime="2023-01">Jan 2023</time>
               -
               <time datetime="2025-03">March 2025</time>
             </span>
             <h3 class="role-title">
-              3D Environment Artist at Treehouse Ninjas
+              3D Environment Artist at
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.treehouseninjas.com/careers.html"
+                class="company-name"
+                >Treehouse Ninjas</a
+              >
             </h3>
           </div>
 
@@ -86,7 +90,7 @@
             <div class="flex-none">
               <img
                 :src="require('../assets/jones-cover.jpg')"
-                class="rounded-xl flex-none mb-4 sm:mb-0 w-[150px]"
+                class="rounded-lg md:rounded-xl flex-none mb-4 sm:mb-0 w-[150px]"
                 alt="Inidiana Jones and the Great Circle game poster"
               />
             </div>
@@ -96,7 +100,7 @@
               <div class="scores-container mb-2">
                 <img
                   :src="require('/icons/metacritic.svg')"
-                  class="rounded-xl w-4 sm:w-6"
+                  class="w-4 sm:w-6"
                   alt="Metacritic logo"
                 />
                 <a
@@ -108,7 +112,7 @@
               <div class="scores-container">
                 <img
                   :src="require('/icons/steam.svg')"
-                  class="rounded-xl w-4 sm:w-6"
+                  class="w-4 sm:w-6"
                   alt="Steam logo"
                 />
                 <a
@@ -123,13 +127,22 @@
       </article>
       <article class="work-story">
         <div class="work-story-text-container">
-          <div class="flex flex-col mb-2">
+          <div class="flex flex-col">
             <span class="date-label" style="width: fit-content">
               <time datetime="2022-02">Feb 2022</time>
               -
               <time datetime="2023-01">Jan 2023</time>
             </span>
-            <h3 class="role-title">Junior 3D Character Artist at RageSquid</h3>
+            <h3 class="role-title">
+              Junior 3D Character Artist at
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://ragesquid.com/"
+                class="company-name"
+                >RageSquid</a
+              >
+            </h3>
           </div>
 
           <span class="location-tag">
@@ -160,7 +173,7 @@
             <div class="flex-none">
               <img
                 :src="require('../assets/descenders-cover.jpg')"
-                class="rounded-xl flex-none mb-4 sm:mb-0 w-[150px]"
+                class="rounded-lg md:rounded-xl flex-none mb-4 sm:mb-0 w-[150px]"
                 alt="Descenders game poster"
               />
             </div>
@@ -170,7 +183,7 @@
               <div class="scores-container">
                 <img
                   :src="require('/icons/steam.svg')"
-                  class="rounded-xl w-4 sm:w-6"
+                  class="w-4 sm:w-6"
                   alt="Steam logo"
                 />
                 <a
@@ -192,11 +205,11 @@
         <div
           v-for="software in softwares"
           :key="software"
-          class="flex items-center bg-gray p-2 rounded-lg gap-x-2 text-white text-sm lg:text-base"
+          class="flex items-center bg-gray p-2 rounded-md sm:rounded-lg gap-x-2 text-white text-sm lg:text-base"
         >
           <img
             :src="'/logos/' + software + '.png'"
-            class="rounded-md w-4 lg:w-6"
+            class="rounded-md h-4 lg:h-6"
             :alt="software + ' logo'"
           />
           <span>{{ software }}</span>
@@ -207,46 +220,26 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { useContentData } from "@/composables/useContentData.js";
 
-const softwares = ref([
-  "3ds Max",
-  "Adobe After Effects",
-  "Blender",
-  "Character Creator",
-  "FiberShop",
-  "GS CurveTools",
-  "Hansoft",
-  "Houdini",
-  "idTech",
-  "Mari",
-  "Marmoset Toolbag",
-  "Marvelous Designer",
-  "Maya",
-  "MODO",
-  "Perforce",
-  "Photoshop",
-  "R3DS ZWrap",
-  "RizomUV",
-  "Substance 3D Designer",
-  "Substance 3D Painter",
-  "Substance 3D Sampler",
-  "Unity",
-  "Unreal Engine",
-  "xNormal",
-  "ZBrush",
-]);
+const softwares = ref([]);
+
+onMounted(async () => {
+  const data = await useContentData();
+  softwares.value = data["softwares"];
+});
 </script>
 
 <style>
 .work-story {
-  @apply rounded-2xl bg-menu-gray p-6 flex flex-col lg:flex-row sm:gap-x-16 2xl:gap-x-64 mb-4;
+  @apply rounded-xl md:rounded-2xl bg-menu-gray p-6 flex flex-col lg:flex-row sm:gap-x-16 2xl:gap-x-64 mb-4;
 }
 .work-story-text-container {
   @apply flex flex-col text-white lg:w-1/2 2xl:w-2/3;
 }
 .work-story-project-container {
-  @apply flex flex-col text-white bg-gray rounded-xl p-4 mt-4 lg:mt-0 flex-none lg:w-1/2 2xl:w-1/3 shadow-lg;
+  @apply flex flex-col text-white bg-gray rounded-lg md:rounded-xl p-4 mt-4 lg:mt-0 flex-none lg:w-1/2 2xl:w-1/3 shadow-lg;
   height: fit-content;
 }
 li {
@@ -254,10 +247,10 @@ li {
   padding-bottom: 12px;
 }
 .project-title {
-  @apply font-medium text-base sm:text-lg lg:text-xl mb-2;
+  @apply font-semibold text-base sm:text-lg lg:text-lg;
 }
 .release-date {
-  @apply mb-4 lg:mb-8 font-semibold text-white text-opacity-80 text-sm;
+  @apply mb-5 sm:mb-6 font-semibold text-white text-opacity-65 text-sm;
 }
 .scores-container {
   @apply flex items-center gap-x-1 text-sm;
@@ -266,13 +259,16 @@ li {
   @apply text-white text-2xl md:text-3xl font-medium mb-8;
 }
 .date-label {
-  @apply rounded-lg bg-gray p-2 text-xs sm:text-sm font-semibold text-green whitespace-nowrap mb-8;
+  @apply rounded-md md:rounded-lg bg-gray p-2 text-xs sm:text-sm font-semibold text-green whitespace-nowrap mb-8;
 }
 .location-tag {
   @apply flex items-center gap-x-1 mb-8 text-sm sm:text-base;
 }
 .role-title {
-  @apply font-bold text-lg lg:text-2xl mb-1;
+  @apply font-bold text-lg lg:text-2xl mb-2;
+}
+.company-name {
+  @apply hover:text-green underline transition-all;
 }
 .role-subtitle {
   @apply text-base sm:text-lg font-medium sm:mb-6;
@@ -281,7 +277,7 @@ li {
   @apply ml-6 text-white text-opacity-90 text-sm sm:text-base;
 }
 .main-project {
-  @apply font-bold text-lg lg:text-2xl mb-4;
+  @apply font-medium text-lg lg:text-xl mb-4;
 }
 .main-project-container {
   @apply flex flex-col sm:flex-row gap-x-4;

@@ -14,11 +14,11 @@ p {
 }
 
 .background-overlay {
-  @apply opacity-0 absolute bottom-0 left-0 h-full w-full rounded-2xl;
+  @apply opacity-0 absolute bottom-0 left-0 h-full w-full rounded-xl;
 }
 
 .project-container {
-  @apply relative rounded-2xl shadow-lg;
+  @apply relative shadow-lg;
 }
 
 .project-container:hover {

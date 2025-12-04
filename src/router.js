@@ -14,6 +14,11 @@ const routes = [
     },
   },
   { path: "/archviz", redirect: "/" },
+  {
+    path: "/archviz/:slug",
+    component: () => import("./components/ProjectContainer.vue"),
+    meta: { requiresAuth: true },
+  },
   { path: "/game-art", name: "gameArt", component: GameArtHome },
   {
     path: "/game-art/:slug",

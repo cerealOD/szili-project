@@ -17,7 +17,11 @@ const currentRouteName = computed(() => route.params.slug);
 const project = ref({});
 
 onMounted(async () => {
+  const currentRoute = route.fullPath.split("/")[1];
   const data = await useContentData();
-  project.value = data["game-art"][currentRouteName.value];
+  project.value =
+    currentRoute == "game-art"
+      ? data["game-art"][currentRouteName.value]
+      : data["archviz"][currentRouteName.value];
 });
 </script>
