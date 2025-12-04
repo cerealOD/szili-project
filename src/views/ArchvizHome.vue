@@ -16,7 +16,7 @@
             <figure>
               <img
                 :src="imgSrc(key)"
-                class="rounded-xl xl:rounded-2xl"
+                class="rounded-xl xl:rounded-2xl w-full"
                 alt="Project thumbnail"
               />
               <figcaption class="sr-only">{{ project["title"] }}</figcaption>
@@ -52,7 +52,7 @@ const imgSrc = (key) => {
   const path = `/archviz/thumbnails/${key}.jpg`;
 
   if (import.meta.env.PROD) {
-    return `/.netlify/images?url=${encodeURIComponent(path)}&w=640`;
+    return `/.netlify/images?url=${encodeURIComponent(path)}&w=640q=100`;
   }
 
   return path;
