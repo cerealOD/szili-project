@@ -61,9 +61,9 @@ const imgSrc = (key) => {
     } else {
       targetWidth.value = 2560;
     }
-    return `/.netlify/images?url=${encodeURIComponent(
-      path
-    )}&w=${targetWidth}&q=100`;
+    return `/.netlify/images?url=${encodeURIComponent(path)}&w=${
+      targetWidth.value
+    }&q=100`;
   }
 
   return path;
