@@ -16,7 +16,7 @@
     <div class="flex flex-col items-center">
       <h1
         v-if="title"
-        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium py-10 md:py-12 lg:py-16text-center text-white"
+        class="w-full text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium py-10 md:py-12 lg:py-16 text-center text-white"
       >
         {{ title }}
       </h1>

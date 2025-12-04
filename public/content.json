@@ -144,7 +144,7 @@
   "archviz": {
     "modern-apartment-living-space": {
       "files": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-      "description": "In this project I set out to design a warm, contemporary apartment that feels truly comfortable and welcoming. I focused on soft natural light, cozy textures and a calm color palette to let the living and dining areas flow together naturally. I brought in small details with table settings, artworks and layered lighting to add personality without disrupting the clean, modern aesthetic. The bedroom carries that same idea forward with simple lines, wood accents and comfortable textiles creating a quiet retreat. Overall I aimed to balance practical functionality with a sense of everyday comfort and understated elegance.",
+      "description": "In this project I set out to design a contemporary, warm apartment that feels truly comfortable and welcoming. I focused on soft natural light, cozy textures and a calm color palette to let the living and dining areas flow together naturally. I brought in small details with table settings, artworks and layered lighting to add personality without disrupting the clean, modern aesthetic. The bedroom carries that same idea forward with simple lines, wood accents and comfortable textiles creating a quiet retreat. Overall I aimed to balance practical functionality with a sense of everyday comfort and understated elegance.",
       "title": "Modern Apartment Living Space",
       "software": ["3ds Max", "V-Ray", "Photoshop"]
     },
