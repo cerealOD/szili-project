@@ -71,6 +71,8 @@
       </a>
       <div class="text-white flex items-center w-full gap-x-1">
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.artstation.com/szilardhazi3d"
           class="cursor-pointer bg-gray rounded-md p-1.5 flex items-center justify-center gap-x-1 text-xs hover:bg-white hover:text-gray transition-all font-medium"
           aria-label="Szilard Hazi on ArtStation"
@@ -79,6 +81,8 @@
           ArtStation
         </a>
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.linkedin.com/in/szilard-hazi-3d/"
           class="cursor-pointer bg-gray rounded-md p-1.5 flex items-center justify-center gap-x-1 text-xs hover:bg-white hover:text-deep-blue transition-all font-medium"
           aria-label="Szilard Hazi on LinkedIn"
