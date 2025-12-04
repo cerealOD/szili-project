@@ -52,9 +52,7 @@ const imgSrc = (key) => {
   const path = `/archviz/thumbnails/${key}.jpg`;
   const targetWidth = ref(0);
   if (import.meta.env.PROD) {
-    if (window.innerWidth < 768) {
-      targetWidth.value = 768;
-    } else if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1280) {
       targetWidth.value = 1024;
     } else if (window.innerWidth < 1440) {
       targetWidth.value = 1920;
