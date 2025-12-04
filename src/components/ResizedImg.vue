@@ -4,21 +4,20 @@
       :src="resizedImage"
       v-if="resizedImage"
       alt="Resized Image"
-      class="rounded-3xl"
+      class="rounded-xl xl:rounded-2xl"
       @load="onImageLoad"
     />
     <div
-      class="open-overlay opacity-0 absolute bottom-0 left-0 w-full rounded-2xl flex justify-end p-6 items-end"
+      class="open-overlay lg:opacity-0 absolute bottom-0 left-0 w-full rounded-2xl flex justify-end p-3 sm:p-4 md:p-5 lg:p-6 items-end"
       style="background-color: transparent; z-index: 4"
     >
       <a
         :href="imgSrc"
         target="_blank"
-        class="p-1.5 rounded-xl open-link bg-menu-gray/90"
+        class="p-1 sm:p-1.5 rounded-md sm:rounded-lg open-link bg-black/60 lg:bg-menu-gray/90"
       >
         <svg
-          width="28"
-          height="28"
+          class="w-5 h-5 sm:w-6 sm:h-6"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
