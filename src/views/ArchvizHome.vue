@@ -50,9 +50,20 @@ onMounted(async () => {
 
 const imgSrc = (key) => {
   const path = `/archviz/thumbnails/${key}.jpg`;
-
+  const targetWidth = ref(0);
   if (import.meta.env.PROD) {
-    return `/.netlify/images?url=${encodeURIComponent(path)}&w=640q=100`;
+    if (window.innerWidth < 768) {
+      targetWidth.value = 768;
+    } else if (window.innerWidth < 1024) {
+      targetWidth.value = 1024;
+    } else if (window.innerWidth < 1440) {
+      targetWidth.value = 1920;
+    } else {
+      targetWidth.value = 2560;
+    }
+    return `/.netlify/images?url=${encodeURIComponent(
+      path
+    )}&w=${targetWidth}&q=100`;
   }
 
   return path;
