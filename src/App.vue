@@ -7,13 +7,19 @@
         <RouterLink
           to="/"
           class="underlined-link px-2 lg:px-0"
-          :class="$route.path == '/' ? 'font-bold !no-underline' : ''"
+          :class="
+            $route.path == '/' || $route.path.includes('/archviz')
+              ? 'font-bold !no-underline'
+              : ''
+          "
           >Archviz
         </RouterLink>
         <RouterLink
           to="/game-art"
           class="underlined-link px-2 lg:px-0"
-          :class="$route.path == '/game-art' ? 'font-bold !no-underline' : ''"
+          :class="
+            $route.path.includes('/game-art') ? 'font-bold !no-underline' : ''
+          "
           >Game Art
         </RouterLink>
         <RouterLink
